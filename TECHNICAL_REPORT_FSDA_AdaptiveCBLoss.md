@@ -1,5 +1,7 @@
 # TECHNICAL REPORT — DETAILED DESIGN
+
 # EfficientNetB4 + FSDA + Adaptive Class-Balanced Focal Loss
+
 # Garlic Disease Classification
 
 > Tài liệu này mô tả CHI TIẾT từng bước tính toán, từng tensor shape,
@@ -283,6 +285,7 @@ Cấu trúc bên trong:
 **Mục đích:** Xác định KÊNH NÀO (trong 1792 channels) mang thông tin tần số liên quan đến bệnh.
 
 **Hyperparameters từ code:**
+
 ```
 reduction = 16
 r = max(1792 // 16, 8) = max(112, 8) = 112
@@ -394,6 +397,7 @@ TỔNG PARAMS FrequencyChannelAttention:
 ```
 
 **Công thức tổng hợp:**
+
 ```
 FreqAttn(x) = x ⊗ σ( W₂ · ReLU( W₁ · GAP( log(1 + |FFT2D(x)|) ) ) )
 
@@ -413,6 +417,7 @@ Trong đó:
 **Mục đích:** Xác định VỊ TRÍ NÀO trên ảnh có tổn thương bệnh.
 
 **Hyperparameters từ code:**
+
 ```
 spatial_kernel = 7
 Conv2D: 1 filter, kernel 7×7, padding='same', use_bias=False, dtype='float32'
@@ -492,6 +497,7 @@ TỔNG PARAMS SpatialAttention:
 ```
 
 **Công thức tổng hợp:**
+
 ```
 SpatAttn(x) = x ⊗ σ( Conv_{7×7}( [AvgPool_c(x) ⊕ MaxPool_c(x)] ) )
 
@@ -554,6 +560,7 @@ RETURN: (fused, sp_attn)
 ```
 
 **Công thức FSDA hoàn chỉnh:**
+
 ```
 FSDA(x) = BN( FreqAttn(x) + SpatAttn(x) )
 
@@ -813,6 +820,7 @@ LOG OUTPUT mỗi epoch:
 ```
 
 **Toàn bộ adaptive mechanism (công thức toán):**
+
 ```
 Tại epoch t:
 

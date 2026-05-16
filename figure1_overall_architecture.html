@@ -1,0 +1,1186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Figure 1 — Overall Architecture: EfficientNetB4 + FSDA</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #fff;
+        font-family: "Times New Roman", Times, serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 24px 40px;
+      }
+
+      /* ── Figure container ─────────────────────────────────── */
+      .fig-wrap {
+        width: 1280px;
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 28px 32px 24px;
+      }
+
+      /* ── Caption ──────────────────────────────────────────── */
+      .caption {
+        margin-top: 14px;
+        font-size: 12.5px;
+        color: #222;
+        text-align: center;
+        max-width: 1280px;
+        line-height: 1.55;
+      }
+      .caption b {
+        font-weight: bold;
+      }
+
+      /* ── Title inside figure ──────────────────────────────── */
+      .fig-title {
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        color: #111;
+        letter-spacing: 0.3px;
+        margin-bottom: 20px;
+      }
+
+      /* ── Pipeline row ─────────────────────────────────────── */
+      .pipeline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        width: 100%;
+      }
+
+      /* ── Arrow ────────────────────────────────────────────── */
+      .arrow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 38px;
+      }
+      .arrow svg {
+        display: block;
+      }
+
+      /* ── Generic block ────────────────────────────────────── */
+      .block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      /* ── 3D feature tensor (SVG-based) ───────────────────── */
+      .tensor-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .tensor-label {
+        font-size: 10.5px;
+        font-weight: bold;
+        color: #111;
+        margin-top: 6px;
+        text-align: center;
+      }
+      .tensor-dim {
+        font-size: 9.5px;
+        color: #555;
+        font-style: italic;
+        margin-top: 2px;
+        text-align: center;
+      }
+
+      /* ── Module box ───────────────────────────────────────── */
+      .module-box {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 10px;
+        text-align: center;
+      }
+      .module-label {
+        font-size: 10.5px;
+        font-weight: bold;
+        line-height: 1.35;
+      }
+      .module-sub {
+        font-size: 8.8px;
+        font-style: italic;
+        margin-top: 3px;
+        line-height: 1.3;
+        color: #444;
+      }
+      .module-sub.light {
+        color: #ddd;
+      }
+
+      /* ── Section label beneath module ────────────────────── */
+      .sec-label {
+        font-size: 9px;
+        color: #777;
+        font-style: italic;
+        margin-top: 5px;
+        text-align: center;
+      }
+
+      /* ── Section bracket ──────────────────────────────────── */
+      .section-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .section-title {
+        font-size: 9px;
+        font-weight: bold;
+        color: #555;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        border-bottom: 1.5px solid #ccc;
+        padding-bottom: 3px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* ── Output probabilities bar ─────────────────────────── */
+      .prob-bar-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 110px;
+      }
+      .prob-row {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .prob-label {
+        font-size: 8px;
+        color: #333;
+        width: 38px;
+        text-align: right;
+        flex-shrink: 0;
+      }
+      .prob-bar-bg {
+        flex: 1;
+        height: 12px;
+        background: #eee;
+        border-radius: 2px;
+        overflow: hidden;
+        border: 0.5px solid #ccc;
+      }
+      .prob-bar-fill {
+        height: 100%;
+        border-radius: 2px;
+      }
+      .prob-val {
+        font-size: 7.5px;
+        color: #333;
+        width: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fig-wrap" id="figure1">
+      <div class="fig-title">
+        Fig. 1 — Overall Architecture of the Proposed EfficientNetB4 + FSDA
+        Model
+      </div>
+
+      <!-- ══════════════════════════════════════════════════ -->
+      <!--  MAIN PIPELINE ROW                                -->
+      <!-- ══════════════════════════════════════════════════ -->
+      <div class="pipeline">
+        <!-- ① INPUT IMAGE ──────────────────────────────── -->
+        <div class="block tensor-wrap">
+          <!-- 3D tensor: RGB 3 channels -->
+          <svg width="68" height="100" viewBox="0 0 68 100">
+            <!-- channel 3 (back) -->
+            <polygon
+              points="10,22 44,22 54,12 20,12"
+              fill="#b8d4f0"
+              stroke="#3a6aa0"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="44,22 54,12 54,72 44,82"
+              fill="#7baad4"
+              stroke="#3a6aa0"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="10,22 10,82 44,82 44,22"
+              fill="#9dc4e8"
+              stroke="#3a6aa0"
+              stroke-width="0.8"
+            />
+            <!-- channel 2 (mid) -->
+            <polygon
+              points="5,28 39,28 49,18 15,18"
+              fill="#a8d4b0"
+              stroke="#2e7a3e"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="39,28 49,18 49,78 39,88"
+              fill="#72b480"
+              stroke="#2e7a3e"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="5,28 5,88 39,88 39,28"
+              fill="#8ec89a"
+              stroke="#2e7a3e"
+              stroke-width="0.8"
+            />
+            <!-- channel 1 (front, R) -->
+            <polygon
+              points="0,34 34,34 44,24 10,24"
+              fill="#f0b8b8"
+              stroke="#a03030"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="34,34 44,24 44,88 34,98"
+              fill="#d48080"
+              stroke="#a03030"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="0,34 0,98 34,98 34,34"
+              fill="#e8a0a0"
+              stroke="#a03030"
+              stroke-width="0.8"
+            />
+            <!-- RGB text on front face -->
+            <text
+              x="17"
+              y="70"
+              font-size="9"
+              fill="#7a2020"
+              font-style="italic"
+              font-family="Times New Roman"
+            >
+              RGB
+            </text>
+          </svg>
+          <div class="tensor-label">Input Image</div>
+          <div class="tensor-dim">380 × 380 × 3</div>
+        </div>
+
+        <!-- arrow -->
+        <div class="arrow">
+          <svg width="38" height="18" viewBox="0 0 38 18">
+            <line
+              x1="2"
+              y1="9"
+              x2="30"
+              y2="9"
+              stroke="#444"
+              stroke-width="1.4"
+            />
+            <polygon points="30,5 38,9 30,13" fill="#444" />
+          </svg>
+        </div>
+
+        <!-- ② EFFICIENTNETB4 BACKBONE ───────────────────── -->
+        <div class="block">
+          <div class="section-title" style="width: 148px">
+            Feature Extraction
+          </div>
+          <div
+            style="display: flex; flex-direction: column; align-items: center"
+          >
+            <!-- Big backbone box with internal block suggestion -->
+            <div
+              class="module-box"
+              style="
+                width: 148px;
+                height: 118px;
+                background: linear-gradient(160deg, #5b8fcf 0%, #3566a8 100%);
+                border: 1.5px solid #2a508a;
+                box-shadow: 2px 2px 0 #1a3060;
+                position: relative;
+              "
+            >
+              <!-- Internal "conv block" lines suggestion -->
+              <div
+                style="
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  overflow: hidden;
+                  border-radius: 5px;
+                "
+              >
+                <div
+                  style="
+                    position: absolute;
+                    top: 18px;
+                    left: 8px;
+                    right: 8px;
+                    height: 1px;
+                    background: rgba(255, 255, 255, 0.18);
+                  "
+                ></div>
+                <div
+                  style="
+                    position: absolute;
+                    top: 36px;
+                    left: 8px;
+                    right: 8px;
+                    height: 1px;
+                    background: rgba(255, 255, 255, 0.18);
+                  "
+                ></div>
+                <div
+                  style="
+                    position: absolute;
+                    top: 54px;
+                    left: 8px;
+                    right: 8px;
+                    height: 1px;
+                    background: rgba(255, 255, 255, 0.18);
+                  "
+                ></div>
+                <div
+                  style="
+                    position: absolute;
+                    top: 72px;
+                    left: 8px;
+                    right: 8px;
+                    height: 1px;
+                    background: rgba(255, 255, 255, 0.18);
+                  "
+                ></div>
+                <div
+                  style="
+                    position: absolute;
+                    top: 90px;
+                    left: 8px;
+                    right: 8px;
+                    height: 1px;
+                    background: rgba(255, 255, 255, 0.18);
+                  "
+                ></div>
+              </div>
+              <div class="module-label" style="color: #fff; font-size: 11px">
+                EfficientNetB4<br />Backbone
+              </div>
+              <div class="module-sub light" style="margin-top: 5px">
+                ImageNet pretrained
+              </div>
+              <div style="margin-top: 8px; display: flex; gap: 4px">
+                <span
+                  style="
+                    background: rgba(255, 255, 255, 0.22);
+                    border: 0.8px solid rgba(255, 255, 255, 0.5);
+                    border-radius: 3px;
+                    font-size: 7.8px;
+                    color: #ddeeff;
+                    padding: 2px 4px;
+                    font-family: Times New Roman;
+                  "
+                  >B1–B2 frozen</span
+                >
+                <span
+                  style="
+                    background: rgba(255, 220, 130, 0.3);
+                    border: 0.8px solid rgba(255, 200, 80, 0.6);
+                    border-radius: 3px;
+                    font-size: 7.8px;
+                    color: #fff0b0;
+                    padding: 2px 4px;
+                    font-family: Times New Roman;
+                  "
+                  >B3–B7 fine-tuned</span
+                >
+              </div>
+            </div>
+            <div class="sec-label">BN layers always frozen</div>
+          </div>
+        </div>
+
+        <!-- arrow -->
+        <div class="arrow">
+          <svg width="38" height="18" viewBox="0 0 38 18">
+            <line
+              x1="2"
+              y1="9"
+              x2="30"
+              y2="9"
+              stroke="#444"
+              stroke-width="1.4"
+            />
+            <polygon points="30,5 38,9 30,13" fill="#444" />
+          </svg>
+        </div>
+
+        <!-- ③ FEATURE MAP ───────────────────────────────── -->
+        <div class="block tensor-wrap">
+          <svg width="72" height="100" viewBox="0 0 72 100">
+            <!-- 5-layer deep tensor stack -->
+            <polygon
+              points="30,6 66,6 72,1 36,1"
+              fill="#8aaace"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="66,6 72,1 72,55 66,60"
+              fill="#5a80b4"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="30,6 30,60 66,60 66,6"
+              fill="#7094c4"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+
+            <polygon
+              points="24,12 60,12 66,7 30,7"
+              fill="#8aaace"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="60,12 66,7 66,61 60,66"
+              fill="#5a80b4"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="24,12 24,66 60,66 60,12"
+              fill="#7094c4"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+
+            <polygon
+              points="18,18 54,18 60,13 24,13"
+              fill="#8aaace"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="54,18 60,13 60,67 54,72"
+              fill="#5a80b4"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="18,18 18,72 54,72 54,18"
+              fill="#7094c4"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+
+            <polygon
+              points="12,24 48,24 54,19 18,19"
+              fill="#8aaace"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="48,24 54,19 54,73 48,78"
+              fill="#5a80b4"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="12,24 12,78 48,78 48,24"
+              fill="#7094c4"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+
+            <polygon
+              points="6,30 42,30 48,25 12,25"
+              fill="#9ab4d8"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="42,30 48,25 48,79 42,84"
+              fill="#6888be"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="6,30 6,84 42,84 42,30"
+              fill="#7ea0ce"
+              stroke="#3060a0"
+              stroke-width="0.7"
+            />
+
+            <text
+              x="14"
+              y="62"
+              font-size="8"
+              fill="#1a3a70"
+              font-style="italic"
+              font-family="Times New Roman"
+            >
+              1792
+            </text>
+          </svg>
+          <div class="tensor-label">Feature Map</div>
+          <div class="tensor-dim">12 × 12 × 1792</div>
+        </div>
+
+        <!-- arrow -->
+        <div class="arrow">
+          <svg width="38" height="18" viewBox="0 0 38 18">
+            <line
+              x1="2"
+              y1="9"
+              x2="30"
+              y2="9"
+              stroke="#444"
+              stroke-width="1.4"
+            />
+            <polygon points="30,5 38,9 30,13" fill="#444" />
+          </svg>
+        </div>
+
+        <!-- ④ FSDA BLOCK ────────────────────────────────── -->
+        <div class="block">
+          <div
+            class="section-title"
+            style="width: 150px; border-color: #c06010; color: #c06010"
+          >
+            Proposed Module
+          </div>
+          <div
+            class="module-box"
+            style="
+              width: 150px;
+              height: 118px;
+              background: linear-gradient(155deg, #f0904a 0%, #cc5f18 100%);
+              border: 2px solid #a84008;
+              box-shadow: 3px 3px 0 #7a2e00;
+              position: relative;
+            "
+          >
+            <!-- dashed border inside to emphasize novelty -->
+            <div
+              style="
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                right: 5px;
+                bottom: 5px;
+                border: 1px dashed rgba(255, 255, 255, 0.35);
+                border-radius: 3px;
+                pointer-events: none;
+              "
+            ></div>
+            <div class="module-label" style="color: #fff; font-size: 11.5px">
+              Proposed<br />FSDA Block
+            </div>
+            <div
+              class="module-sub light"
+              style="margin-top: 6px; color: #fde8c8"
+            >
+              Frequency-Spatial<br />Dual Attention
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                font-size: 7.8px;
+                color: #ffe8b0;
+                font-style: italic;
+                font-family: Times New Roman;
+              "
+            >
+              Freq. Branch + Spatial Branch
+            </div>
+          </div>
+          <div class="sec-label" style="color: #b05010">Novel Contribution</div>
+        </div>
+
+        <!-- arrow -->
+        <div class="arrow">
+          <svg width="38" height="18" viewBox="0 0 38 18">
+            <line
+              x1="2"
+              y1="9"
+              x2="30"
+              y2="9"
+              stroke="#444"
+              stroke-width="1.4"
+            />
+            <polygon points="30,5 38,9 30,13" fill="#444" />
+          </svg>
+        </div>
+
+        <!-- ⑤ ENHANCED FEATURE MAP ──────────────────────── -->
+        <div class="block tensor-wrap">
+          <svg width="72" height="100" viewBox="0 0 72 100">
+            <polygon
+              points="30,6 66,6 72,1 36,1"
+              fill="#f0b888"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="66,6 72,1 72,55 66,60"
+              fill="#c07840"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="30,6 30,60 66,60 66,6"
+              fill="#d89060"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+
+            <polygon
+              points="24,12 60,12 66,7 30,7"
+              fill="#f0b888"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="60,12 66,7 66,61 60,66"
+              fill="#c07840"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="24,12 24,66 60,66 60,12"
+              fill="#d89060"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+
+            <polygon
+              points="18,18 54,18 60,13 24,13"
+              fill="#f0b888"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="54,18 60,13 60,67 54,72"
+              fill="#c07840"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="18,18 18,72 54,72 54,18"
+              fill="#d89060"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+
+            <polygon
+              points="12,24 48,24 54,19 18,19"
+              fill="#f0b888"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="48,24 54,19 54,73 48,78"
+              fill="#c07840"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="12,24 12,78 48,78 48,24"
+              fill="#d89060"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+
+            <polygon
+              points="6,30 42,30 48,25 12,25"
+              fill="#f8c8a0"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="42,30 48,25 48,79 42,84"
+              fill="#d09060"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+            <polygon
+              points="6,30 6,84 42,84 42,30"
+              fill="#e8a878"
+              stroke="#a05010"
+              stroke-width="0.7"
+            />
+
+            <text
+              x="14"
+              y="62"
+              font-size="8"
+              fill="#6a2c00"
+              font-style="italic"
+              font-family="Times New Roman"
+            >
+              1792
+            </text>
+          </svg>
+          <div class="tensor-label">Enhanced Feature Map</div>
+          <div class="tensor-dim">12 × 12 × 1792</div>
+        </div>
+
+        <!-- arrow -->
+        <div class="arrow">
+          <svg width="38" height="18" viewBox="0 0 38 18">
+            <line
+              x1="2"
+              y1="9"
+              x2="30"
+              y2="9"
+              stroke="#444"
+              stroke-width="1.4"
+            />
+            <polygon points="30,5 38,9 30,13" fill="#444" />
+          </svg>
+        </div>
+
+        <!-- ⑥–⑨ CLASSIFICATION HEAD ─────────────────────── -->
+        <div class="block">
+          <div class="section-title" style="width: 134px">
+            Classification Head
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 3px;
+            "
+          >
+            <!-- GAP -->
+            <div
+              class="module-box"
+              style="
+                width: 134px;
+                height: 26px;
+                background: #e8eaf6;
+                border: 1px solid #7986cb;
+              "
+            >
+              <span
+                class="module-label"
+                style="font-size: 9.5px; color: #283593"
+              >
+                Global Average Pooling
+              </span>
+            </div>
+            <div
+              style="
+                font-size: 8px;
+                color: #888;
+                font-style: italic;
+                margin: -1px 0;
+              "
+            >
+              → 1792
+            </div>
+
+            <!-- mini arrow -->
+            <svg
+              width="12"
+              height="10"
+              viewBox="0 0 12 10"
+              style="margin: -1px 0"
+            >
+              <line
+                x1="6"
+                y1="0"
+                x2="6"
+                y2="7"
+                stroke="#666"
+                stroke-width="1.2"
+              />
+              <polygon points="3,6 6,10 9,6" fill="#666" />
+            </svg>
+
+            <!-- BN -->
+            <div
+              class="module-box"
+              style="
+                width: 134px;
+                height: 24px;
+                background: #ede7f6;
+                border: 1px solid #9575cd;
+              "
+            >
+              <span
+                class="module-label"
+                style="font-size: 9.5px; color: #311b92"
+                >Batch Normalization</span
+              >
+            </div>
+
+            <!-- mini arrow -->
+            <svg
+              width="12"
+              height="10"
+              viewBox="0 0 12 10"
+              style="margin: -1px 0"
+            >
+              <line
+                x1="6"
+                y1="0"
+                x2="6"
+                y2="7"
+                stroke="#666"
+                stroke-width="1.2"
+              />
+              <polygon points="3,6 6,10 9,6" fill="#666" />
+            </svg>
+
+            <!-- FC -->
+            <div
+              class="module-box"
+              style="
+                width: 134px;
+                height: 28px;
+                background: #d8eaff;
+                border: 1px solid #5c85d6;
+              "
+            >
+              <span
+                class="module-label"
+                style="font-size: 9.5px; color: #1a3a7a"
+                >FC 256 + ReLU</span
+              >
+              <span class="module-sub" style="color: #335; font-size: 8px"
+                >+ L2 regularizer</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 8px;
+                color: #888;
+                font-style: italic;
+                margin: -1px 0;
+              "
+            >
+              → 256
+            </div>
+
+            <!-- mini arrow -->
+            <svg
+              width="12"
+              height="10"
+              viewBox="0 0 12 10"
+              style="margin: -1px 0"
+            >
+              <line
+                x1="6"
+                y1="0"
+                x2="6"
+                y2="7"
+                stroke="#666"
+                stroke-width="1.2"
+              />
+              <polygon points="3,6 6,10 9,6" fill="#666" />
+            </svg>
+
+            <!-- Dropout -->
+            <div
+              class="module-box"
+              style="
+                width: 134px;
+                height: 24px;
+                background: #f3e5f5;
+                border: 1px solid #ab47bc;
+              "
+            >
+              <span
+                class="module-label"
+                style="font-size: 9.5px; color: #4a148c"
+                >Dropout 0.5</span
+              >
+            </div>
+
+            <!-- mini arrow -->
+            <svg
+              width="12"
+              height="10"
+              viewBox="0 0 12 10"
+              style="margin: -1px 0"
+            >
+              <line
+                x1="6"
+                y1="0"
+                x2="6"
+                y2="7"
+                stroke="#666"
+                stroke-width="1.2"
+              />
+              <polygon points="3,6 6,10 9,6" fill="#666" />
+            </svg>
+
+            <!-- Softmax -->
+            <div
+              class="module-box"
+              style="
+                width: 134px;
+                height: 28px;
+                background: linear-gradient(135deg, #2e7d32, #388e3c);
+                border: 1.5px solid #1b5e20;
+                box-shadow: 1px 1px 0 #0a3010;
+              "
+            >
+              <span class="module-label" style="color: #fff; font-size: 10px"
+                >Softmax Output</span
+              >
+              <span
+                style="
+                  font-size: 8px;
+                  color: #c8f0c8;
+                  font-style: italic;
+                  font-family: Times New Roman;
+                "
+                >N classes</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- arrow -->
+        <div class="arrow">
+          <svg width="38" height="18" viewBox="0 0 38 18">
+            <line
+              x1="2"
+              y1="9"
+              x2="30"
+              y2="9"
+              stroke="#444"
+              stroke-width="1.4"
+            />
+            <polygon points="30,5 38,9 30,13" fill="#444" />
+          </svg>
+        </div>
+
+        <!-- ⑩ OUTPUT PROBABILITIES ─────────────────────── -->
+        <div class="block" style="align-items: flex-start">
+          <div class="section-title" style="width: 130px">Output</div>
+          <div
+            style="
+              font-size: 9.5px;
+              font-weight: bold;
+              color: #1b5e20;
+              margin-bottom: 6px;
+              text-align: center;
+              width: 130px;
+            "
+          >
+            Disease Probabilities
+          </div>
+          <div class="prob-bar-wrap" style="width: 130px">
+            <div class="prob-row">
+              <div class="prob-label">Healthy</div>
+              <div class="prob-bar-bg">
+                <div
+                  class="prob-bar-fill"
+                  style="width: 4%; background: #aaa"
+                ></div>
+              </div>
+              <div class="prob-val" style="color: #777">0.04</div>
+            </div>
+            <div class="prob-row">
+              <div class="prob-label">Rust</div>
+              <div class="prob-bar-bg">
+                <div
+                  class="prob-bar-fill"
+                  style="width: 85%; background: #d32f2f"
+                ></div>
+              </div>
+              <div class="prob-val" style="color: #b71c1c; font-weight: bold">
+                0.85
+              </div>
+            </div>
+            <div class="prob-row">
+              <div class="prob-label">Blight</div>
+              <div class="prob-bar-bg">
+                <div
+                  class="prob-bar-fill"
+                  style="width: 5%; background: #aaa"
+                ></div>
+              </div>
+              <div class="prob-val" style="color: #777">0.05</div>
+            </div>
+            <div class="prob-row">
+              <div class="prob-label">Mold</div>
+              <div class="prob-bar-bg">
+                <div
+                  class="prob-bar-fill"
+                  style="width: 4%; background: #aaa"
+                ></div>
+              </div>
+              <div class="prob-val" style="color: #777">0.04</div>
+            </div>
+            <div class="prob-row">
+              <div class="prob-label">Rot</div>
+              <div class="prob-bar-bg">
+                <div
+                  class="prob-bar-fill"
+                  style="width: 2%; background: #aaa"
+                ></div>
+              </div>
+              <div class="prob-val" style="color: #777">0.02</div>
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 8px;
+              font-size: 8.5px;
+              color: #555;
+              font-style: italic;
+              text-align: center;
+              width: 130px;
+            "
+          >
+            Predicted: <b style="color: #b71c1c">Rust</b>
+          </div>
+        </div>
+      </div>
+      <!-- end pipeline -->
+
+      <!-- ── Bottom section bracket labels ───────────────────── -->
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 0;
+          margin-top: 10px;
+          padding: 0 0 0 68px;
+          font-size: 8.5px;
+          color: #777;
+          font-style: italic;
+          width: 100%;
+        "
+      >
+        <div
+          style="
+            width: 186px;
+            text-align: center;
+            border-top: 1px solid #ccc;
+            padding-top: 3px;
+          "
+        >
+          Input
+        </div>
+        <div style="width: 38px"></div>
+        <div
+          style="
+            width: 148px;
+            text-align: center;
+            border-top: 1px solid #3060a0;
+            padding-top: 3px;
+            color: #3060a0;
+          "
+        >
+          Feature Extraction
+        </div>
+        <div style="width: 38px"></div>
+        <div
+          style="
+            width: 72px;
+            text-align: center;
+            border-top: 1px solid #ccc;
+            padding-top: 3px;
+          "
+        ></div>
+        <div style="width: 38px"></div>
+        <div
+          style="
+            width: 150px;
+            text-align: center;
+            border-top: 2px solid #cc5f18;
+            padding-top: 3px;
+            color: #cc5f18;
+            font-weight: bold;
+          "
+        >
+          Proposed FSDA
+        </div>
+        <div style="width: 38px"></div>
+        <div
+          style="
+            width: 72px;
+            text-align: center;
+            border-top: 1px solid #ccc;
+            padding-top: 3px;
+          "
+        ></div>
+        <div style="width: 38px"></div>
+        <div
+          style="
+            width: 134px;
+            text-align: center;
+            border-top: 1px solid #5c85d6;
+            padding-top: 3px;
+            color: #5c85d6;
+          "
+        >
+          Classification Head
+        </div>
+        <div style="width: 38px"></div>
+        <div
+          style="
+            width: 130px;
+            text-align: center;
+            border-top: 1px solid #2e7d32;
+            padding-top: 3px;
+            color: #2e7d32;
+          "
+        >
+          Output
+        </div>
+      </div>
+    </div>
+    <!-- end fig-wrap -->
+
+    <!-- Caption -->
+    <div class="caption">
+      <b>Fig. 1.</b> Overall architecture of the proposed EfficientNetB4-FSDA
+      model for garlic disease classification. The pipeline processes an input
+      image (380 × 380 × 3) through an EfficientNetB4 backbone (Blocks 1–2
+      frozen, Blocks 3–7 fine-tuned, batch normalization always frozen),
+      followed by the proposed Frequency-Spatial Dual Attention (FSDA) block, a
+      global average pooling layer, and a fully-connected classification head
+      with Dropout regularization and Softmax output.
+    </div>
+
+    <!-- Print/export hint -->
+    <div
+      style="
+        margin-top: 18px;
+        font-size: 10px;
+        color: #aaa;
+        font-family: monospace;
+        text-align: center;
+      "
+    >
+      To export as PNG: right-click on the figure → "Inspect" or use browser
+      Print → Save as PDF (Ctrl+P)
+    </div>
+  </body>
+</html>

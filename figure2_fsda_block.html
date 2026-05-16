@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Figure 2 — FSDA Block Internal Architecture</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #fff;
+        font-family: "Times New Roman", Times, serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 24px 40px;
+      }
+
+      .fig-wrap {
+        width: 860px;
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 28px 32px 24px;
+      }
+
+      .caption {
+        margin-top: 14px;
+        font-size: 12.5px;
+        color: #222;
+        text-align: center;
+        max-width: 860px;
+        line-height: 1.55;
+      }
+
+      .fig-title {
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        color: #111;
+        letter-spacing: 0.3px;
+        margin-bottom: 20px;
+      }
+
+      /* ── Shared node styles ──────────────────────────── */
+      .node {
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 5px 8px;
+      }
+      .node-label {
+        font-size: 9.5px;
+        font-weight: bold;
+        color: #111;
+        line-height: 1.3;
+      }
+      .node-sub {
+        font-size: 8px;
+        color: #444;
+        font-style: italic;
+        margin-top: 2px;
+        line-height: 1.25;
+      }
+      .node-sub.light {
+        color: #ddd;
+      }
+
+      /* ── Vertical arrow ──────────────────────────────── */
+      .v-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 18px;
+      }
+
+      /* ── Section title ───────────────────────────────── */
+      .branch-title {
+        font-size: 9.5px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 4px 8px;
+        border-radius: 3px 3px 0 0;
+        text-align: center;
+        border-bottom: 1.5px solid transparent;
+      }
+
+      /* ── Fusion box ──────────────────────────────────── */
+      .fusion-box {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fig-wrap" id="figure2">
+      <div class="fig-title">
+        Fig. 2 — Internal Architecture of the Proposed FSDA Block
+      </div>
+
+      <!-- ════════════════════════════════════════════════════ -->
+      <!--  TOP: INPUT FEATURE MAP                             -->
+      <!-- ════════════════════════════════════════════════════ -->
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <!-- Input tensor (3D block) -->
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <svg width="120" height="60" viewBox="0 0 120 60">
+            <polygon
+              points="44,6  104,6  116,0  56,0"
+              fill="#9ab4d8"
+              stroke="#3060a0"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="104,6 116,0  116,48 104,54"
+              fill="#6888be"
+              stroke="#3060a0"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="44,6  44,54  104,54 104,6"
+              fill="#7ea0ce"
+              stroke="#3060a0"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="28,12 88,12  100,6  40,6"
+              fill="#9ab4d8"
+              stroke="#3060a0"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="88,12 100,6  100,54 88,60"
+              fill="#6888be"
+              stroke="#3060a0"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="28,12 28,60  88,60  88,12"
+              fill="#7ea0ce"
+              stroke="#3060a0"
+              stroke-width="0.8"
+            />
+            <text
+              x="46"
+              y="42"
+              font-size="9"
+              fill="#1a3a70"
+              font-style="italic"
+              font-family="Times New Roman"
+            >
+              1792 ch.
+            </text>
+          </svg>
+          <div
+            style="
+              font-size: 11px;
+              font-weight: bold;
+              color: #111;
+              margin-top: 4px;
+            "
+          >
+            Input Feature Map
+          </div>
+          <div style="font-size: 9px; color: #555; font-style: italic">
+            12 × 12 × 1792 (from EfficientNetB4 top_activation)
+          </div>
+        </div>
+
+        <!-- Split arrow down -->
+        <svg
+          width="200"
+          height="36"
+          viewBox="0 0 200 36"
+          style="margin-top: 4px"
+        >
+          <!-- vertical stem -->
+          <line
+            x1="100"
+            y1="0"
+            x2="100"
+            y2="16"
+            stroke="#444"
+            stroke-width="1.3"
+          />
+          <!-- split dot -->
+          <circle cx="100" cy="16" r="3" fill="#444" />
+          <!-- left branch -->
+          <line
+            x1="100"
+            y1="16"
+            x2="30"
+            y2="16"
+            stroke="#c06010"
+            stroke-width="1.3"
+          />
+          <line
+            x1="30"
+            y1="16"
+            x2="30"
+            y2="36"
+            stroke="#c06010"
+            stroke-width="1.3"
+          />
+          <polygon points="26,32 30,36 34,32" fill="#c06010" />
+          <!-- right branch -->
+          <line
+            x1="100"
+            y1="16"
+            x2="170"
+            y2="16"
+            stroke="#2e7d32"
+            stroke-width="1.3"
+          />
+          <line
+            x1="170"
+            y1="16"
+            x2="170"
+            y2="36"
+            stroke="#2e7d32"
+            stroke-width="1.3"
+          />
+          <polygon points="166,32 170,36 174,32" fill="#2e7d32" />
+        </svg>
+
+        <!-- ══ TWO BRANCHES SIDE BY SIDE ══════════════════════ -->
+        <div
+          style="display: flex; gap: 28px; align-items: flex-start; width: 100%"
+        >
+          <!-- ─── LEFT: FREQUENCY CHANNEL ATTENTION ─────────── -->
+          <div
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            "
+          >
+            <!-- Branch header -->
+            <div
+              class="branch-title"
+              style="
+                background: #fff3e0;
+                border-bottom-color: #e65100;
+                color: #bf360c;
+                width: 100%;
+                border: 1.5px solid #e65100;
+                border-bottom: none;
+                border-radius: 5px 5px 0 0;
+              "
+            >
+              Branch 1 — Frequency Channel Attention
+            </div>
+
+            <div
+              style="
+                width: 100%;
+                border: 1.5px solid #e65100;
+                border-top: none;
+                border-radius: 0 0 5px 5px;
+                padding: 10px 10px 14px;
+                background: #fffaf5;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+              "
+            >
+              <!-- Step 1: FFT2D -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #fbe9d0;
+                  border: 1px solid #e65100;
+                "
+              >
+                <div class="node-label">2D FFT</div>
+                <div class="node-sub">
+                  (B,H,W,C) → Transpose → (B,C,H,W)<br />→ complex spectrum
+                  (complex64)
+                </div>
+              </div>
+              <div class="v-arrow">
+                <svg width="12" height="18" viewBox="0 0 12 18">
+                  <line
+                    x1="6"
+                    y1="0"
+                    x2="6"
+                    y2="13"
+                    stroke="#e65100"
+                    stroke-width="1.2"
+                  />
+                  <polygon points="3,12 6,18 9,12" fill="#e65100" />
+                </svg>
+              </div>
+
+              <!-- Step 2: log-magnitude -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #fbe9d0;
+                  border: 1px solid #e65100;
+                "
+              >
+                <div class="node-label">Log-Magnitude</div>
+                <div class="node-sub">
+                  log<sub>1p</sub>( |FFT| ) → (B, C, H, W) float32
+                </div>
+              </div>
+              <div class="v-arrow">
+                <svg width="12" height="18" viewBox="0 0 12 18">
+                  <line
+                    x1="6"
+                    y1="0"
+                    x2="6"
+                    y2="13"
+                    stroke="#e65100"
+                    stroke-width="1.2"
+                  />
+                  <polygon points="3,12 6,18 9,12" fill="#e65100" />
+                </svg>
+              </div>
+
+              <!-- Step 3: GAP over spatial -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #f7d5a8;
+                  border: 1px solid #c04000;
+                "
+              >
+                <div class="node-label">Global Avg Pool (H, W dims)</div>
+                <div class="node-sub">
+                  reduce_mean(H, W) → (B, C) = (B, 1792)
+                </div>
+              </div>
+              <div class="v-arrow">
+                <svg width="12" height="18" viewBox="0 0 12 18">
+                  <line
+                    x1="6"
+                    y1="0"
+                    x2="6"
+                    y2="13"
+                    stroke="#c04000"
+                    stroke-width="1.2"
+                  />
+                  <polygon points="3,12 6,18 9,12" fill="#c04000" />
+                </svg>
+              </div>
+
+              <!-- Step 4: FC1 -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #f0b870;
+                  border: 1px solid #b03000;
+                "
+              >
+                <div class="node-label">FC<sub>1</sub> + ReLU</div>
+                <div class="node-sub">
+                  C → C/16 = 1792 → 112 (no bias, float32)
+                </div>
+              </div>
+              <div class="v-arrow">
+                <svg width="12" height="18" viewBox="0 0 12 18">
+                  <line
+                    x1="6"
+                    y1="0"
+                    x2="6"
+                    y2="13"
+                    stroke="#b03000"
+                    stroke-width="1.2"
+                  />
+                  <polygon points="3,12 6,18 9,12" fill="#b03000" />
+                </svg>
+              </div>
+
+              <!-- Step 5: FC2 -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #e89040;
+                  border: 1px solid #902000;
+                "
+              >
+                <div class="node-label" style="color: #fff">
+                  FC<sub>2</sub> + Sigmoid
+                </div>
+                <div class="node-sub" style="color: #ffe8c0">
+                  C/16 → C = 112 → 1792 (no bias, float32)
+                </div>
+              </div>
+              <div class="v-arrow">
+                <svg width="12" height="18" viewBox="0 0 12 18">
+                  <line
+                    x1="6"
+                    y1="0"
+                    x2="6"
+                    y2="13"
+                    stroke="#902000"
+                    stroke-width="1.2"
+                  />
+                  <polygon points="3,12 6,18 9,12" fill="#902000" />
+                </svg>
+              </div>
+
+              <!-- Step 6: Channel weights -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #d06018;
+                  border: 1px solid #801000;
+                "
+              >
+                <div class="node-label" style="color: #fff">
+                  Channel Weights
+                </div>
+                <div class="node-sub" style="color: #ffd8a0">
+                  reshape → (B, 1, 1, C) = (B, 1, 1, 1792)
+                </div>
+              </div>
+              <div class="v-arrow">
+                <svg width="12" height="18" viewBox="0 0 12 18">
+                  <line
+                    x1="6"
+                    y1="0"
+                    x2="6"
+                    y2="13"
+                    stroke="#801000"
+                    stroke-width="1.2"
+                  />
+                  <polygon points="3,12 6,18 9,12" fill="#801000" />
+                </svg>
+              </div>
+
+              <!-- Step 7: Reweighting -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #b04010;
+                  border: 1.5px solid #701000;
+                "
+              >
+                <div class="node-label" style="color: #fff">
+                  Channel Reweighting
+                </div>
+                <div class="node-sub" style="color: #ffd0a0">
+                  x<sub>freq</sub> = x × attn(1, 1, C)
+                </div>
+              </div>
+
+              <!-- output label -->
+              <div
+                style="
+                  font-size: 8px;
+                  color: #b04010;
+                  font-style: italic;
+                  margin-top: 5px;
+                "
+              >
+                (B, 12, 12, 1792) float32
+              </div>
+            </div>
+          </div>
+
+          <!-- ─── RIGHT: SPATIAL ATTENTION ──────────────────── -->
+          <div
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            "
+          >
+            <div
+              class="branch-title"
+              style="
+                background: #e8f5e9;
+                border-bottom-color: #2e7d32;
+                color: #1b5e20;
+                width: 100%;
+                border: 1.5px solid #2e7d32;
+                border-bottom: none;
+                border-radius: 5px 5px 0 0;
+              "
+            >
+              Branch 2 — Spatial Attention (CBAM-style)
+            </div>
+
+            <div
+              style="
+                width: 100%;
+                border: 1.5px solid #2e7d32;
+                border-top: none;
+                border-radius: 0 0 5px 5px;
+                padding: 10px 10px 14px;
+                background: #f6fff6;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+              "
+            >
+              <!-- Step 1: AvgPool + MaxPool (parallel) -->
+              <div style="display: flex; gap: 6px; width: 100%">
+                <div
+                  class="node"
+                  style="
+                    flex: 1;
+                    background: #c8e6c9;
+                    border: 1px solid #388e3c;
+                  "
+                >
+                  <div class="node-label" style="font-size: 9px">AvgPool</div>
+                  <div class="node-sub">reduce_mean(C)<br />→ (B,H,W,1)</div>
+                </div>
+                <div
+                  class="node"
+                  style="
+                    flex: 1;
+                    background: #c8e6c9;
+                    border: 1px solid #388e3c;
+                  "
+                >
+                  <div class="node-label" style="font-size: 9px">MaxPool</div>
+                  <div class="node-sub">reduce_max(C)<br />→ (B,H,W,1)</div>
+                </div>
+              </div>
+
+              <!-- Merge arrows -->
+              <svg
+                width="160"
+                height="22"
+                viewBox="0 0 160 22"
+                style="width: 100%; max-width: 280px"
+              >
+                <line
+                  x1="40"
+                  y1="0"
+                  x2="40"
+                  y2="10"
+                  stroke="#2e7d32"
+                  stroke-width="1.2"
+                />
+                <line
+                  x1="120"
+                  y1="0"
+                  x2="120"
+                  y2="10"
+                  stroke="#2e7d32"
+                  stroke-width="1.2"
+                />
+                <line
+                  x1="40"
+                  y1="10"
+                  x2="120"
+                  y2="10"
+                  stroke="#2e7d32"
+                  stroke-width="1.2"
+                />
+                <line
+                  x1="80"
+                  y1="10"
+                  x2="80"
+                  y2="22"
+                  stroke="#2e7d32"
+                  stroke-width="1.2"
+                />
+                <polygon points="76,18 80,22 84,18" fill="#2e7d32" />
+              </svg>
+
+              <!-- Step 2: Concat -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #a5d6a7;
+                  border: 1px solid #2e7d32;
+                "
+              >
+                <div class="node-label">Concatenate</div>
+                <div class="node-sub">[ AvgPool ∥ MaxPool ] → (B, H, W, 2)</div>
+              </div>
+              <div class="v-arrow">
+                <svg width="12" height="18" viewBox="0 0 12 18">
+                  <line
+                    x1="6"
+                    y1="0"
+                    x2="6"
+                    y2="13"
+                    stroke="#2e7d32"
+                    stroke-width="1.2"
+                  />
+                  <polygon points="3,12 6,18 9,12" fill="#2e7d32" />
+                </svg>
+              </div>
+
+              <!-- Step 3: Conv 7x7 -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #81c784;
+                  border: 1px solid #1b5e20;
+                "
+              >
+                <div class="node-label">Conv 7×7 (1 filter)</div>
+                <div class="node-sub">
+                  padding=same, no bias, float32<br />→ (B, H, W, 1)
+                </div>
+              </div>
+              <div class="v-arrow">
+                <svg width="12" height="18" viewBox="0 0 12 18">
+                  <line
+                    x1="6"
+                    y1="0"
+                    x2="6"
+                    y2="13"
+                    stroke="#1b5e20"
+                    stroke-width="1.2"
+                  />
+                  <polygon points="3,12 6,18 9,12" fill="#1b5e20" />
+                </svg>
+              </div>
+
+              <!-- Step 4: Sigmoid -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #4caf50;
+                  border: 1px solid #1b5e20;
+                "
+              >
+                <div class="node-label" style="color: #fff">Sigmoid</div>
+                <div class="node-sub" style="color: #d0ffd0">
+                  attention map → (B, 12, 12, 1)
+                </div>
+              </div>
+              <div class="v-arrow">
+                <svg width="12" height="18" viewBox="0 0 12 18">
+                  <line
+                    x1="6"
+                    y1="0"
+                    x2="6"
+                    y2="13"
+                    stroke="#1b5e20"
+                    stroke-width="1.2"
+                  />
+                  <polygon points="3,12 6,18 9,12" fill="#1b5e20" />
+                </svg>
+              </div>
+
+              <!-- Step 5: Spatial Map (special) -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #388e3c;
+                  border: 1.5px solid #1b5e20;
+                "
+              >
+                <div class="node-label" style="color: #fff">
+                  Spatial Attention Map
+                </div>
+                <div class="node-sub" style="color: #ccffcc">
+                  shape: 12 × 12 × 1
+                </div>
+              </div>
+
+              <!-- side note: also used for vis -->
+              <div
+                style="
+                  font-size: 7.8px;
+                  color: #2e7d32;
+                  font-style: italic;
+                  margin: 3px 0;
+                  background: #e8f5e9;
+                  border: 0.8px solid #81c784;
+                  border-radius: 3px;
+                  padding: 2px 6px;
+                  width: 100%;
+                  text-align: center;
+                "
+              >
+                Also output as sp_attn_map for visualization (FSDA attention
+                overlay)
+              </div>
+
+              <div class="v-arrow">
+                <svg width="12" height="18" viewBox="0 0 12 18">
+                  <line
+                    x1="6"
+                    y1="0"
+                    x2="6"
+                    y2="13"
+                    stroke="#1b5e20"
+                    stroke-width="1.2"
+                  />
+                  <polygon points="3,12 6,18 9,12" fill="#1b5e20" />
+                </svg>
+              </div>
+
+              <!-- Step 6: Spatial Reweighting -->
+              <div
+                class="node"
+                style="
+                  width: 100%;
+                  background: #2e7d32;
+                  border: 1.5px solid #1b5e20;
+                "
+              >
+                <div class="node-label" style="color: #fff">
+                  Spatial Reweighting
+                </div>
+                <div class="node-sub" style="color: #c8ffc8">
+                  x<sub>spat</sub> = x × attn(H, W, 1)
+                </div>
+              </div>
+
+              <!-- output label -->
+              <div
+                style="
+                  font-size: 8px;
+                  color: #2e7d32;
+                  font-style: italic;
+                  margin-top: 5px;
+                "
+              >
+                (B, 12, 12, 1792) float32
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end branches row -->
+
+        <!-- ══ FUSION ARROWS ════════════════════════════════════ -->
+        <svg
+          width="600"
+          height="40"
+          viewBox="0 0 600 40"
+          style="width: 100%; max-width: 860px; margin-top: 4px"
+        >
+          <!-- left branch arrow comes down-right -->
+          <line
+            x1="150"
+            y1="0"
+            x2="150"
+            y2="20"
+            stroke="#c04000"
+            stroke-width="1.3"
+          />
+          <line
+            x1="150"
+            y1="20"
+            x2="300"
+            y2="20"
+            stroke="#c04000"
+            stroke-width="1.3"
+          />
+          <line
+            x1="300"
+            y1="20"
+            x2="300"
+            y2="40"
+            stroke="#666"
+            stroke-width="1.3"
+          />
+          <!-- right branch arrow comes down-left -->
+          <line
+            x1="450"
+            y1="0"
+            x2="450"
+            y2="20"
+            stroke="#2e7d32"
+            stroke-width="1.3"
+          />
+          <line
+            x1="450"
+            y1="20"
+            x2="300"
+            y2="20"
+            stroke="#2e7d32"
+            stroke-width="1.3"
+          />
+          <polygon points="296,36 300,40 304,36" fill="#444" />
+        </svg>
+
+        <!-- ══ FUSION BLOCK ══════════════════════════════════════ -->
+        <div
+          style="
+            width: 380px;
+            background: linear-gradient(140deg, #7c4dff 0%, #512da8 100%);
+            border: 2px solid #311b92;
+            border-radius: 6px;
+            box-shadow: 2px 2px 0 #1a0070;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 16px 12px;
+            text-align: center;
+          "
+        >
+          <div
+            style="
+              font-size: 12px;
+              font-weight: bold;
+              color: #fff;
+              letter-spacing: 0.3px;
+            "
+          >
+            &#8853; &nbsp; Element-wise Addition
+          </div>
+          <div
+            style="
+              font-size: 9px;
+              color: #d0c0ff;
+              font-style: italic;
+              margin-top: 4px;
+            "
+          >
+            x<sub>freq</sub> + x<sub>spat</sub> → (B, 12, 12, 1792) float32
+          </div>
+        </div>
+
+        <!-- arrow to BN -->
+        <div class="v-arrow" style="height: 16px">
+          <svg width="12" height="16" viewBox="0 0 12 16">
+            <line
+              x1="6"
+              y1="0"
+              x2="6"
+              y2="11"
+              stroke="#444"
+              stroke-width="1.3"
+            />
+            <polygon points="3,10 6,16 9,10" fill="#444" />
+          </svg>
+        </div>
+
+        <!-- BN -->
+        <div
+          style="
+            width: 380px;
+            background: #ede7f6;
+            border: 1.5px solid #7c4dff;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 7px 10px;
+            text-align: center;
+          "
+        >
+          <div style="font-size: 10.5px; font-weight: bold; color: #311b92">
+            Batch Normalization (float32)
+          </div>
+          <div
+            style="
+              font-size: 8.5px;
+              color: #555;
+              font-style: italic;
+              margin-top: 2px;
+            "
+          >
+            Normalize fused features, then cast back to input dtype (float16
+            under mixed precision)
+          </div>
+        </div>
+
+        <!-- Math formula -->
+        <div
+          style="
+            margin-top: 10px;
+            background: #fafafa;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 6px 16px;
+            font-size: 11px;
+            color: #222;
+            font-style: italic;
+            letter-spacing: 0.2px;
+            text-align: center;
+          "
+        >
+          FSDA(<i>x</i>) = BN( FreqAttn(<i>x</i>) + SpatAttn(<i>x</i>) )
+        </div>
+
+        <!-- arrow to output -->
+        <div class="v-arrow" style="height: 16px; margin-top: 4px">
+          <svg width="12" height="16" viewBox="0 0 12 16">
+            <line
+              x1="6"
+              y1="0"
+              x2="6"
+              y2="11"
+              stroke="#444"
+              stroke-width="1.3"
+            />
+            <polygon points="3,10 6,16 9,10" fill="#444" />
+          </svg>
+        </div>
+
+        <!-- OUTPUT TENSOR -->
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 4px;
+          "
+        >
+          <svg width="120" height="60" viewBox="0 0 120 60">
+            <polygon
+              points="44,6  104,6  116,0  56,0"
+              fill="#f0b888"
+              stroke="#a05010"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="104,6 116,0  116,48 104,54"
+              fill="#c07840"
+              stroke="#a05010"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="44,6  44,54  104,54 104,6"
+              fill="#d89060"
+              stroke="#a05010"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="28,12 88,12  100,6  40,6"
+              fill="#f8c898"
+              stroke="#a05010"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="88,12 100,6  100,54 88,60"
+              fill="#d09060"
+              stroke="#a05010"
+              stroke-width="0.8"
+            />
+            <polygon
+              points="28,12 28,60  88,60  88,12"
+              fill="#e8a878"
+              stroke="#a05010"
+              stroke-width="0.8"
+            />
+            <text
+              x="38"
+              y="40"
+              font-size="9"
+              fill="#6a2c00"
+              font-style="italic"
+              font-family="Times New Roman"
+            >
+              enhanced
+            </text>
+          </svg>
+          <div
+            style="
+              font-size: 11px;
+              font-weight: bold;
+              color: #111;
+              margin-top: 4px;
+            "
+          >
+            Attention-Enhanced Feature Map
+          </div>
+          <div style="font-size: 9px; color: #555; font-style: italic">
+            12 × 12 × 1792 → GAP → BN → FC 256 → Dropout → Softmax
+          </div>
+        </div>
+      </div>
+      <!-- end column -->
+    </div>
+    <!-- end fig-wrap -->
+
+    <!-- Caption -->
+    <div class="caption">
+      <b>Fig. 2.</b> Internal architecture of the proposed Frequency-Spatial
+      Dual Attention (FSDA) block. The input feature map (12 × 12 × 1792) is
+      processed by two parallel branches: (1) the Frequency Channel Attention
+      branch applies a 2D FFT, log-magnitude, global average pooling, and a
+      bottleneck MLP (FC<sub>1</sub> + ReLU → FC<sub>2</sub> + Sigmoid) to
+      produce channel-wise attention weights; (2) the Spatial Attention branch
+      applies channel-wise average/max pooling, concatenation, and a Conv 7×7 +
+      Sigmoid to produce a spatial attention map (also used for visualization).
+      The two attended feature maps are fused via element-wise addition followed
+      by Batch Normalization, yielding an attention-enhanced feature map of the
+      same shape (12 × 12 × 1792).
+    </div>
+
+    <div
+      style="
+        margin-top: 18px;
+        font-size: 10px;
+        color: #aaa;
+        font-family: monospace;
+        text-align: center;
+      "
+    >
+      To export as PNG: right-click on the figure → "Inspect" or use browser
+      Print → Save as PDF (Ctrl+P)
+    </div>
+  </body>
+</html>
