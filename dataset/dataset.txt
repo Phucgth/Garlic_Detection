@@ -1,0 +1,13 @@
+Bộ dữ liệu Tập con Bóc sạch vỏ Bóc chưa sạch Hư hỏng Tổng
+data-1 Train 482 306 704 1492
+data-1 Validation 103 65 150 318
+data-1 Test 105 67 152 324
+data-1 Total 690 438 1006 2134
+data-2 Train 1050 306 704 2060
+data-2 Validation 225 65 150 440
+data-2 Test 225 67 152 444
+data-2 Total 1500 438 1006 2944
+
+Bộ dữ liệu	Tỏi sạch vỏ	Tỏi còn vỏ	Tỏi hư	Tổng
+dataset-1	32,33%	20,52%	47,15%	100%
+dataset-2	50,95%	14,88%	34,17%	100%
