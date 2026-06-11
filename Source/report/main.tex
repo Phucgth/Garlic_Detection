@@ -1,0 +1,3997 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{multirow}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\ifLuaTeX
+  \usepackage{luacolor}
+  \usepackage[soul]{lua-ul}
+\else
+  \usepackage{soul}
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{quote}
+BỘ GIÁO DỤC VÀ ĐÀO TẠO
+
+\textbf{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ TP. HCM}
+\end{quote}
+
+\includegraphics[width=2.31519in,height=2.78208in]{./media/image1.jpeg}
+
+\begin{quote}
+\textbf{HOÀNG TRẦN GIA PHÚC}
+
+\textbf{NGHIÊN CỨU VÀ PHÁT TRIỂN MÔ HÌNH HỌC SÂU CHO BÀI TOÁN PHÂN LOẠI
+CHẤT LƯỢNG TỎI}
+
+\textbf{LUẬN VĂN THẠC SĨ}
+
+Chuyên ngành: Công nghệ Thông tin Mã số ngành:
+\end{quote}
+
+TP. HỒ CHÍ MINH, tháng \hl{09} năm 2026
+
+\begin{quote}
+BỘ GIÁO DỤC VÀ ĐÀO TẠO
+
+\textbf{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ TP. HCM}
+\end{quote}
+
+\includegraphics[width=2.31519in,height=2.78208in]{./media/image1.jpeg}\includegraphics[width=1.95704in,height=2.34708in]{./media/image2.jpeg}
+
+\begin{quote}
+\textbf{HOÀNG TRẦN GIA PHÚC}
+
+\textbf{NGHIÊN CỨU VÀ PHÁT TRIỂN MÔ HÌNH HỌC SÂU CHO BÀI TOÁN PHÂN LOẠI
+CHẤT LƯỢNG TỎI}
+
+\textbf{LUẬN VĂN THẠC SĨ}
+
+Chuyên ngành: Công nghệ Thông tin Mã số ngành:
+\end{quote}
+
+\textbf{CÁN BỘ HƯỚNG DẪN KHOA HỌC: TS. LÊ CUNG TƯỞNG}
+
+\begin{quote}
+TP. HỒ CHÍ MINH, tháng \hl{09} năm 2026
+
+CÔNG TRÌNH ĐƯỢC HOÀN THÀNH TẠI
+
+\textbf{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ TP. HCM}
+
+Cán bộ hướng dẫn khoa học: TS. Lê Cung Tưởng
+
+\emph{(Ghi rõ họ, tên, học hàm, học vị và chữ ký)}
+
+Đề án Thạc sĩ được bảo vệ tại Trường Đại học Công nghệ TP. HCM,
+ngày\ldots{} tháng \ldots{} năm\ldots.
+
+Thành phần Hội đồng đánh giá Đề án Thạc sĩ gồm:
+
+\emph{(Ghi rõ họ, tên, học hàm, học vị của Hội đồng chấm bảo vệ Đề án
+Thạc sĩ)}
+\end{quote}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0657}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3638}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3421}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{TT}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\begin{quote}
+\textbf{Họ và tên}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\begin{quote}
+\textbf{Chức danh Hội đồng}
+\end{quote}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & & \begin{minipage}[t]{\linewidth}\centering
+\begin{quote}
+Chủ tịch
+\end{quote}
+\end{minipage} \\
+2 & & \begin{minipage}[t]{\linewidth}\centering
+\begin{quote}
+Phản biện 1
+\end{quote}
+\end{minipage} \\
+3 & & \begin{minipage}[t]{\linewidth}\centering
+\begin{quote}
+Phản biện 2
+\end{quote}
+\end{minipage} \\
+4 & & \begin{minipage}[t]{\linewidth}\centering
+\begin{quote}
+Ủy viên
+\end{quote}
+\end{minipage} \\
+5 & & \begin{minipage}[t]{\linewidth}\centering
+\begin{quote}
+Ủy viên, Thư ký
+\end{quote}
+\end{minipage} \\
+\end{longtable}
+}
+
+\begin{quote}
+Xác nhận của Chủ tịch Hội đồng đánh giá Luận sau khi Đề án đã được sửa
+chữa (nếu có).
+
+\textbf{Chủ tịch Hội đồng đánh giá Đề án}
+\end{quote}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4373}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5415}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+TRƯỜNG ĐH CÔNG NGHỆ TP. HCM
+
+\textbf{VIỆN ĐÀO TẠO SAU ĐẠI HỌC}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM}
+
+\textbf{Độc lập -- Tự do -- Hạnh phúc}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+}
+
+\emph{TP. HCM, ngày}..\emph{\ldots{} tháng\ldots{}}.. \emph{năm
+20}..\emph{\ldots{}}
+
+\textbf{\hl{NHIỆM VỤ LUẬN VĂN THẠC SĨ}}
+
+Họ tên học viên:
+..........................................................................Giới
+tính:
+
+Ngày, tháng, năm sinh:
+................................................................Nơi
+sinh:
+
+Chuyên ngành:
+.............................................................................MSHV:
+
+\textbf{I- Tên đề tài:}
+
+\textbf{II- Nhiệm vụ và nội dung:}
+
+\textbf{III- Ngày giao nhiệm vụ:} \emph{(Ngày bắt đầu thực hiện LV ghi
+trong QĐ giao đề tài)}
+
+\textbf{IV- Ngày hoàn thành nhiệm vụ:}
+
+\textbf{V- Cán bộ hướng dẫn:} \emph{(Ghi rõ học hàm, học vị, họ, tên)}
+
+\textbf{CÁN BỘ HƯỚNG DẪN KHOA QUẢN LÝ CHUYÊN NGÀNH}
+
+(Họ tên và chữ ký) (Họ tên và chữ ký)
+
+\section{\texorpdfstring{\hl{LỜI CAM
+ĐOAN}}{LỜI CAM ĐOAN}}\label{lux1eddi-cam-ux111oan}
+
+Tôi xin cam kết rằng đây là công trình nghiên cứu do chính tôi thực
+hiện. Toàn bộ số liệu, kết quả và nội dung trình bày trong Đề án là
+trung thực, không sao chép từ bất cứ nguồn nào và chưa từng được công bố
+trong bất kỳ công trình nghiên cứu nào khác.
+
+Tôi xin cam đoan rằng tất cả các tài liệu tham khảo được sử dụng trong
+Đề án đều đã được trích dẫn đầy đủ và ghi rõ nguồn gốc theo đúng quy
+định.
+
+\begin{quote}
+\textbf{Học viên thực hiện Đề án}
+
+\textbf{Hoàng Trần Gia Phúc}
+\end{quote}
+
+\section{\texorpdfstring{\hl{LỜI CÁM
+ƠN}}{LỜI CÁM ƠN}}\label{lux1eddi-cuxe1m-ux1a1n}
+
+Trước hết, tôi xin bày tỏ lòng biết ơn sâu sắc đến Tiến sĩ Lê Cung
+Tưởng, người đã tận tình hướng dẫn, chỉ bảo và hỗ trợ tôi trong suốt quá
+trình thực hiện Đề án này với sự tận tâm và chuyên môn cao.
+
+Tôi xin chân thành cảm ơn Quý Thầy, Cô tại Khoa Công nghệ Thông tin,
+Trường Đại học Công nghệ TP. HCM (HUTECH). Những người đã tận tâm giảng
+dạy, truyền đạt kiến thức và tạo nền tảng vững chắc giúp tôi có thể hoàn
+thành quá trình học tập cũng như nghiên cứu.
+
+Tôi cũng xin gửi lời tri ân gia đình, bạn bè và đồng nghiệp đã luôn đồng
+hành, động viên và ủng hộ tôi trong suốt hành trình học tập và thực hiện
+Đề án này.
+
+Mặc dù đã nỗ lực hết mình, song tôi nhận thức rằng Đề án này vẫn có thể
+còn những thiếu sót. Tôi rất mong nhận được những ý kiến đóng góp quý
+giá từ Quý Thầy, Cô để công trình được hoàn thiện hơn.
+
+Một lần nữa, xin trân trọng cảm ơn tất cả những ai đã hỗ trợ và đồng
+hành cùng tôi trong quá trình học tập và nghiên cứu.
+
+\begin{quote}
+\textbf{Học viên thực hiện Đề án}
+
+\textbf{Hoàng Trần Gia Phúc}
+\end{quote}
+
+\section{\texorpdfstring{\hl{TÓM TẮT}}{TÓM TẮT}}\label{tuxf3m-tux1eaft}
+
+\section{\texorpdfstring{\hl{ABSTRACT}}{ABSTRACT}}\label{abstract}
+
+\section{\texorpdfstring{\hl{MỤC
+LỤC}}{MỤC LỤC}}\label{mux1ee5c-lux1ee5c}
+
+\section{}\label{section}
+
+\hyperref[lux1eddi-cam-ux111oan]{\hl{LỜI CAM ĐOAN}
+\hyperref[lux1eddi-cam-ux111oan]{1}}
+
+\hyperref[lux1eddi-cuxe1m-ux1a1n]{\hl{LỜI CÁM ƠN}
+\hyperref[lux1eddi-cuxe1m-ux1a1n]{2}}
+
+\hyperref[tuxf3m-tux1eaft]{\hl{TÓM TẮT} \hyperref[tuxf3m-tux1eaft]{3}}
+
+\hyperref[abstract]{\hl{ABSTRACT} \hyperref[abstract]{3}}
+
+\hyperref[mux1ee5c-lux1ee5c]{\hl{MỤC LỤC}
+\hyperref[mux1ee5c-lux1ee5c]{3}}
+
+\hyperref[danh-mux1ee5c-cuxe1c-tux1eeb-viux1ebft-tux1eaft]{\hl{DANH MỤC
+CÁC TỪ VIẾT TẮT}
+\hyperref[danh-mux1ee5c-cuxe1c-tux1eeb-viux1ebft-tux1eaft]{7}}
+
+\hyperref[danh-mux1ee5c-cuxe1c-bux1ea3ng]{\hl{DANH MỤC CÁC BẢNG}
+\hyperref[danh-mux1ee5c-cuxe1c-bux1ea3ng]{8}}
+
+\hyperref[danh-mux1ee5c-cuxe1c-huxecnh]{\hl{DANH MỤC CÁC HÌNH}
+\hyperref[danh-mux1ee5c-cuxe1c-huxecnh]{9}}
+
+\hyperref[chux1b0ux1a1ng-1-giux1edbi-thiux1ec7u-tux1ed5ng-quan]{CHƯƠNG
+1: GIỚI THIỆU TỔNG QUAN
+\hyperref[chux1b0ux1a1ng-1-giux1edbi-thiux1ec7u-tux1ed5ng-quan]{10}}
+
+\hyperref[_bookmark9]{\textbf{1.1} \textbf{Tính cấp thiết của đề tài.}
+\hyperref[_bookmark9]{11}}
+
+\hyperref[_Toc232111981]{\textbf{1.2} \textbf{Mục tiêu nghiên cứu}
+\hyperref[_Toc232111981]{16}}
+
+\hyperref[_Toc232111982]{\emph{\textbf{1.2.1}} \emph{\textbf{Mục tiêu
+tổng quát}} \hyperref[_Toc232111982]{16}}
+
+\hyperref[_Toc232111983]{\emph{\textbf{1.2.2}} \emph{\textbf{Mục tiêu cụ
+thể}} \hyperref[_Toc232111983]{16}}
+
+\hyperref[_Toc232111984]{\textbf{1.3} \textbf{Đối tượng, phạm vi nghiên
+cứu} \hyperref[_Toc232111984]{19}}
+
+\hyperref[_Toc232111985]{\emph{\textbf{1.3.1}} \emph{\textbf{Đối tượng
+nghiên cứu}} \hyperref[_Toc232111985]{19}}
+
+\hyperref[_Toc232111986]{\emph{\textbf{1.3.2}} \emph{\textbf{Phạm vi
+nghiên cứu}} \hyperref[_Toc232111986]{21}}
+
+\hyperref[_Toc232111987]{\textbf{1.4} \textbf{Phương pháp nghiên cứu}
+\hyperref[_Toc232111987]{23}}
+
+\hyperref[_Toc232111988]{\textbf{1.5} \textbf{Ý nghĩa nghiên cứu}
+\hyperref[_Toc232111988]{27}}
+
+\hyperref[_Toc232111989]{\emph{\textbf{1.5.1}} \emph{\textbf{Ý nghĩa
+khoa học}} \hyperref[_Toc232111989]{27}}
+
+\hyperref[_Toc232111990]{\emph{\textbf{1.5.2}} \emph{\textbf{Ý nghĩa
+thực tiễn}} \hyperref[_Toc232111990]{27}}
+
+\hyperref[_Toc232111991]{\emph{\textbf{1.5.3}} \emph{\textbf{Ý nghĩa
+kinh tế và xã hội}} \hyperref[_Toc232111991]{28}}
+
+\hyperref[_Toc232111992]{\emph{\textbf{1.5.4}} \emph{\textbf{Ý nghĩa mở
+rộng và định hướng phát triển}} \hyperref[_Toc232111992]{28}}
+
+\hyperref[_Toc232111993]{\textbf{\hl{1.6}} \textbf{\hl{Cấu trúc luận
+văn}} \hyperref[_Toc232111993]{29}}
+
+\hyperref[_Toc232111994]{\textbf{\hl{1.7}} \textbf{\hl{Tiến độ thực hiện
+Đề án}} \hyperref[_Toc232111994]{30}}
+
+\hyperref[tuxf3m-tux1eaft-chux1b0ux1a1ng-1]{TÓM TẮT CHƯƠNG 1
+\hyperref[tuxf3m-tux1eaft-chux1b0ux1a1ng-1]{31}}
+
+\hyperref[chux1b0ux1a1ng-2-cux1a1-sux1edf-luxfd-thuyux1ebft-vuxe0-muxf4-huxecnh-nghiuxean-cux1ee9u]{CHƯƠNG
+2: CƠ SỞ LÝ THUYẾT VÀ MÔ HÌNH NGHIÊN CỨU
+\hyperref[chux1b0ux1a1ng-2-cux1a1-sux1edf-luxfd-thuyux1ebft-vuxe0-muxf4-huxecnh-nghiuxean-cux1ee9u]{32}}
+
+\hyperref[_Toc232111997]{\textbf{2.1} \textbf{Tổng quan về bài toán phân
+loại chất lượng tỏi} \hyperref[_Toc232111997]{32}}
+
+\hyperref[_Toc232111998]{\textbf{2.2} \textbf{Tổng quan về bộ dữ liệu
+ảnh tỏi sử dụng trong nghiên cứu} \hyperref[_Toc232111998]{33}}
+
+\hyperref[_Toc232111999]{\textbf{2.3} \textbf{Cơ sở lý thuyết về học
+sâu} \hyperref[_Toc232111999]{35}}
+
+\hyperref[_Toc232112000]{\emph{\textbf{2.3.1}} \emph{\textbf{Khái niệm
+học sâu}} \hyperref[_Toc232112000]{36}}
+
+\hyperref[_Toc232112001]{\emph{\textbf{2.3.2}} \emph{\textbf{Cấu trúc
+tổng quát của mạng nơ-ron}} \hyperref[_Toc232112001]{36}}
+
+\hyperref[_Toc232112002]{\emph{\textbf{2.3.3}} \emph{\textbf{Quá trình
+học của mô hình}} \hyperref[_Toc232112002]{37}}
+
+\hyperref[_Toc232112003]{\emph{\textbf{2.3.4}} \emph{\textbf{Vai trò của
+học sâu trong phân loại ảnh}} \hyperref[_Toc232112003]{38}}
+
+\hyperref[_Toc232112004]{\textbf{2.4} \textbf{Mạng nơ-ron tích chập
+trong phân loại ảnh} \hyperref[_Toc232112004]{38}}
+
+\hyperref[_Toc232112005]{\emph{\textbf{2.4.1}} \emph{\textbf{Khái niệm
+mạng nơ-ron tích chập}} \hyperref[_Toc232112005]{39}}
+
+\hyperref[_Toc232112006]{\emph{\textbf{2.4.2}} \emph{\textbf{Lớp tích
+chập}} \hyperref[_Toc232112006]{40}}
+
+\hyperref[_Toc232112007]{\emph{\textbf{2.4.3}} \emph{\textbf{Hàm kích
+hoạt trong CNN}} \hyperref[_Toc232112007]{41}}
+
+\hyperref[_Toc232112008]{\emph{\textbf{2.4.4}} \emph{\textbf{Lớp
+pooling}} \hyperref[_Toc232112008]{41}}
+
+\hyperref[_Toc232112009]{\emph{\textbf{2.4.5}} \emph{\textbf{Lớp phân
+loại}} \hyperref[_Toc232112009]{42}}
+
+\hyperref[_Toc232112010]{\emph{\textbf{2.4.6}} \emph{\textbf{Vai trò của
+CNN trong phân loại ảnh}} \hyperref[_Toc232112010]{42}}
+
+\hyperref[_Toc232112011]{\textbf{2.5} \textbf{Học chuyển giao trong phân
+loại ảnh} \hyperref[_Toc232112011]{42}}
+
+\hyperref[_Toc232112012]{\emph{\textbf{2.5.1}} \emph{\textbf{Khái niệm
+học chuyển giao}} \hyperref[_Toc232112012]{43}}
+
+\hyperref[_Toc232112013]{\emph{\textbf{2.5.2}} \emph{\textbf{Pre-trained
+model trong phân loại ảnh}} \hyperref[_Toc232112013]{44}}
+
+\hyperref[_Toc232112014]{\emph{\textbf{2.5.3}} \emph{\textbf{Các chiến
+lược sử dụng học chuyển giao}} \hyperref[_Toc232112014]{44}}
+
+\hyperref[_Toc232112015]{\emph{\textbf{2.5.4}} \emph{\textbf{Fine-tuning
+trong phân loại ảnh}} \hyperref[_Toc232112015]{45}}
+
+\hyperref[_Toc232112016]{\emph{\textbf{2.5.5}} \emph{\textbf{Vai trò của
+học chuyển giao trong nghiên cứu}} \hyperref[_Toc232112016]{45}}
+
+\hyperref[_Toc232112017]{\textbf{2.6} \textbf{Các mô hình CNN được sử
+dụng trong nghiên cứu} \hyperref[_Toc232112017]{46}}
+
+\hyperref[_Toc232112018]{\emph{\textbf{2.5.6}} \emph{\textbf{Mô hình
+NASNetMobile}} \hyperref[_Toc232112018]{46}}
+
+\hyperref[_Toc232112019]{\emph{\textbf{2.5.7}} \emph{\textbf{Mô hình
+Inception}} \hyperref[_Toc232112019]{49}}
+
+\hyperref[_Toc232112020]{\emph{\textbf{2.5.8}} \emph{\textbf{Mô hình
+EfficientNet}} \hyperref[_Toc232112020]{53}}
+
+\hyperref[_Toc232112021]{\emph{\textbf{2.5.9}} \emph{\textbf{Mô hình
+MobileNet}} \hyperref[_Toc232112021]{56}}
+
+\hyperref[_Toc232112022]{\emph{\textbf{2.5.10}} \emph{\textbf{Mô hình
+DenseNet}} \hyperref[_Toc232112022]{58}}
+
+\hyperref[tuxf3m-tux1eaft-chux1b0ux1a1ng-2]{TÓM TẮT CHƯƠNG 2
+\hyperref[tuxf3m-tux1eaft-chux1b0ux1a1ng-2]{62}}
+
+\hyperref[chux1b0ux1a1ng-3-muxf4-huxecnh-ux111ux1ec1-xuux1ea5t]{CHƯƠNG
+3: MÔ HÌNH ĐỀ XUẤT
+\hyperref[chux1b0ux1a1ng-3-muxf4-huxecnh-ux111ux1ec1-xuux1ea5t]{63}}
+
+\hyperref[_Toc232112025]{\textbf{3.1 Các mô hình học sâu tiền huấn luyện
+cho phân loại} \hyperref[_Toc232112025]{63}}
+
+\hyperref[_Toc232112026]{\emph{\textbf{3.1.1 Mục tiêu}}
+\hyperref[_Toc232112026]{63}}
+
+\hyperref[_Toc232112027]{\emph{\textbf{3.1.2 Các mô hình được lựa chọn}}
+\hyperref[_Toc232112027]{63}}
+
+\hyperref[_bookmark21]{\emph{\textbf{3.1.3 Bộ dữ liệu và tiền xử lý}}
+\hyperref[_bookmark21]{63}}
+
+\hyperref[_Toc232112029]{\emph{\textbf{3.1.4 Xây dựng và huấn luyện mô
+hình}} \hyperref[_Toc232112029]{63}}
+
+\hyperref[_Toc232112030]{\textbf{3.2 Mô hình đề xuất CPGC-EfficientNetB4}
+\hyperref[_Toc232112030]{65}}
+
+\hyperref[_Toc232112031]{\emph{\textbf{3.2.1 Hạn chế của mô hình
+EfficientNetB4}} \hyperref[_Toc232112031]{65}}
+
+\hyperref[_Toc232112032]{\emph{\textbf{3.2.2 Ý tưởng cải tiến}}
+\hyperref[_Toc232112032]{65}}
+
+\hyperref[_Toc232112033]{\emph{\textbf{3.2.3 Kiến trúc}}
+\hyperref[_Toc232112033]{65}}
+
+\hyperref[chux1b0ux1a1ng-4-kux1ebft-quux1ea3-thux1ef1c-nghiux1ec7m]{CHƯƠNG
+4: KẾT QUẢ THỰC NGHIỆM
+\hyperref[chux1b0ux1a1ng-4-kux1ebft-quux1ea3-thux1ef1c-nghiux1ec7m]{66}}
+
+\hyperref[_Toc232112035]{\textbf{4.1 Tiêu chí đánh giá và công cụ hỗ
+trợ} \hyperref[_Toc232112035]{66}}
+
+\hyperref[_Toc232112036]{\emph{\textbf{4.1.1 Tiêu chí đánh giá}}
+\hyperref[_Toc232112036]{66}}
+
+\hyperref[_Toc232112037]{\emph{\textbf{4.1.2 Công cụ hỗ trợ}}
+\hyperref[_Toc232112037]{67}}
+
+\hyperref[_Toc232112038]{\textbf{4.2 Kết quả của 5 mô hình Pre-trained}
+\hyperref[_Toc232112038]{67}}
+
+\hyperref[_Toc232112039]{\textbf{4.3 Kết quả của mô hình đề xuất}
+\hyperref[_Toc232112039]{68}}
+
+\hyperref[chux1b0ux1a1ng-5-kux1ebft-luux1eadn]{CHƯƠNG 5: KẾT LUẬN
+\hyperref[chux1b0ux1a1ng-5-kux1ebft-luux1eadn]{69}}
+
+\hyperref[_Toc232112041]{\textbf{5.1 Tổng kết quá trình nghiên cứu}
+\hyperref[_Toc232112041]{69}}
+
+\hyperref[_Toc232112042]{\textbf{5.2 Hạn chế và hướng phát triển}
+\hyperref[_Toc232112042]{69}}
+
+\hyperref[_Toc232112043]{\emph{\textbf{5.2.1 Hạn chế:}}
+\hyperref[_Toc232112043]{69}}
+
+\hyperref[_Toc232112044]{\emph{\textbf{5.2.2 Hướng phát triển trong
+tương lai:}} \hyperref[_Toc232112044]{69}}
+
+\hyperref[_Toc232112045]{\textbf{5.3 Khả năng ứng dụng thực tiễn}
+\hyperref[_Toc232112045]{69}}
+
+\hyperref[tuxe0i-liux1ec7u-tham-khux1ea3o]{TÀI LIỆU THAM KHẢO
+\hyperref[tuxe0i-liux1ec7u-tham-khux1ea3o]{70}}
+
+\section{\texorpdfstring{\hl{DANH MỤC CÁC TỪ VIẾT
+TẮT}}{DANH MỤC CÁC TỪ VIẾT TẮT}}\label{danh-mux1ee5c-cuxe1c-tux1eeb-viux1ebft-tux1eaft}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0691}}
+  >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1241}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4122}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3482}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{STT}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Viết tắt}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Tiếng Anh}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Tiếng Việt}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & CNN & Convolutional Neural Network & Mạng nơ-ron tích chập \\
+2 & SE & Squeeze-and-Excitation & Cơ chế nén và kích hoạt kênh \\
+3 & ECA & Efficient Channel Attention & Cơ chế chú ý kênh hiệu quả \\
+4 & GCD & Garlic Clove Dataset & Bộ dữ liệu ảnh tép tỏi \\
+5 & IoT & Internet of Things & Internet vạn vật \\
+6 & XAI & Explainable Artificial Intelligence & Trí tuệ nhân tạo có khả
+năng giải thích \\
+7 & BVTV & ~ & Bảo vệ Thực vật \\
+8 & TP. HCM & ~ & Thành phố Hồ Chí Minh \\
+\multirow{2}{=}{\centering\arraybackslash 9} &
+\multirow{2}{=}{\centering\arraybackslash HUTECH} & Ho Chi Minh City
+University of & \multirow{2}{=}{Trường Đại học Công nghệ TP.HCM} \\
+& & Technology \\
+\multirow{2}{=}{\centering\arraybackslash 10} &
+\multirow{2}{=}{\centering\arraybackslash CVPR} &
+\multirow{2}{=}{Conference on Computer Vision and Pattern Recognition} &
+\multirow{2}{=}{Hội nghị về Thị giác Máy tính và Nhận dạng Mẫu} \\
+ \\
+\multirow{2}{=}{\centering\arraybackslash 11} &
+\multirow{2}{=}{\centering\arraybackslash ACM} & Association for
+Computing & \multirow{2}{=}{Hiệp hội Máy tính Hoa Kỳ} \\
+& & Machinery \\
+12 & CPGC & Classification of Peeled Garlic Cloves & Khung phân loại tép
+tỏi đã bóc vỏ \\
+13 & GIS & Geographic Information System & Hệ thống thông tin địa lý \\
+\end{longtable}
+}
+
+\section{\texorpdfstring{\hl{DANH MỤC CÁC
+BẢNG}}{DANH MỤC CÁC BẢNG}}\label{danh-mux1ee5c-cuxe1c-bux1ea3ng}
+
+Bảng 2.1
+\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots Trang
+33
+
+\section{\texorpdfstring{\hl{DANH MỤC CÁC
+HÌNH}}{DANH MỤC CÁC HÌNH}}\label{danh-mux1ee5c-cuxe1c-huxecnh}
+
+Hình 1.1 Hình ảnh
+\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots Trang
+28
+
+`
+
+\section{\texorpdfstring{CHƯƠNG 1: GIỚI THIỆU TỔNG QUAN
+}{CHƯƠNG 1: GIỚI THIỆU TỔNG QUAN }}\label{chux1b0ux1a1ng-1-giux1edbi-thiux1ec7u-tux1ed5ng-quan}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_bookmark9}{}\textbf{Tính cấp thiết của
+  đề tài.}
+\end{enumerate}
+
+Nông nghiệp là một trong những lĩnh vực có vai trò quan trọng trong nền
+kinh tế Việt Nam, góp phần bảo đảm an ninh lương thực, tạo việc làm và
+cung cấp nguyên liệu cho ngành công nghiệp chế biến thực phẩm. Theo số
+liệu năm 2025, khu vực nông, lâm nghiệp và thủy sản chiếm 11,64\% trong
+cơ cấu nền kinh tế Việt \hl{Nam
+{[}https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2026/01/bao-cao-tinh-hinh-kinh-te-xa-hoi-quy-iv-va-nam-2025{]}}.
+Trong bối cảnh sản xuất nông nghiệp ngày càng hướng đến tự động hóa và
+nâng cao giá trị sau thu hoạch, việc ứng dụng công nghệ vào các khâu sơ
+chế, phân loại và kiểm soát chất lượng nông sản trở thành yêu cầu cấp
+thiết.
+
+Tỏi là một loại nông sản được sử dụng rộng rãi trong đời sống, chế biến
+thực phẩm và các sản phẩm gia vị. Trong dây chuyền chế biến tỏi, nguyên
+liệu thường trải qua các công đoạn như tách tép, bóc vỏ, làm sạch, phân
+loại và đưa vào chế biến tiếp theo. Mặc dù các công đoạn tách tép và bóc
+vỏ đã có thể được hỗ trợ bởi máy móc, nhưng sau quá trình bóc vỏ, tỏi
+vẫn thường xuất hiện nhiều trạng thái khác nhau như tỏi đã bóc sạch, tỏi
+còn sót vỏ, tỏi bị hư hỏng, dập nát hoặc biến màu. Do đó, công đoạn phân
+loại sau bóc vỏ vẫn giữ vai trò quan trọng trong việc bảo đảm chất lượng
+nguyên liệu đầu vào.
+
+Hiện nay, việc phân loại tỏi sau bóc vỏ tại nhiều cơ sở sản xuất vẫn chủ
+yếu được thực hiện thủ công. Người lao động phải quan sát từng tép tỏi
+để phân biệt các nhóm như tỏi sạch, tỏi còn vỏ và tỏi hư. Phương pháp
+này có nhiều hạn chế: tốn thời gian, cần nhiều nhân công, phụ thuộc vào
+kinh nghiệm người kiểm tra và dễ xảy ra sai sót khi làm việc trong thời
+gian dài. Đặc biệt, trong dây chuyền sản xuất thực phẩm, nếu tỏi hư hoặc
+tỏi còn sót vỏ bị lẫn vào nhóm tỏi sạch, chất lượng sản phẩm cuối cùng
+có thể bị ảnh hưởng, làm giảm độ đồng nhất và giá trị thương mại của sản
+phẩm.
+
+Sự phát triển của trí tuệ nhân tạo, thị giác máy tính và học sâu đã mở
+ra khả năng tự động hóa công đoạn kiểm tra chất lượng nông sản. Các
+nghiên cứu gần đây cho thấy học máy và học sâu đang được ứng dụng mạnh
+mẽ trong kiểm soát chất lượng thực phẩm, phát hiện lỗi sản phẩm, kiểm
+tra bề mặt và phân loại tự động trong dây chuyền sản xuất
+\hl{{[}https://www.mdpi.com/2304-8158/14/19/3424{]}}. Đối với nông sản,
+các hệ thống thị giác nhân tạo có thể thay thế hoặc hỗ trợ con người
+trong việc phát hiện lỗi, đánh giá chất lượng và phân loại sản phẩm dựa
+trên ảnh đầu vào.
+
+Đối với bài toán phân loại chất lượng tỏi, mô hình học sâu có thể học
+các đặc trưng trực quan như màu sắc, kết cấu bề mặt, vùng hư hỏng, phần
+vỏ còn sót và hình dạng bất thường của tép tỏi. Đây là những đặc điểm mà
+phương pháp thủ công thường đánh giá bằng mắt thường, nhưng có thể được
+mô hình hóa bằng các mạng nơ-ron tích chập hiện đại. Một số nghiên cứu
+liên quan đến tỏi cũng đã chứng minh tiềm năng của học sâu trong xử lý
+ảnh hậu thu hoạch, chẳng hạn phân loại tỏi sau cắt rễ bằng CNN hoặc phát
+hiện hư hỏng tỏi bằng mô hình YOLO cải tiến.
+\hl{{[}https://doi.org/10.1016/j.postharvbio.2022.111956{]}}
+
+Bên cạnh nhu cầu thực tiễn, đề tài còn phù hợp với định hướng phát triển
+công nghệ trí tuệ nhân tạo tại Việt Nam. Quyết định số 127/QĐ-TTg ngày
+26/01/2021 của Thủ tướng Chính phủ đã ban hành Chiến lược quốc gia về
+nghiên cứu, phát triển và ứng dụng trí tuệ nhân tạo đến năm 2030, trong
+đó AI được định hướng ứng dụng vào nhiều lĩnh vực, bao gồm sản xuất và
+nông nghiệp công nghệ cao
+\hl{{[}https://vanban.chinhphu.vn/default.aspx?docid=202565\&pageid=27160{]}}.
+Vì vậy, việc nghiên cứu và phát triển mô hình học sâu cho bài toán phân
+loại chất lượng tỏi là cần thiết, có ý nghĩa khoa học và có khả năng ứng
+dụng thực tiễn trong lĩnh vực chế biến nông sản.
+
+Từ những lý do trên, luận văn lựa chọn đề tài ``\textbf{Nghiên cứu và
+phát triển mô hình học sâu cho bài toán phân loại chất lượng tỏi}'' nhằm
+xây dựng một mô hình phân loại ảnh có khả năng nhận diện ba trạng thái
+chính của tỏi sau bóc vỏ, gồm \textbf{tỏi sạch}, \textbf{tỏi còn vỏ} và
+\textbf{tỏi hư}, góp phần hỗ trợ tự động hóa dây chuyền sản xuất và nâng
+cao chất lượng sản phẩm.
+
+\begin{itemize}
+\item
+  \textbf{Tình hình nghiên cứu ngoài nước liên quan đến đề tài}
+\end{itemize}
+
+Trên thế giới, trí tuệ nhân tạo (AI) được ứng dụng rộng rãi trong nhiều
+khía cạnh của nông nghiệp, từ quản lý cây trồng, chăn nuôi, tối ưu hóa
+tài nguyên nước và đất, đến lai tạo giống cây trồng mới. Một số ứng dụng
+và nghiên cứu tiêu biểu bao gồm:
+
+\begin{itemize}
+\item
+  \textbf{Hệ thống thị giác nhân tạo cho kiểm tra và phân loại trái
+  cây:} Nghiên cứu của Rojas Santelices và cộng sự năm 2025 tổng hợp 56
+  công trình trong giai đoạn 2015--2024 về hệ thống thị giác nhân tạo
+  dùng cho kiểm tra và phân loại trái cây. Kết quả cho thấy các hệ thống
+  kiểm tra chất lượng nông sản hiện nay thường sử dụng camera RGB, hệ
+  thống chiếu sáng LED, kết hợp với các thuật toán xử lý ảnh và mô hình
+  học sâu như ResNet, VGG hoặc transfer learning. Công trình cũng chỉ ra
+  rằng kiểm tra thủ công có nhiều hạn chế như tốn thời gian, mang tính
+  chủ quan và dễ sai sót, trong khi hệ thống thị giác máy tính có thể hỗ
+  trợ phát hiện lỗi, phân loại chất lượng và ra quyết định tự động trong
+  dây chuyền sản xuất. Nghiên cứu này có ý nghĩa nền tảng đối với đề tài
+  vì bài toán phân loại tỏi sau bóc vỏ cũng thuộc nhóm kiểm tra chất
+  lượng nông sản bằng hình ảnh.
+\item
+  \textbf{Thiết kế và thực nghiệm hệ thống phân loại chất lượng dưa leo
+  dựa trên thị giác máy tính:} Liu và cộng sự năm 2024 đề xuất một hệ
+  thống phân loại chất lượng dưa leo dựa trên thị giác máy tính và học
+  sâu. Hệ thống sử dụng ảnh RGB để dự đoán khối lượng và hỗ trợ phân
+  loại sản phẩm theo chất lượng. Kết quả thực nghiệm cho thấy hệ thống
+  đạt năng suất tối đa 2,3 tấn/giờ; mô hình MassNet đạt sai số MAPE
+  3,9\% và RMSE 6,7 g trong dự đoán khối lượng. Công trình này cho thấy
+  việc kết hợp mô hình học sâu với thiết bị phân loại cơ khí có thể hỗ
+  trợ triển khai trong dây chuyền sản xuất thực tế.
+\item
+  \textbf{Phân loại ảnh tỏi sau cắt rễ bằng mạng nơ-ron tích chập sâu
+  theo hướng phân loại đa nhãn và đa lớp:} Nhóm tác giả Pham Thi Quynh
+  Anh, Dang Quoc Thuyet và Yuichi Kobayashi năm 2022 sử dụng mạng CNN để
+  phân loại tỏi sau khi cắt rễ. Công trình phân loại tỏi theo hai nhóm
+  nhãn: nhóm chất lượng cắt rễ gồm good, bad, untrimmed, scratched và
+  nhóm trạng thái bề mặt gồm clean, muddy. Mô hình multi-label đạt độ
+  chính xác tổng thể 95,2\%; khi bổ sung lớp nền, độ chính xác tăng lên
+  98,0\%; thời gian xử lý mỗi ảnh khoảng 0,021 giây. Công trình này
+  chứng minh rằng CNN có thể được sử dụng hiệu quả trong xử lý ảnh hậu
+  thu hoạch tỏi và có tiềm năng triển khai cho robot phân loại tỏi thời
+  gian thực.
+\item
+  \textbf{Garlic-YOLO-DD: Thuật toán phát hiện đối tượng nhẹ cho bài
+  toán phát hiện hư hỏng tỏi:} Gao và cộng sự năm 2025 đề xuất mô hình
+  Garlic-YOLO-DD cho bài toán phát hiện hư hỏng tỏi. Mô hình được xây
+  dựng dựa trên YOLOv11n và cải tiến bằng các thành phần như ADown,
+  SimAM attention và BiFPN nhằm giảm số tham số, tăng khả năng nhận diện
+  vùng hư hỏng nhỏ và cải thiện tốc độ suy luận. Kết quả cho thấy mô
+  hình đạt mAP@50 là 92,58\%, chỉ sử dụng 1,497 triệu tham số và đạt tốc
+  độ 167 FPS trên bộ dữ liệu hư hỏng tỏi tự xây dựng.
+\item
+  \textbf{DH-GarlicNet: Phương pháp nhận diện chính xác hư hỏng tỏi dựa
+  trên mạng phần dư cải tiến:} He và cộng sự năm 2026 đề xuất mô hình
+  DH-GarlicNet để nhận diện tỏi hư dựa trên kiến trúc ResNet34 cải tiến.
+  Mô hình tích hợp depthwise convolution, SE attention và hàm kích hoạt
+  SiLU để tăng khả năng trích xuất đặc trưng vùng hư hỏng. Kết quả thực
+  nghiệm cho thấy mô hình đạt độ chính xác 98,95\% và loss 0,0793 trong
+  nhiệm vụ phát hiện hư hỏng tỏi. Phân tích Grad-CAM cho thấy mô hình có
+  khả năng tập trung vào các vùng hư hỏng trên ảnh, chứng minh hiệu quả
+  trong học đặc trưng cục bộ.
+\end{itemize}
+
+\begin{itemize}
+\item
+  Các công trình trên cho thấy xu hướng nghiên cứu quốc tế hiện nay
+  không chỉ dừng lại ở phân loại ảnh nông sản thông thường mà đang tập
+  trung vào các mô hình có khả năng nhận diện lỗi nhỏ, học đặc trưng cục
+  bộ, sử dụng attention và tối ưu mô hình để triển khai trong môi trường
+  thực tế. Đây là cơ sở quan trọng cho đề tài phân loại chất lượng tỏi
+  sau bóc vỏ, vì bài toán này cũng cần nhận diện các đặc điểm nhỏ như vỏ
+  còn sót, vùng hư hỏng, vết dập hoặc thay đổi màu sắc trên bề mặt tép
+  tỏi.
+\end{itemize}
+
+\begin{itemize}
+\item
+  \textbf{Tình hình nghiên cứu trong nước liên quan đến đề tài}
+\end{itemize}
+
+Tại Việt Nam, việc ứng dụng trí tuệ nhân tạo trong nông nghiệp đang ngày
+càng được chú trọng. Các nghiên cứu và ứng dụng hiện nay tập trung nhiều
+vào nhận diện sâu bệnh cây trồng, giám sát sản xuất, truy xuất nguồn
+gốc, quản lý dinh dưỡng và hỗ trợ ra quyết định trong canh tác. Mặc dù
+số lượng nghiên cứu trực tiếp về phân loại chất lượng tỏi sau bóc vỏ còn
+hạn chế, nhiều công trình trong nước đã cho thấy tiềm năng lớn của AI và
+thị giác máy tính trong nông nghiệp.
+
+\begin{itemize}
+\item
+  \textbf{Ứng dụng "AI Plant Doctor":} Trong chẩn đoán bệnh trên cây
+  trồng, ứng dụng "AI Plant Doctor" được phát triển bởi BOM-Software,
+  phối hợp với Trung tâm Thúc đẩy Quốc tế hóa Khoa học và Công nghệ Việt
+  Nam (VISTIP), Viện Nghiên cứu Cây ăn quả Miền Nam (SOFRI), và Trung
+  tâm Quốc tế Sinh học Nông nghiệp (CABI) trong khuôn khổ chương trình
+  Plantwise. Ứng dụng này sử dụng AI và công nghệ Big Data để hỗ trợ
+  nhận diện sâu bệnh trên cây trồng, ban đầu tập trung vào cây thanh
+  long. Ứng dụng ra mắt vào ngày 18/12/2020 tại tỉnh Tiền Giang, cho
+  phép nông dân chụp ảnh cây trồng bằng điện thoại thông minh (tương
+  thích cả Android và iOS) để nhận diện bệnh và nhận khuyến nghị xử lý.
+  Hiện tại, ứng dụng đang được mở rộng để hỗ trợ thêm nhiều loại cây
+  trồng khác giúp nông dân phát hiện sớm sâu bệnh, giảm thiểu thiệt hại,
+  và cung cấp giải pháp xử lý kịp thời mà không cần phụ thuộc hoàn toàn
+  vào chuyên gia tại chỗ.
+  \hl{{[}https://blog.plantwise.org/2021/02/18/ai-plant-doctor-app-launched-to-help-diagnose-pests-and-diseases-on-dragon-fruit-crops-in-vietnam{]}}
+\item
+  \textbf{Ứng dụng AI trong quản lý bệnh hại cây trồng:} Bài tổng hợp
+  của CESTI năm 2025 trình bày nhiều ứng dụng AI trong quản lý bệnh hại
+  cây trồng tại Việt Nam. Trong đó, ứng dụng AI Doctor tại Hưng Yên hỗ
+  trợ nhận diện và quản lý bốn loại sâu bệnh phổ biến trên cây nhãn; ứng
+  dụng 2Nông được tích hợp AI để chẩn đoán sâu bệnh và thiếu dinh dưỡng
+  trên cà phê, tiêu, sầu riêng và lúa; hệ thống T-Pest sử dụng mô hình
+  YOLOv5-Ghost để nhận diện sâu bệnh lúa theo thời gian thực. Ngoài ra,
+  một hệ thống AI nhận diện bệnh hại dưa lưới trong nhà màng đạt độ
+  chính xác trên 90\%. Các công trình này cho thấy AI tại Việt Nam đang
+  được triển khai nhiều trong nhận diện hình ảnh nông nghiệp, tạo cơ sở
+  thực tiễn cho việc nghiên cứu phân loại chất lượng tỏi.
+  \hl{{[}https://thongke.cesti.gov.vn/an-pham-thong-ke/thong-tin-chuyen-de-khoa-hoc-cong-nghe-va-doi-moi-sang-tao/1431-ung-dung-ai-trong-quan-ly-benh-hai-cay-trong{]}}
+\item
+  \textbf{Nghiên cứu thuật toán học sâu mạng nơ-ron tích chập và ứng
+  dụng trong nhận dạng hình ảnh ong mật mang phấn:} Nghiên cứu của Học
+  viện Nông nghiệp Việt Nam năm 2023 ứng dụng mạng nơ-ron tích chập
+  trong nhận dạng ảnh ong mật mang phấn. Nhóm nghiên cứu khảo sát các
+  kiến trúc CNN, học chuyển giao như VGG16, VGG19, ResNet50, ResNet101
+  và xây dựng mô hình CNN cơ bản nhằm giảm chi phí tính toán. Nghiên cứu
+  cũng sử dụng các kỹ thuật tăng cường dữ liệu như xoay ảnh, dịch
+  chuyển, cắt, phóng to/thu nhỏ và lật ảnh để cải thiện khả năng tổng
+  quát hóa. Công trình này liên quan đến đề tài vì cùng sử dụng CNN cho
+  bài toán nhận dạng ảnh trong nông nghiệp, đồng thời cho thấy hướng
+  thiết kế mô hình nhẹ, hiệu quả là cần thiết khi muốn triển khai thực
+  tế.
+  \hl{{[}https://vnua.edu.vn/tin-tuc-su-kien/nghien-cuu-khoa-hoc/nghien-cuu-thuat-toan-hoc-sau-mang-noron-tich-chap-va-ung-dung-trong-nhan-dang-hinh-anh-ong-mat-mang-phan-55308{]}}
+\item
+  \textbf{Ứng dụng trí tuệ nhân tạo vào phát hiện độc tố vi nấm trong
+  thực phẩm:} Bài viết của Khoa Công nghệ thực phẩm, Học viện Nông
+  nghiệp Việt Nam năm 2025 trình bày xu hướng ứng dụng AI trong phát
+  hiện độc tố vi nấm trong thực phẩm. Bài viết chỉ ra rằng các phương
+  pháp truyền thống như LC-MS/MS và ELISA tuy có độ chính xác cao nhưng
+  yêu cầu thiết bị hiện đại, quy trình phức tạp và nhân sự chuyên môn;
+  trong khi đó, AI có khả năng xử lý dữ liệu lớn, tự động hóa nhận diện
+  và hỗ trợ kiểm nghiệm nhanh hơn. Nội dung này liên quan gián tiếp đến
+  đề tài vì phân loại tỏi hư, tỏi sạch và tỏi còn vỏ cũng thuộc nhóm bài
+  toán kiểm soát chất lượng và an toàn trong chế biến thực phẩm.
+  \hl{{[}https://cntp.vnua.edu.vn/tin-tuc-va-su-kien/ung-dung-tri-tue-nhan-tao-ai-vao-phat-hien-doc-to-vi-nam-trong-thuc-pham-64051{]}}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Tuy nhiên, trong phạm vi các nguồn đã khảo sát, các nghiên cứu tại
+  Việt Nam hiện nay chủ yếu tập trung vào phát hiện bệnh cây trồng, quản
+  lý canh tác hoặc an toàn thực phẩm nói chung. Chưa có nhiều công trình
+  tập trung trực tiếp vào bài toán phân loại chất lượng tỏi sau bóc vỏ
+  trong dây chuyền chế biến. Điều này cho thấy đề tài có tính mới ở mức
+  ứng dụng, đặc biệt trong bối cảnh các cơ sở chế biến tỏi vẫn còn phụ
+  thuộc nhiều vào phân loại thủ công.
+\end{itemize}
+
+\begin{itemize}
+\item
+  \textbf{Khoảng trống nghiên cứu và lý do lựa chọn đề tài}
+\end{itemize}
+
+Từ các nghiên cứu ngoài nước và trong nước có thể nhận thấy rằng học sâu
+đã chứng minh hiệu quả trong nhiều bài toán kiểm tra chất lượng nông
+sản, phát hiện hư hỏng và phân loại sản phẩm sau thu hoạch. Tuy nhiên,
+phần lớn các công trình hiện nay tập trung vào trái cây, rau củ, bệnh lá
+cây hoặc hư hỏng trên củ tỏi nguyên củ. Các nghiên cứu trực tiếp về tỏi
+chủ yếu xử lý bài toán cắt rễ, phát hiện hư hỏng củ hoặc nhận diện bệnh,
+trong khi bài toán phân loại tỏi sau bóc vỏ thành các nhóm tỏi sạch, tỏi
+còn vỏ và tỏi hư vẫn chưa được khai thác nhiều.
+
+Bài toán phân loại tỏi sau bóc vỏ có những đặc thù riêng so với các bài
+toán phân loại nông sản thông thường. Thứ nhất, đối tượng cần phân loại
+có kích thước nhỏ và hình dạng không đồng nhất. Thứ hai, dấu hiệu phân
+biệt giữa các lớp đôi khi rất tinh vi, chẳng hạn phần vỏ còn sót chỉ
+chiếm một vùng nhỏ trên bề mặt tép tỏi. Thứ ba, tỏi hư có thể biểu hiện
+qua nhiều dạng khác nhau như đổi màu, dập nát, mềm nhũn hoặc xuất hiện
+vùng thâm. Những đặc điểm này đòi hỏi mô hình phải có khả năng khai thác
+cả đặc trưng tổng thể và đặc trưng cục bộ.
+
+Chính vì vậy, luận văn lựa chọn hướng nghiên cứu mô hình học sâu cho bài
+toán phân loại chất lượng tỏi sau bóc vỏ. Việc phát triển mô hình có khả
+năng phân loại chính xác ba nhóm \textbf{tỏi sạch}, \textbf{tỏi còn vỏ}
+và \textbf{tỏi hư} không chỉ có ý nghĩa về mặt học thuật mà còn có khả
+năng ứng dụng thực tiễn trong dây chuyền chế biến thực phẩm. Hệ thống
+này có thể hỗ trợ giảm phụ thuộc vào lao động thủ công, nâng cao tính ổn
+định của chất lượng sản phẩm và tạo nền tảng cho việc xây dựng dây
+chuyền phân loại tỏi tự động trong tương lai.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \protect\phantomsection\label{_Toc232111981}{}\textbf{Mục tiêu nghiên
+  cứu}
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \protect\phantomsection\label{_Toc232111982}{}\emph{\textbf{Mục tiêu
+    tổng quát}}
+  \end{enumerate}
+\end{enumerate}
+
+Mục tiêu tổng quát của luận văn là nghiên cứu và phát triển mô hình học
+sâu nhằm phân loại chất lượng tỏi sau quá trình bóc vỏ dựa trên dữ liệu
+hình ảnh. Mô hình được xây dựng với khả năng nhận diện và phân loại tỏi
+thành ba nhóm chính: \textbf{tỏi đã bóc sạch}, \textbf{tỏi còn sót vỏ}
+và \textbf{tỏi hư hỏng}. Thông qua đó, luận văn hướng đến việc hỗ trợ tự
+động hóa công đoạn kiểm tra chất lượng tỏi trong dây chuyền chế biến
+thực phẩm, góp phần giảm phụ thuộc vào lao động thủ công, nâng cao năng
+suất và bảo đảm tính ổn định của sản phẩm đầu ra.
+
+Bên cạnh việc xây dựng mô hình phân loại ảnh thông thường, luận văn còn
+hướng đến đề xuất một mô hình học sâu cải tiến dựa trên kiến trúc CNN
+phù hợp nhất sau quá trình thực nghiệm. Mô hình đề xuất không chỉ học
+trực tiếp bài toán phân loại ba lớp, mà còn được bổ sung các nhiệm vụ
+phụ có ý nghĩa theo logic đánh giá chất lượng tỏi, từ đó giúp mô hình
+học đặc trưng tốt hơn và cải thiện hiệu quả phân loại.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \protect\phantomsection\label{_Toc232111983}{}\emph{\textbf{Mục tiêu
+  cụ thể}}
+\end{enumerate}
+
+Luận văn tập trung vào các mục tiêu cụ thể như sau:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \textbf{Thu thập, xây dựng và tiền xử lý bộ dữ liệu ảnh tỏi}
+\end{enumerate}
+
+Luận văn tiến hành thu thập và xây dựng bộ dữ liệu ảnh tỏi phục vụ cho
+bài toán phân loại chất lượng sau bóc vỏ. Dữ liệu được tổ chức thành ba
+nhóm chính gồm \textbf{Fully\_Peeled\_Garlic} tương ứng với tỏi đã bóc
+sạch, \textbf{Partially\_Peeled\_Garlic} tương ứng với tỏi còn sót vỏ và
+\textbf{Spoiled\_Garlic} tương ứng với tỏi hư hỏng.
+
+Sau khi thu thập, dữ liệu được kiểm tra, làm sạch và tiền xử lý nhằm bảo
+đảm chất lượng đầu vào cho quá trình huấn luyện mô hình. Các bước tiền
+xử lý có thể bao gồm chuẩn hóa kích thước ảnh, kiểm tra nhãn, loại bỏ
+ảnh lỗi, chia dữ liệu thành các tập huấn luyện, kiểm định và kiểm tra.
+Ngoài ra, luận văn cũng xem xét áp dụng các kỹ thuật tăng cường dữ liệu
+nhằm giúp mô hình học được nhiều biến thể khác nhau của ảnh tỏi trong
+điều kiện thực tế.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \textbf{Thực nghiệm và so sánh các mô hình CNN gốc}
+\end{enumerate}
+
+Luận văn tiến hành thực nghiệm trên nhiều mô hình học sâu thuộc nhóm
+mạng nơ-ron tích chập nhằm đánh giá khả năng phân loại ảnh tỏi. Các mô
+hình được lựa chọn bao gồm \textbf{NASNetMobile}, \textbf{InceptionV3},
+\textbf{EfficientNetB4}, \textbf{MobileNetV2} và \textbf{DenseNet121}.
+Đây là các kiến trúc CNN đã được sử dụng phổ biến trong bài toán phân
+loại ảnh và có khả năng học đặc trưng hình ảnh ở nhiều mức độ khác nhau.
+
+Thông qua quá trình thực nghiệm, luận văn so sánh hiệu quả của các mô
+hình trên cùng bộ dữ liệu và cùng điều kiện đánh giá. Mục tiêu của bước
+này là xác định mô hình nền phù hợp nhất với bài toán phân loại chất
+lượng tỏi, làm cơ sở để phát triển mô hình đề xuất ở các bước tiếp theo.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \textbf{Lựa chọn mô hình phù hợp nhất làm backbone cho mô hình đề
+  xuất}
+\end{enumerate}
+
+Dựa trên kết quả thực nghiệm giữa các mô hình CNN nền, luận văn lựa chọn
+mô hình có hiệu quả tốt nhất để làm backbone chính. Trong định hướng
+hiện tại, \textbf{EfficientNetB4} được lựa chọn làm backbone do có khả
+năng trích xuất đặc trưng ảnh tốt, cân bằng giữa độ chính xác và chi phí
+tính toán, đồng thời cho kết quả phù hợp với bài toán phân loại chất
+lượng tỏi.
+
+EfficientNetB4 được sử dụng để trích xuất các đặc trưng quan trọng từ
+ảnh tỏi, bao gồm màu sắc, kết cấu bề mặt, vùng hư hỏng, phần vỏ còn sót
+và hình dạng bất thường. Các đặc trưng này là cơ sở để mô hình đưa ra
+quyết định phân loại ảnh vào một trong ba nhóm chất lượng.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\item
+  \textbf{Đề xuất mô hình học sâu cải tiến cho bài toán phân loại chất
+  lượng tỏi}
+\end{enumerate}
+
+Trên nền tảng EfficientNetB4, luận văn đề xuất mô hình học sâu cải tiến
+theo hướng kết hợp đặc trưng và học đa nhiệm. Mô hình đề xuất sử dụng
+EfficientNetB4 làm backbone chính để trích xuất đặc trưng ảnh, sau đó
+kết hợp hai cơ chế tổng hợp đặc trưng là \textbf{Global Average Pooling
+(GAP)} và \textbf{Global Max Pooling (GMP)}. Trong đó, GAP giúp mô hình
+nắm bắt thông tin tổng quát trên toàn ảnh, còn GMP giúp giữ lại các đặc
+trưng nổi bật, chẳng hạn vùng hư hỏng hoặc phần vỏ còn sót trên bề mặt
+tép tỏi.
+
+Khác với kiến trúc phân loại thông thường chỉ sử dụng một đầu ra Softmax
+cho ba lớp, mô hình đề xuất bổ sung thêm hai nhiệm vụ phụ nhằm hỗ trợ mô
+hình học theo logic phân loại thực tế của bài toán tỏi. Cụ thể, mô hình
+gồm một nhiệm vụ chính và hai nhiệm vụ phụ:
+
+\begin{itemize}
+\item
+  Nhiệm vụ chính là phân loại ảnh tỏi thành ba lớp:
+  \textbf{Fully\_Peeled\_Garlic}, \textbf{Partially\_Peeled\_Garlic} và
+  \textbf{Spoiled\_Garlic}.
+\item
+  Nhiệm vụ phụ thứ nhất là nhận diện ảnh tỏi thuộc nhóm Spoiled hay
+  Non-spoiled, tức là xác định mẫu tỏi có bị hư hỏng hay không.
+\item
+  Nhiệm vụ phụ thứ hai là phân biệt Fully\_Peeled và Partially\_Peeled
+  đối với các ảnh thuộc nhóm không hư hỏng, nhằm giúp mô hình học rõ hơn
+  sự khác biệt giữa tỏi đã bóc sạch và tỏi còn sót vỏ.
+\end{itemize}
+
+Với thiết kế này, mô hình không chỉ học câu hỏi ``\emph{\textbf{ảnh này
+thuộc lớp nào}}'', mà còn học thêm các câu hỏi phụ có ý nghĩa về mặt
+chất lượng: ``\emph{\textbf{ảnh này có bị hư không?}}'' và
+``\emph{\textbf{nếu không hư thì ảnh này là tỏi bóc sạch hay tỏi còn
+vỏ?}}''. Cách tiếp cận này được kỳ vọng giúp mô hình học đặc trưng sâu
+hơn, giảm nhầm lẫn giữa các lớp có biểu hiện gần giống nhau và cải thiện
+hiệu quả phân loại tổng thể.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\item
+  \textbf{Xử lý vấn đề mất cân bằng dữ liệu bằng hàm mất mát phù hợp}
+\end{enumerate}
+
+Trong bài toán phân loại chất lượng tỏi, số lượng mẫu giữa các lớp có
+thể không hoàn toàn cân bằng. Thông thường, nhóm tỏi sạch có thể chiếm
+tỷ lệ lớn hơn so với nhóm tỏi còn vỏ hoặc tỏi hư. Sự mất cân bằng này có
+thể làm mô hình thiên lệch về lớp có nhiều mẫu, dẫn đến giảm khả năng
+nhận diện các lớp ít mẫu nhưng quan trọng.
+
+Do đó, luận văn xem xét sử dụng \textbf{Class-Balanced Loss} hoặc biến
+thể kết hợp với Focal Loss trong quá trình huấn luyện. Mục tiêu của việc
+sử dụng hàm mất mát này là giúp mô hình chú ý hơn đến các lớp có ít mẫu
+và các mẫu khó phân loại, từ đó cải thiện khả năng nhận diện tỏi hư và
+tỏi còn sót vỏ.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{5}
+\item
+  \textbf{Đánh giá và phân tích hiệu quả của mô hình}
+\end{enumerate}
+
+Luận văn đánh giá hiệu quả của các mô hình thông qua các chỉ số chuẩn
+trong bài toán phân loại ảnh, bao gồm \textbf{Accuracy},
+\textbf{Precision}, \textbf{Recall}, \textbf{F1-score}, \textbf{AUC} và
+\textbf{Confusion Matrix}. Các chỉ số này giúp đánh giá toàn diện hiệu
+quả của mô hình, không chỉ ở độ chính xác tổng thể mà còn ở khả năng
+nhận diện từng lớp cụ thể.
+
+Đặc biệt, ma trận nhầm lẫn được sử dụng để phân tích các lỗi phân loại
+thường gặp, chẳng hạn mô hình nhầm tỏi còn vỏ thành tỏi sạch, hoặc nhầm
+tỏi hư thành tỏi sạch. Đây là những lỗi có ý nghĩa thực tiễn quan trọng
+vì có thể ảnh hưởng trực tiếp đến chất lượng sản phẩm trong dây chuyền
+chế biến.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{6}
+\item
+  \textbf{Đề xuất định hướng ứng dụng thực tiễn}
+\end{enumerate}
+
+Từ kết quả nghiên cứu và thực nghiệm, luận văn đề xuất định hướng ứng
+dụng mô hình vào hệ thống phân loại chất lượng tỏi tự động. Hệ thống có
+thể được phát triển theo hướng kết hợp camera, mô hình học sâu và cơ cấu
+phân loại trên dây chuyền sản xuất. Khi được triển khai, mô hình có thể
+hỗ trợ phát hiện và phân loại tỏi sạch, tỏi còn vỏ và tỏi hư một cách
+nhanh chóng, ổn định hơn so với phương pháp thủ công.
+
+Kết quả của luận văn có thể làm cơ sở cho việc xây dựng hệ thống kiểm
+tra chất lượng tỏi trong thực tế, đồng thời có thể mở rộng sang các loại
+nông sản khác có đặc điểm tương tự như hành, gừng, khoai tây hoặc các
+sản phẩm cần kiểm tra bề mặt sau sơ chế.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \protect\phantomsection\label{_Toc232111984}{}\textbf{Đối tượng, phạm
+  vi nghiên cứu}
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \protect\phantomsection\label{_Toc232111985}{}\emph{\textbf{Đối
+    tượng nghiên cứu}}
+  \end{enumerate}
+\end{enumerate}
+
+Đối tượng nghiên cứu của luận văn là các mô hình học sâu ứng dụng trong
+nhận diện hình ảnh, cụ thể là bài toán phân loại chất lượng tỏi sau quá
+trình bóc vỏ. Nghiên cứu tập trung xây dựng, huấn luyện, tối ưu và đánh
+giá các mô hình phân loại ảnh nhằm nhận diện ba nhóm tỏi chính gồm:
+\textbf{tỏi đã bóc sạch}, \textbf{tỏi còn sót vỏ} và \textbf{tỏi hư
+hỏng}.
+
+Cụ thể, đối tượng nghiên cứu của luận văn bao gồm:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \textbf{Hình ảnh dữ liệu tỏi sau bóc vỏ}
+\end{enumerate}
+
+Luận văn sử dụng bộ dữ liệu hình ảnh tỏi được chia thành ba nhóm chính:
+\textbf{Fully\_Peeled\_Garlic}, \textbf{Partially\_Peeled\_Garlic} và
+\textbf{Spoiled\_Garlic}. Trong đó, Fully\_Peeled\_Garlic là nhóm tỏi đã
+được bóc vỏ hoàn chỉnh, bề mặt tương đối sạch và không có dấu hiệu hư
+hỏng rõ rệt; Partially\_Peeled\_Garlic là nhóm tỏi vẫn còn sót lại một
+phần vỏ sau quá trình bóc; Spoiled\_Garlic là nhóm tỏi có dấu hiệu hư
+hỏng, dập nát, biến màu hoặc không đạt yêu cầu chất lượng.
+
+Bộ dữ liệu này được sử dụng để huấn luyện, kiểm định và đánh giá hiệu
+quả của các mô hình học sâu. Hình ảnh trong dữ liệu đóng vai trò là
+nguồn đầu vào chính để mô hình học các đặc trưng trực quan như màu sắc,
+hình dạng, kết cấu bề mặt, vùng hư hỏng và phần vỏ còn sót trên tép tỏi.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \textbf{Các mô hình học sâu dùng trong phân loại ảnh}
+\end{enumerate}
+
+Luận văn tập trung nghiên cứu các mô hình mạng nơ-ron tích chập, hay còn
+gọi là \textbf{Convolutional Neural Network -- CNN}, trong bài toán phân
+loại chất lượng tỏi. Các mô hình CNN nền được lựa chọn để thực nghiệm và
+so sánh bao gồm \textbf{NASNetMobile}, \textbf{InceptionV3},
+\textbf{EfficientNetB4}, \textbf{MobileNetV2} và \textbf{DenseNet121}.
+
+Các mô hình này được lựa chọn vì đã được sử dụng rộng rãi trong các bài
+toán phân loại ảnh, có khả năng trích xuất đặc trưng hình ảnh ở nhiều
+mức độ khác nhau và phù hợp để đánh giá hiệu quả trên bộ dữ liệu tỏi.
+Thông qua quá trình thực nghiệm, luận văn xác định mô hình có kết quả
+phù hợp nhất để làm cơ sở phát triển mô hình đề xuất.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \textbf{Mô hình đề xuất cho bài toán phân loại chất lượng tỏi}
+\end{enumerate}
+
+Trên cơ sở kết quả thực nghiệm các mô hình CNN nền, luận văn lựa chọn
+\textbf{EfficientNetB4} làm backbone chính để phát triển mô hình đề
+xuất. Mô hình đề xuất có cấu trúc dựa trên EfficientNetB4 kết hợp với
+\textbf{Global Average Pooling (GAP)}, \textbf{Global Max Pooling
+(GMP)}, nhánh phân loại chính ba lớp và hai nhánh phụ gồm
+\textbf{Spoilage Aux} và \textbf{Peeling Aux}.
+
+Trong đó, nhánh phân loại chính thực hiện nhiệm vụ phân loại ảnh tỏi
+thành ba lớp: Fully\_Peeled\_Garlic, Partially\_Peeled\_Garlic và
+Spoiled\_Garlic. Nhánh phụ Spoilage Aux hỗ trợ mô hình học khả năng phân
+biệt tỏi hư và tỏi không hư. Nhánh phụ Peeling Aux hỗ trợ mô hình phân
+biệt tỏi đã bóc sạch và tỏi còn sót vỏ đối với các mẫu không thuộc nhóm
+tỏi hư.
+
+Cách thiết kế này giúp mô hình không chỉ học trực tiếp nhãn phân loại ba
+lớp, mà còn học thêm logic đánh giá chất lượng tỏi theo từng bước: trước
+hết xác định tỏi có bị hư hay không, sau đó nếu không hư thì tiếp tục
+phân biệt tỏi đã bóc sạch hay còn sót vỏ. Đây là hướng tiếp cận phù hợp
+với đặc thù của bài toán, vì các dấu hiệu như vùng hư hỏng hoặc phần vỏ
+còn sót thường có kích thước nhỏ và dễ gây nhầm lẫn.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\item
+  \textbf{Các phương pháp xử lý và tối ưu mô hình}
+\end{enumerate}
+
+Luận văn nghiên cứu và áp dụng các phương pháp xử lý dữ liệu, tăng cường
+dữ liệu và tối ưu mô hình nhằm nâng cao hiệu quả phân loại. Các bước xử
+lý có thể bao gồm chuẩn hóa kích thước ảnh, kiểm tra nhãn, chia dữ liệu
+thành các tập huấn luyện, kiểm định và kiểm tra. Bên cạnh đó, các kỹ
+thuật \textbf{Data Augmentation} như xoay ảnh, lật ảnh, thay đổi độ
+sáng, phóng to hoặc dịch chuyển ảnh được sử dụng nhằm giúp mô hình tăng
+khả năng khái quát hóa và hạn chế hiện tượng quá khớp.
+
+Ngoài ra, do dữ liệu giữa các lớp có thể không hoàn toàn cân bằng, luận
+văn sử dụng hoặc xem xét sử dụng \textbf{Class-Balanced Loss (CBLoss)}
+nhằm giảm ảnh hưởng của mất cân bằng dữ liệu. Kỹ thuật này giúp mô hình
+chú ý hơn đến các lớp có số lượng mẫu ít hơn, đặc biệt là nhóm tỏi còn
+sót vỏ và tỏi hư hỏng.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\item
+  \textbf{Phạm vi ứng dụng của mô hình}
+\end{enumerate}
+
+Đối tượng ứng dụng của nghiên cứu là công đoạn phân loại chất lượng tỏi
+sau bóc vỏ trong dây chuyền chế biến thực phẩm. Mô hình được kỳ vọng có
+thể hỗ trợ nhận diện và phân loại tự động các mẫu tỏi dựa trên ảnh, từ
+đó giảm phụ thuộc vào lao động thủ công, nâng cao năng suất và bảo đảm
+tính ổn định của chất lượng sản phẩm.
+
+Ngoài bài toán phân loại tỏi, hướng nghiên cứu này còn có tiềm năng mở
+rộng sang các loại nông sản khác có đặc điểm tương tự như hành, gừng,
+khoai tây hoặc các sản phẩm cần kiểm tra bề mặt sau sơ chế.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_Toc232111986}{}\emph{\textbf{Phạm vi
+  nghiên cứu}}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \textbf{Phạm vi dữ liệu}
+\end{enumerate}
+
+Dữ liệu sử dụng trong luận văn là bộ dữ liệu ảnh tỏi sau bóc vỏ, được
+phân chia thành ba lớp chính: \textbf{Fully\_Peeled\_Garlic},
+\textbf{Partially\_Peeled\_Garlic} và \textbf{Spoiled\_Garlic}. Bộ dữ
+liệu phản ánh các trạng thái chất lượng thường gặp của tỏi sau công đoạn
+bóc vỏ, bao gồm tỏi đã bóc sạch, tỏi còn sót vỏ và tỏi bị hư hỏng.
+
+Trong phạm vi nghiên cứu này, dữ liệu được sử dụng dưới dạng ảnh tĩnh.
+Luận văn tập trung vào việc xử lý, huấn luyện và đánh giá mô hình trên
+các ảnh đã được gán nhãn sẵn. Nghiên cứu không đi sâu vào quá trình thu
+hoạch, bảo quản, tách tép hoặc vận hành máy bóc vỏ tỏi. Các yếu tố như
+điều kiện ánh sáng, góc chụp, phông nền và chất lượng ảnh được xem xét ở
+mức phục vụ cho quá trình tiền xử lý và tăng cường dữ liệu.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \textbf{Phạm vi bài toán}
+\end{enumerate}
+
+Luận văn tập trung vào bài toán \textbf{phân loại ảnh tỏi thành ba lớp}.
+Đầu vào của mô hình là ảnh tỏi sau bóc vỏ, đầu ra là nhãn phân loại
+tương ứng với một trong ba nhóm: tỏi đã bóc sạch, tỏi còn sót vỏ hoặc
+tỏi hư hỏng.
+
+Nghiên cứu chưa đi sâu vào bài toán phát hiện vị trí của từng tép tỏi
+trên ảnh, phân đoạn vùng hư hỏng, định vị chính xác phần vỏ còn sót hoặc
+điều khiển cơ cấu phân loại tự động trên băng chuyền. Các bài toán này
+có thể được xem là hướng phát triển tiếp theo sau khi mô hình phân loại
+đạt kết quả ổn định.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \textbf{Phạm vi kỹ thuật}
+\end{enumerate}
+
+Về mặt kỹ thuật, luận văn tập trung nghiên cứu và ứng dụng các mô hình
+học sâu, đặc biệt là mạng nơ-ron tích chập, cho bài toán phân loại ảnh.
+Các mô hình CNN nền được đưa vào thực nghiệm gồm \textbf{NASNetMobile},
+\textbf{InceptionV3}, \textbf{EfficientNetB4}, \textbf{MobileNetV2} và
+\textbf{DenseNet121}. Các mô hình này được huấn luyện và đánh giá trên
+cùng bộ dữ liệu để so sánh hiệu quả phân loại.
+
+Sau quá trình thực nghiệm, luận văn lựa chọn mô hình phù hợp nhất để
+phát triển mô hình đề xuất. Trong định hướng nghiên cứu hiện tại,
+EfficientNetB4 được sử dụng làm backbone chính. Mô hình đề xuất kết hợp
+EfficientNetB4 với GAP/GMP, nhánh phân loại chính ba lớp và hai nhánh
+phụ gồm Spoilage Aux và Peeling Aux. Ngoài ra, luận văn sử dụng CBLoss
+nhằm hỗ trợ xử lý vấn đề mất cân bằng dữ liệu giữa các lớp.
+
+Phạm vi kỹ thuật của luận văn giới hạn trong các phương pháp học sâu cho
+phân loại ảnh. Các kỹ thuật xử lý ảnh truyền thống chỉ đóng vai trò hỗ
+trợ tiền xử lý dữ liệu, không phải hướng nghiên cứu chính.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\item
+  \textbf{Phạm vi thực nghiệm}
+\end{enumerate}
+
+Các thực nghiệm của luận văn được thực hiện trong môi trường lập trình
+Python với các thư viện hỗ trợ học sâu như TensorFlow/Keras hoặc
+PyTorch, tùy theo quá trình triển khai mô hình. Việc huấn luyện mô hình
+được thực hiện trên môi trường có hỗ trợ GPU nhằm tăng tốc quá trình
+tính toán.
+
+Trong quá trình thực nghiệm, dữ liệu được chia thành các tập huấn luyện,
+kiểm định và kiểm tra. Mô hình được huấn luyện trên tập huấn luyện, tinh
+chỉnh và lựa chọn thông qua tập kiểm định, sau đó đánh giá cuối cùng
+trên tập kiểm tra. Các kỹ thuật như lưu mô hình tốt nhất, theo dõi quá
+trình huấn luyện thông qua đồ thị Accuracy/Loss và điều chỉnh siêu tham
+số được sử dụng để bảo đảm quá trình thực nghiệm có tính hệ thống.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\item
+  \textbf{Phạm vi đánh giá}
+\end{enumerate}
+
+Luận văn đánh giá mô hình thông qua các chỉ số phổ biến trong bài toán
+phân loại ảnh như \textbf{Accuracy}, \textbf{Precision},
+\textbf{Recall}, \textbf{F1-score}, \textbf{AUC} và \textbf{Confusion
+Matrix}. Trong đó, Accuracy phản ánh độ chính xác tổng thể của mô hình;
+Precision và Recall giúp đánh giá khả năng dự đoán đúng từng lớp;
+F1-score thể hiện sự cân bằng giữa Precision và Recall; AUC hỗ trợ đánh
+giá khả năng phân biệt của mô hình; Confusion Matrix giúp phân tích chi
+tiết các trường hợp mô hình nhầm lẫn giữa các lớp.
+
+Đối với bài toán phân loại chất lượng tỏi, việc phân tích lỗi có ý nghĩa
+quan trọng. Một số lỗi như nhầm tỏi hư thành tỏi sạch hoặc nhầm tỏi còn
+vỏ thành tỏi sạch có thể ảnh hưởng trực tiếp đến chất lượng sản phẩm đầu
+ra. Do đó, ngoài kết quả tổng thể, luận văn còn chú trọng phân tích hiệu
+quả nhận diện trên từng lớp để đánh giá tính phù hợp của mô hình trong
+thực tế.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{5}
+\item
+  \textbf{Phạm vi ứng dụng thực tiễn}
+\end{enumerate}
+
+Luận văn hướng đến việc xây dựng mô hình làm nền tảng cho hệ thống phân
+loại chất lượng tỏi tự động. Trong phạm vi nghiên cứu, luận văn tập
+trung vào phần mô hình nhận diện và phân loại ảnh. Việc tích hợp mô hình
+vào hệ thống camera, băng chuyền, bộ điều khiển và cơ cấu gạt sản phẩm
+chưa được triển khai đầy đủ trong phạm vi luận văn này.
+
+Tuy nhiên, kết quả nghiên cứu có thể được sử dụng làm cơ sở cho các
+nghiên cứu tiếp theo nhằm xây dựng hệ thống phân loại tỏi tự động trong
+dây chuyền chế biến thực phẩm, góp phần giảm lao động thủ công, nâng cao
+năng suất và cải thiện chất lượng sản phẩm.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  \protect\phantomsection\label{_Toc232111987}{}\textbf{Phương pháp
+  nghiên cứu}
+\end{enumerate}
+
+Luận văn được thực hiện dựa trên sự kết hợp giữa phương pháp nghiên cứu
+lý thuyết và phương pháp nghiên cứu thực nghiệm. Trong đó, nghiên cứu lý
+thuyết được sử dụng để khảo sát các công trình liên quan, tìm hiểu cơ sở
+khoa học của các mô hình học sâu trong phân loại ảnh. Nghiên cứu thực
+nghiệm được sử dụng để xây dựng bộ dữ liệu, huấn luyện, so sánh, cải
+tiến và đánh giá mô hình phân loại chất lượng tỏi.
+
+Cụ thể, luận văn áp dụng các phương pháp nghiên cứu sau:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \textbf{Phương pháp nghiên cứu tài liệu}
+\end{enumerate}
+
+Luận văn tiến hành thu thập, phân tích và tổng hợp các tài liệu, công
+trình nghiên cứu trong và ngoài nước liên quan đến trí tuệ nhân tạo, thị
+giác máy tính, học sâu và ứng dụng học sâu trong nông nghiệp. Nội dung
+khảo sát tập trung vào các hướng nghiên cứu chính như phân loại ảnh nông
+sản, kiểm tra chất lượng thực phẩm, phát hiện lỗi bề mặt, nhận diện hư
+hỏng sau thu hoạch và các mô hình học sâu dùng trong phân loại ảnh.
+
+Bên cạnh đó, luận văn cũng nghiên cứu các kiến trúc mạng nơ-ron tích
+chập hiện đại như NASNetMobile, InceptionV3, EfficientNetB4, MobileNetV2
+và DenseNet121. Đây là các mô hình đã được sử dụng phổ biến trong nhiều
+bài toán phân loại ảnh và có thể áp dụng cho bài toán phân loại chất
+lượng tỏi. Ngoài ra, các kỹ thuật như Transfer Learning, Data
+Augmentation, Global Average Pooling, Global Max Pooling, học đa nhiệm
+và hàm mất mát xử lý mất cân bằng dữ liệu cũng được tìm hiểu để làm cơ
+sở cho việc đề xuất mô hình cải tiến.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \textbf{Phương pháp thu thập, xử lý và chuẩn bị dữ liệu}
+\end{enumerate}
+
+Luận văn sử dụng bộ dữ liệu ảnh tỏi được phân chia thành ba lớp chính
+gồm Fully\_Peeled\_Garlic, Partially\_Peeled\_Garlic và Spoiled\_Garlic.
+Đây là ba trạng thái chất lượng thường gặp của tỏi sau quá trình bóc vỏ,
+tương ứng với tỏi đã bóc sạch, tỏi còn sót vỏ và tỏi hư hỏng.
+
+Dữ liệu sau khi thu thập được tiến hành kiểm tra và tiền xử lý trước khi
+đưa vào huấn luyện mô hình. Các bước xử lý bao gồm kiểm tra nhãn dữ
+liệu, loại bỏ các ảnh lỗi hoặc không phù hợp, chuẩn hóa kích thước ảnh,
+chuẩn hóa giá trị điểm ảnh và tổ chức dữ liệu theo đúng cấu trúc từng
+lớp. Sau đó, bộ dữ liệu được chia thành các tập train, validation và
+test nhằm phục vụ quá trình huấn luyện, tinh chỉnh và đánh giá mô hình.
+
+Để tăng khả năng khái quát hóa của mô hình và hạn chế hiện tượng quá
+khớp, luận văn áp dụng các kỹ thuật tăng cường dữ liệu như xoay ảnh, lật
+ảnh, thay đổi độ sáng, phóng to, thu nhỏ hoặc dịch chuyển ảnh. Các kỹ
+thuật này giúp mô hình học được nhiều biến thể khác nhau của ảnh tỏi, từ
+đó hoạt động ổn định hơn trong điều kiện dữ liệu thực tế.
+
+Ngoài ra, luận văn cũng xem xét vấn đề mất cân bằng dữ liệu giữa các
+lớp. Trong bài toán phân loại chất lượng tỏi, số lượng ảnh tỏi sạch, tỏi
+còn vỏ và tỏi hư có thể không đồng đều. Vì vậy, việc xử lý mất cân bằng
+dữ liệu là cần thiết để tránh mô hình thiên lệch về lớp có số lượng mẫu
+lớn.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \textbf{Phương pháp thực nghiệm các mô hình CNN nền}
+\end{enumerate}
+
+Sau khi dữ liệu được chuẩn bị, luận văn tiến hành huấn luyện và đánh giá
+nhiều mô hình CNN nền khác nhau nhằm xác định mô hình phù hợp nhất với
+bài toán phân loại chất lượng tỏi. Các mô hình được sử dụng trong thực
+nghiệm bao gồm:
+
+\begin{itemize}
+\item
+  NASNetMobile
+\item
+  InceptionV3
+\item
+  EfficientNetB4
+\item
+  MobileNetV2
+\item
+  DenseNet121
+\end{itemize}
+
+Các mô hình này được huấn luyện trên cùng bộ dữ liệu và đánh giá theo
+cùng hệ thống chỉ số để bảo đảm tính công bằng trong quá trình so sánh.
+Mục tiêu của bước thực nghiệm này là xác định mô hình có khả năng trích
+xuất đặc trưng ảnh tỏi tốt nhất, đặc biệt trong việc phân biệt các đặc
+điểm như vùng hư hỏng, phần vỏ còn sót và trạng thái bề mặt của tép tỏi.
+
+Kết quả thực nghiệm giữa các mô hình CNN nền là cơ sở để lựa chọn
+backbone cho mô hình đề xuất. Trong hướng nghiên cứu hiện tại,
+EfficientNetB4 được lựa chọn làm mô hình nền chính vì cho thấy khả năng
+phù hợp tốt với dữ liệu ảnh tỏi và có khả năng trích xuất đặc trưng
+mạnh.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\item
+  \textbf{Phương pháp đề xuất và cải tiến mô hình}
+\end{enumerate}
+
+Trên cơ sở mô hình EfficientNetB4, luận văn đề xuất mô hình học sâu cải
+tiến cho bài toán phân loại chất lượng tỏi. Mô hình sử dụng
+EfficientNetB4 làm backbone chính để trích xuất đặc trưng ảnh, sau đó
+kết hợp hai cơ chế tổng hợp đặc trưng là Global Average Pooling (GAP) và
+Global Max Pooling (GMP).
+
+Trong đó, GAP giúp mô hình nắm bắt thông tin tổng quát trên toàn ảnh,
+còn GMP giúp giữ lại các đặc trưng nổi bật nhất, chẳng hạn như vùng hư
+hỏng hoặc phần vỏ còn sót. Việc kết hợp GAP và GMP giúp mô hình khai
+thác đồng thời đặc trưng tổng thể và đặc trưng cục bộ, phù hợp với đặc
+điểm của ảnh tỏi sau bóc vỏ.
+
+Khác với mô hình phân loại thông thường chỉ có một đầu ra Softmax ba
+lớp, mô hình đề xuất được thiết kế theo hướng học đa nhiệm. Cụ thể, mô
+hình gồm một nhiệm vụ chính và hai nhiệm vụ phụ:
+
+Nhiệm vụ chính là phân loại ảnh tỏi thành ba lớp: Fully\_Peeled\_Garlic,
+Partially\_Peeled\_Garlic và Spoiled\_Garlic.
+
+Nhiệm vụ phụ thứ nhất, gọi là Spoilage Aux, có nhiệm vụ phân biệt tỏi hư
+và tỏi không hư. Nhánh này giúp mô hình học rõ hơn các đặc trưng liên
+quan đến hư hỏng như vùng đổi màu, dập nát hoặc bề mặt bất thường.
+
+Nhiệm vụ phụ thứ hai, gọi là Peeling Aux, có nhiệm vụ phân biệt tỏi đã
+bóc sạch và tỏi còn sót vỏ trên nhóm ảnh không hư hỏng. Nhánh này giúp
+mô hình tập trung hơn vào đặc trưng của phần vỏ còn sót, vốn có thể xuất
+hiện ở vùng nhỏ và dễ bị nhầm với bề mặt tỏi bình thường.
+
+Với thiết kế này, mô hình không chỉ học trực tiếp nhãn phân loại ba lớp
+mà còn học thêm logic phân loại theo quy trình kiểm tra chất lượng thực
+tế: trước hết xác định tỏi có bị hư hay không, sau đó nếu không hư thì
+tiếp tục xác định tỏi đã bóc sạch hay còn sót vỏ. Cách tiếp cận này được
+kỳ vọng giúp mô hình giảm nhầm lẫn giữa các lớp và cải thiện hiệu quả
+phân loại tổng thể.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\item
+  \textbf{Phương pháp tối ưu hóa quá trình huấn luyện}
+\end{enumerate}
+
+Trong quá trình huấn luyện, luận văn tiến hành điều chỉnh các tham số
+như số epoch, batch size, learning rate, optimizer và các tham số liên
+quan đến quá trình fine-tuning. Việc điều chỉnh này nhằm giúp mô hình
+hội tụ ổn định, hạn chế quá khớp và đạt hiệu quả tốt trên tập kiểm tra.
+
+Bên cạnh đó, luận văn sử dụng hàm mất mát phù hợp với bài toán có khả
+năng mất cân bằng dữ liệu. Cụ thể, Class-Balanced Loss hoặc biến thể kết
+hợp với Focal Loss được sử dụng nhằm giảm ảnh hưởng của sự chênh lệch số
+lượng mẫu giữa các lớp. Hàm mất mát này giúp mô hình chú ý hơn đến các
+lớp ít mẫu hoặc khó phân loại, đặc biệt là nhóm
+Partially\_Peeled\_Garlic và Spoiled\_Garlic.
+
+Đối với mô hình học đa nhiệm, tổng hàm mất mát được xây dựng dựa trên sự
+kết hợp giữa mất mát của nhiệm vụ chính và mất mát của các nhiệm vụ phụ.
+Trong đó, nhánh phân loại chính giữ vai trò trung tâm, còn hai nhánh phụ
+đóng vai trò hỗ trợ quá trình học đặc trưng. Cách tối ưu này giúp mô
+hình vừa học được nhãn phân loại cuối cùng, vừa học được các đặc trưng
+phụ có ý nghĩa về mặt chất lượng sản phẩm.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{5}
+\item
+  \textbf{Phương pháp đánh giá và so sánh mô hình}
+\end{enumerate}
+
+Các mô hình được đánh giá thông qua các chỉ số phổ biến trong bài toán
+phân loại ảnh, bao gồm Accuracy, Precision, Recall, F1-score, AUC và
+Confusion Matrix. Trong đó, Accuracy phản ánh độ chính xác tổng thể;
+Precision cho biết mức độ chính xác của các dự đoán thuộc từng lớp;
+Recall thể hiện khả năng phát hiện đầy đủ các mẫu thật của từng lớp;
+F1-score thể hiện sự cân bằng giữa Precision và Recall; AUC đánh giá khả
+năng phân biệt giữa các lớp; và Confusion Matrix giúp phân tích chi tiết
+các trường hợp nhầm lẫn.
+
+Luận văn tiến hành so sánh kết quả giữa các mô hình CNN nền và mô hình
+đề xuất để xác định mức độ cải thiện. Việc so sánh không chỉ dựa trên độ
+chính xác tổng thể mà còn xem xét hiệu quả phân loại từng lớp, đặc biệt
+là hai lớp quan trọng trong thực tế gồm tỏi còn sót vỏ và tỏi hư hỏng.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{6}
+\item
+  \textbf{Phương pháp phân tích và tổng hợp kết quả}
+\end{enumerate}
+
+Sau khi hoàn thành thực nghiệm, luận văn tiến hành phân tích kết quả
+huấn luyện và đánh giá mô hình. Nội dung phân tích bao gồm so sánh hiệu
+quả giữa các mô hình, đánh giá sự cải thiện của mô hình đề xuất, phân
+tích ma trận nhầm lẫn và chỉ ra các trường hợp mô hình còn dự đoán sai.
+
+Thông qua quá trình phân tích, luận văn rút ra nhận xét về ưu điểm, hạn
+chế của từng mô hình và mức độ phù hợp của mô hình đề xuất đối với bài
+toán phân loại chất lượng tỏi. Trên cơ sở đó, luận văn đề xuất các hướng
+phát triển tiếp theo như mở rộng bộ dữ liệu, cải thiện khả năng nhận
+diện vùng lỗi nhỏ, tối ưu tốc độ suy luận và tích hợp mô hình vào hệ
+thống phân loại tỏi tự động trong dây chuyền chế biến thực phẩm.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\item
+  \protect\phantomsection\label{_Toc232111988}{}\textbf{Ý nghĩa nghiên
+  cứu}
+\end{enumerate}
+
+Đề tài ``Nghiên cứu và phát triển mô hình học sâu cho bài toán phân loại
+chất lượng tỏi'' có ý nghĩa cả về mặt khoa học lẫn thực tiễn. Trong bối
+cảnh ngành nông nghiệp và chế biến thực phẩm đang từng bước chuyển đổi
+theo hướng tự động hóa, việc ứng dụng trí tuệ nhân tạo vào phân loại
+chất lượng nông sản là một hướng nghiên cứu cần thiết, có khả năng hỗ
+trợ nâng cao năng suất, giảm chi phí lao động và cải thiện chất lượng
+sản phẩm đầu ra.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_Toc232111989}{}\emph{\textbf{Ý nghĩa
+  khoa học}}
+\end{enumerate}
+
+Về mặt khoa học, luận văn góp phần nghiên cứu và đánh giá khả năng ứng
+dụng các mô hình học sâu trong bài toán phân loại chất lượng tỏi sau bóc
+vỏ. Đây là một bài toán có tính đặc thù cao, vì các lớp cần phân loại có
+sự khác biệt không quá rõ ràng, đặc biệt là giữa tỏi đã bóc sạch và tỏi
+còn sót vỏ. Phần vỏ còn sót có thể xuất hiện ở vùng nhỏ trên bề mặt tép
+tỏi, trong khi dấu hiệu hư hỏng có thể biểu hiện dưới nhiều dạng như
+biến màu, dập nát hoặc xuất hiện vùng bất thường.
+
+Thông qua việc thực nghiệm các mô hình CNN nền như NASNetMobile,
+InceptionV3, EfficientNetB4, MobileNetV2 và DenseNet121, luận văn cung
+cấp cơ sở so sánh để đánh giá mức độ phù hợp của từng kiến trúc đối với
+bài toán phân loại ảnh tỏi. Kết quả nghiên cứu giúp làm rõ khả năng
+trích xuất đặc trưng của các mô hình học sâu trong trường hợp dữ liệu
+nông sản có đặc điểm hình ảnh phức tạp và dễ gây nhầm lẫn.
+
+Bên cạnh đó, luận văn đề xuất mô hình cải tiến dựa trên EfficientNetB4
+kết hợp GAP/GMP, hai nhánh phụ Spoilage Aux và Peeling Aux, cùng với hàm
+mất mát Class-Balanced Loss. Cách tiếp cận này có ý nghĩa khoa học vì mô
+hình không chỉ học trực tiếp bài toán phân loại ba lớp, mà còn học thêm
+các nhiệm vụ phụ có ý nghĩa theo logic kiểm tra chất lượng tỏi. Cụ thể,
+mô hình học cách xác định tỏi có bị hư hay không, sau đó tiếp tục học
+cách phân biệt tỏi bóc sạch và tỏi còn vỏ đối với nhóm không hư hỏng.
+Điều này giúp tăng khả năng học đặc trưng có định hướng, đặc biệt với
+các lớp có sự khác biệt nhỏ.
+
+Ngoài ra, nghiên cứu cũng góp phần bổ sung thêm tài liệu thực nghiệm cho
+hướng ứng dụng học sâu trong phân loại chất lượng nông sản sau sơ chế,
+một lĩnh vực còn nhiều tiềm năng phát triển tại Việt Nam.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \protect\phantomsection\label{_Toc232111990}{}\emph{\textbf{Ý nghĩa
+  thực tiễn}}
+\end{enumerate}
+
+Về mặt thực tiễn, đề tài hướng đến hỗ trợ tự động hóa công đoạn phân
+loại tỏi sau bóc vỏ trong dây chuyền chế biến thực phẩm. Hiện nay, công
+đoạn này tại nhiều cơ sở sản xuất vẫn phụ thuộc nhiều vào lao động thủ
+công. Người lao động phải quan sát bằng mắt thường để phân biệt tỏi
+sạch, tỏi còn sót vỏ và tỏi hư. Cách làm này dễ bị ảnh hưởng bởi kinh
+nghiệm cá nhân, cường độ làm việc, ánh sáng môi trường và sự mệt mỏi
+trong quá trình sản xuất.
+
+Mô hình học sâu được xây dựng trong luận văn có thể hỗ trợ phân loại tỏi
+dựa trên ảnh một cách nhanh chóng và nhất quán hơn. Khi được tích hợp
+với camera và hệ thống xử lý ảnh, mô hình có thể làm nền tảng cho hệ
+thống kiểm tra chất lượng tự động, giúp phát hiện các mẫu tỏi không đạt
+yêu cầu trước khi đưa vào công đoạn chế biến tiếp theo.
+
+Việc phân loại chính xác các nhóm tỏi có ý nghĩa trực tiếp đối với chất
+lượng sản phẩm. Nếu tỏi hư hoặc tỏi còn sót vỏ bị lẫn vào nhóm tỏi sạch,
+sản phẩm cuối cùng có thể bị ảnh hưởng về màu sắc, mùi vị, độ an toàn và
+giá trị thương mại. Do đó, hệ thống phân loại tự động có thể góp phần
+nâng cao tính đồng nhất của nguyên liệu đầu vào, giảm sai sót trong kiểm
+tra chất lượng và hỗ trợ doanh nghiệp cải thiện quy trình sản xuất.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \protect\phantomsection\label{_Toc232111991}{}\emph{\textbf{Ý nghĩa
+  kinh tế và xã hội}}
+\end{enumerate}
+
+Việc ứng dụng mô hình học sâu vào phân loại chất lượng tỏi có thể mang
+lại lợi ích kinh tế cho các cơ sở chế biến nông sản. Khi công đoạn phân
+loại được tự động hóa, doanh nghiệp có thể giảm sự phụ thuộc vào lao
+động thủ công, đặc biệt trong các giai đoạn sản xuất có sản lượng lớn.
+Điều này góp phần giảm chi phí vận hành, nâng cao năng suất và duy trì
+chất lượng phân loại ổn định hơn.
+
+Bên cạnh lợi ích kinh tế, đề tài còn có ý nghĩa xã hội trong việc thúc
+đẩy ứng dụng công nghệ vào sản xuất nông nghiệp. Việc sử dụng AI trong
+chế biến nông sản giúp nâng cao giá trị sản phẩm, tăng khả năng cạnh
+tranh và góp phần hiện đại hóa ngành nông nghiệp Việt Nam. Đây cũng là
+hướng đi phù hợp với xu thế phát triển nông nghiệp thông minh, trong đó
+các công nghệ như thị giác máy tính, học sâu, cảm biến và tự động hóa
+được kết hợp để nâng cao hiệu quả sản xuất.
+
+Ngoài ra, hệ thống phân loại chất lượng tỏi tự động còn có thể hỗ trợ
+giảm áp lực cho người lao động trong các công đoạn lặp đi lặp lại, đòi
+hỏi quan sát liên tục. Người lao động có thể chuyển sang các công việc
+giám sát, vận hành và kiểm soát hệ thống, thay vì thực hiện phân loại
+thủ công trong thời gian dài.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  \protect\phantomsection\label{_Toc232111992}{}\emph{\textbf{Ý nghĩa mở
+  rộng và định hướng phát triển}}
+\end{enumerate}
+
+Kết quả nghiên cứu của luận văn không chỉ có giá trị đối với riêng bài
+toán phân loại tỏi mà còn có thể làm cơ sở cho các bài toán phân loại
+chất lượng nông sản khác. Các loại nông sản như hành, gừng, khoai tây,
+cà rốt hoặc các sản phẩm sau sơ chế cũng có nhu cầu kiểm tra bề mặt,
+phát hiện lỗi và phân loại chất lượng tương tự.
+
+Phương pháp đề xuất trong luận văn, đặc biệt là hướng kết hợp backbone
+CNN với các nhánh phụ có ý nghĩa theo logic bài toán, có thể được điều
+chỉnh để áp dụng cho nhiều bài toán khác trong kiểm tra chất lượng thực
+phẩm. Ví dụ, với các sản phẩm khác, mô hình có thể được thiết kế thêm
+các nhiệm vụ phụ như phát hiện hư hỏng, phân biệt mức độ chín, nhận diện
+phần vỏ còn sót hoặc phát hiện khuyết tật bề mặt.
+
+Trong tương lai, mô hình có thể được phát triển theo hướng tích hợp vào
+hệ thống camera, băng chuyền và cơ cấu phân loại tự động. Khi đó, kết
+quả nghiên cứu không chỉ dừng lại ở mô hình phân loại ảnh mà có thể trở
+thành nền tảng cho một hệ thống kiểm tra chất lượng tỏi hoàn chỉnh, phục
+vụ trực tiếp trong dây chuyền chế biến thực phẩm.
+
+Tổng kết, đề tài có ý nghĩa trong việc kết hợp giữa nghiên cứu học sâu
+và nhu cầu thực tiễn của ngành chế biến nông sản. Luận văn góp phần
+chứng minh tiềm năng của trí tuệ nhân tạo trong tự động hóa phân loại
+chất lượng tỏi, đồng thời mở ra hướng phát triển cho các hệ thống kiểm
+tra chất lượng nông sản thông minh trong tương lai.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\item
+  \protect\phantomsection\label{_Toc232111993}{}\textbf{\hl{Cấu trúc
+  luận văn}}
+\end{enumerate}
+
+Đề án được cấu trúc thành 5 chương, cụ thể như sau:
+
+\textbf{Chương 1: Giới thiệu tổng quan}
+
+\begin{quote}
+1.1 Lý do và tính cấp thiết của Đề án
+
+1.2 Tổng quan về tình hình nghiên cứu trên Thế giới
+
+1.3 Tổng quan về tình hình nghiên cứu tại Việt Nam
+
+1.4 Mục tiêu nghiên cứu
+
+1.5 Đối tượng và phạm vi nghiên cứu
+
+1.6 Phương pháp nghiên cứu
+
+1.7 Nội dung nghiên cứu
+
+1.8 Đóng góp của Đề án
+
+1.9 Cấu trúc Đề án
+
+1.10 Tiến độ thực hiện Đề án
+\end{quote}
+
+\textbf{Chương 2: Cơ sở lý thuyết}
+
+\begin{quote}
+2.1 Đặc điểm bộ dữ liệu Garlic Clove Dataset
+
+2.2 Giới thiệu Transfer Learning
+
+2.3 Các phương pháp Transfer Learning
+
+2.4 Các mô hình Pre-trained phổ biến
+\end{quote}
+
+\textbf{Chương 3: Mô hình đề xuất}
+
+\begin{quote}
+3.1 Các mô hình học sâu tiền huấn luyện cho phân loại chất lượng tỏi
+
+3.2 Mô hình đề xuất \textbf{CPGC-EfficientNetB4}
+\end{quote}
+
+\textbf{Chương 4: Kết quả thực nghiệm}
+
+\begin{quote}
+4.1 Tiêu chí đánh giá và công cụ hỗ trợ
+
+4.2 Kết quả của 5 mô hình Pre-trained
+
+4.3 Kết quả của mô hình đề xuất \textbf{CPGC-EfficientNetB4}
+\end{quote}
+
+\textbf{Chương 5: Kết luận}
+
+\begin{quote}
+5.1 Tổng kết quá trình nghiên cứu
+
+5.2 Hạn chế và hướng phát triển
+
+5.3 Khả năng ứng dụng thực tiễn
+\end{quote}
+
+\textbf{Tài liệu tham khảo}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\item
+  \protect\phantomsection\label{_Toc232111994}{}\textbf{\hl{Tiến độ thực
+  hiện Đề án}}
+\end{enumerate}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.5888}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0704}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0616}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0529}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0527}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0788}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Tháng (năm 2025)
+
+Dự kiến nội dung thực hiện
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+9
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Tiếp nhận Đề án & & & & & \\
+Nghiên cứu tổng quan, lý thuyết, thu thập dữ liệu & & & & & \\
+Thực nghiệm, cải tiến mô hình & & & & & \\
+Đánh giá kết quả & & & & & \\
+Viết Đề án & & & & & \\
+\end{longtable}
+}
+
+\section{TÓM TẮT CHƯƠNG 1}\label{tuxf3m-tux1eaft-chux1b0ux1a1ng-1}
+
+Chương 1 đã trình bày những nội dung nền tảng của luận văn
+\textbf{``Nghiên cứu và phát triển mô hình học sâu cho bài toán phân
+loại chất lượng tỏi''}. Xuất phát từ thực tế trong quá trình chế biến
+tỏi, mặc dù các công đoạn như tách tép và bóc vỏ đã được hỗ trợ bằng máy
+móc, nhưng công đoạn phân loại tỏi sau bóc vỏ vẫn còn phụ thuộc nhiều
+vào lao động thủ công. Việc nhận biết tỏi đã bóc sạch, tỏi còn sót vỏ và
+tỏi hư hỏng bằng mắt thường dễ bị ảnh hưởng bởi kinh nghiệm, điều kiện
+làm việc và sự mệt mỏi của người lao động, từ đó có thể làm giảm tính ổn
+định của chất lượng sản phẩm.
+
+Trên cơ sở đó, chương này đã làm rõ tính cấp thiết của việc ứng dụng trí
+tuệ nhân tạo, đặc biệt là học sâu và thị giác máy tính, vào bài toán
+phân loại chất lượng tỏi. Các nghiên cứu trong và ngoài nước cho thấy
+học sâu đã được ứng dụng hiệu quả trong nhiều bài toán kiểm tra chất
+lượng nông sản, phát hiện lỗi bề mặt và hỗ trợ tự động hóa dây chuyền
+sản xuất. Tuy nhiên, các nghiên cứu trực tiếp về phân loại tỏi sau bóc
+vỏ thành ba nhóm \textbf{tỏi đã bóc sạch}, \textbf{tỏi còn sót vỏ} và
+\textbf{tỏi hư hỏng} vẫn còn hạn chế. Đây là khoảng trống để luận văn
+tiếp tục nghiên cứu và phát triển.
+
+Chương 1 cũng đã xác định mục tiêu, đối tượng, phạm vi và phương pháp
+nghiên cứu của luận văn. Mục tiêu chính là xây dựng mô hình học sâu có
+khả năng phân loại chất lượng tỏi dựa trên ảnh. Để thực hiện mục tiêu
+này, luận văn tập trung vào việc thu thập và xử lý bộ dữ liệu ảnh tỏi,
+thực nghiệm các mô hình CNN nền như \textbf{NASNetMobile},
+\textbf{InceptionV3}, \textbf{EfficientNetB4}, \textbf{MobileNetV2} và
+\textbf{DenseNet121}, từ đó lựa chọn mô hình phù hợp làm nền tảng cho
+hướng cải tiến. Trên cơ sở đó, luận văn định hướng đề xuất mô hình dựa
+trên \textbf{EfficientNetB4}, kết hợp \textbf{GAP/GMP}, hai nhánh phụ
+\textbf{Spoilage Aux}, \textbf{Peeling Aux} và hàm mất mát
+\textbf{CBLoss}.
+
+Ngoài ra, chương này đã nêu ý nghĩa khoa học và thực tiễn của đề tài. Về
+mặt khoa học, nghiên cứu góp phần làm rõ khả năng ứng dụng học sâu trong
+phân loại chất lượng nông sản sau sơ chế. Về mặt thực tiễn, kết quả
+nghiên cứu có thể làm cơ sở cho việc phát triển hệ thống phân loại tỏi
+tự động trong dây chuyền chế biến thực phẩm, góp phần giảm phụ thuộc vào
+lao động thủ công, nâng cao năng suất và cải thiện chất lượng sản phẩm.
+Những nội dung trong chương 1 là cơ sở để các chương tiếp theo trình bày
+sâu hơn về cơ sở lý thuyết, phương pháp đề xuất, thực nghiệm và đánh giá
+kết quả.
+
+\section{\texorpdfstring{CHƯƠNG 2: CƠ SỞ LÝ THUYẾT VÀ MÔ HÌNH NGHIÊN CỨU
+}{CHƯƠNG 2: CƠ SỞ LÝ THUYẾT VÀ MÔ HÌNH NGHIÊN CỨU }}\label{chux1b0ux1a1ng-2-cux1a1-sux1edf-luxfd-thuyux1ebft-vuxe0-muxf4-huxecnh-nghiuxean-cux1ee9u}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_Toc232111997}{}\textbf{Tổng quan về bài
+  toán phân loại chất lượng tỏi}
+\end{enumerate}
+
+Trong quy trình chế biến tỏi, sau khi tỏi được tách thành từng tép và
+đưa qua công đoạn bóc vỏ, sản phẩm đầu ra thường chưa hoàn toàn đồng
+nhất. Một số tép tỏi đã được bóc sạch, một số vẫn còn sót lại lớp vỏ
+mỏng, trong khi một số khác có thể bị hư hỏng, dập nát hoặc biến màu do
+ảnh hưởng từ quá trình thu hoạch, bảo quản và xử lý. Vì vậy, công đoạn
+phân loại chất lượng tỏi sau bóc vỏ là bước cần thiết trước khi nguyên
+liệu được đưa vào các công đoạn chế biến tiếp theo.
+
+Bài toán phân loại chất lượng tỏi trong luận văn này được hiểu là quá
+trình xác định trạng thái chất lượng của từng mẫu tỏi sau bóc vỏ. Mỗi
+mẫu tỏi cần được phân vào một trong ba nhóm chính: \textbf{tỏi đã bóc
+sạch}, \textbf{tỏi còn sót vỏ} và \textbf{tỏi hư hỏng}. Đây là ba trạng
+thái thường gặp trong thực tế sản xuất và có ảnh hưởng trực tiếp đến
+chất lượng nguyên liệu đầu vào.
+
+Trong đó, \textbf{tỏi đã bóc sạch} là nhóm tỏi đạt yêu cầu, bề mặt tương
+đối sạch, không còn lớp vỏ rõ rệt và không có dấu hiệu hư hỏng đáng kể.
+\textbf{Tỏi còn sót vỏ} là nhóm tỏi chưa được bóc vỏ hoàn chỉnh, trên bề
+mặt vẫn còn một phần vỏ bám lại. Nhóm này cần được phát hiện để có thể
+xử lý lại hoặc tách riêng khỏi nhóm đạt yêu cầu. \textbf{Tỏi hư hỏng} là
+nhóm tỏi có các biểu hiện không đạt chất lượng như dập nát, thâm đen,
+biến màu, mềm nhũn hoặc xuất hiện vùng hư trên bề mặt. Đây là nhóm cần
+được loại bỏ để tránh ảnh hưởng đến chất lượng sản phẩm cuối cùng.
+
+Việc phân loại chính xác ba nhóm tỏi trên có ý nghĩa quan trọng trong
+dây chuyền chế biến thực phẩm. Nếu tỏi còn sót vỏ bị đưa vào nhóm tỏi
+sạch, sản phẩm sau chế biến có thể không đạt yêu cầu về cảm quan và chất
+lượng. Nếu tỏi hư bị lẫn vào nguyên liệu đạt chuẩn, chất lượng, mùi vị
+và độ an toàn của sản phẩm có thể bị ảnh hưởng. Do đó, công đoạn phân
+loại không chỉ nhằm tách sản phẩm theo hình thức bên ngoài mà còn góp
+phần kiểm soát chất lượng nguyên liệu trước khi chế biến.
+
+Tuy nhiên, bài toán phân loại chất lượng tỏi có một số khó khăn nhất
+định. Tép tỏi thường có kích thước nhỏ, hình dạng không đồng đều và bề
+mặt có nhiều biến thiên tự nhiên. Sự khác biệt giữa tỏi đã bóc sạch và
+tỏi còn sót vỏ đôi khi không quá rõ ràng, đặc biệt khi phần vỏ còn lại
+chỉ chiếm một vùng nhỏ. Bên cạnh đó, dấu hiệu hư hỏng của tỏi cũng có
+thể xuất hiện dưới nhiều dạng khác nhau, từ các vết thâm nhỏ đến vùng
+dập nát lớn. Những yếu tố này làm cho quá trình phân loại bằng mắt
+thường dễ bị nhầm lẫn, nhất là khi sản lượng lớn hoặc tốc độ dây chuyền
+cao.
+
+Từ những đặc điểm trên, có thể thấy bài toán phân loại chất lượng tỏi là
+một bài toán có ý nghĩa thực tiễn trong chế biến nông sản. Việc nghiên
+cứu phương pháp phân loại tự động dựa trên hình ảnh là hướng tiếp cận
+phù hợp nhằm hỗ trợ giảm phụ thuộc vào lao động thủ công, nâng cao tính
+ổn định của quá trình kiểm tra chất lượng và tạo tiền đề cho việc xây
+dựng hệ thống phân loại tỏi tự động trong tương lai.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \protect\phantomsection\label{_Toc232111998}{}\textbf{Tổng quan về bộ
+  dữ liệu ảnh tỏi sử dụng trong nghiên cứu}
+\end{enumerate}
+
+Bộ dữ liệu là một trong những thành phần quan trọng quyết định hiệu quả
+của mô hình học sâu. Đối với bài toán phân loại chất lượng tỏi, dữ liệu
+ảnh cần phản ánh được các trạng thái thực tế của tỏi sau quá trình bóc
+vỏ, bao gồm tỏi đã bóc sạch, tỏi còn sót vỏ và tỏi bị hư hỏng. Chất
+lượng ảnh, cách tổ chức dữ liệu, độ chính xác của nhãn và mức độ đa dạng
+giữa các mẫu đều có ảnh hưởng trực tiếp đến khả năng học đặc trưng cũng
+như khả năng khái quát hóa của mô hình.
+
+Trong nghiên cứu này, bộ dữ liệu chính được sử dụng là \textbf{Garlic
+Clove Dataset}, bao gồm các ảnh tép tỏi sau quá trình bóc vỏ. Dữ liệu
+được thu thập vào tháng 02 năm 2025 tại một cơ sở chế biến tỏi thương
+mại ở Thành phố Hồ Chí Minh, Việt Nam. Các ảnh được chụp bằng camera
+điện thoại thông minh \textbf{iPhone 14} trong môi trường xử lý tỏi thực
+tế. Việc thu thập dữ liệu trong điều kiện sản xuất thực tế giúp bộ dữ
+liệu phản ánh tốt hơn các tình huống có thể gặp trong quá trình kiểm tra
+chất lượng tỏi sau bóc vỏ.
+
+Các ảnh trong bộ dữ liệu được cắt thủ công thành các vùng ảnh vuông,
+trong đó mỗi ảnh tương ứng với một mẫu tép tỏi riêng biệt. Quá trình gán
+nhãn được thực hiện bằng công cụ \textbf{LabelImg} dựa trên các tiêu chí
+chất lượng đã được xác định trước. Sau khi gán nhãn, dữ liệu được kiểm
+tra lại bằng quan sát trực quan nhằm bảo đảm tính nhất quán của nhãn
+trong quá trình chuẩn bị dữ liệu.
+
+Trong luận văn, hai bộ dữ liệu được ký hiệu lần lượt là
+\textbf{dataset-1} và \textbf{dataset-2} để thuận tiện cho quá trình
+trình bày và so sánh kết quả thực nghiệm. Trong đó, \textbf{dataset-1}
+là bộ dữ liệu ban đầu gồm \textbf{2.134 ảnh}, được thu thập, cắt vùng
+ảnh và gán nhãn theo ba nhóm chất lượng tỏi. \textbf{dataset-2} là bộ dữ
+liệu mở rộng gồm \textbf{2.944 ảnh}, trong đó số lượng ảnh của lớp
+\textbf{Bóc sạch vỏ} được bổ sung nhằm tăng quy mô dữ liệu và phục vụ
+đánh giá mô hình trong điều kiện phân bố lớp khác nhau.
+
+Trong phạm vi nghiên cứu, ảnh tỏi được chia thành ba nhóm chất lượng
+chính: \textbf{Tỏi sạch vỏ}, \textbf{Tỏi còn vỏ} và \textbf{Tỏi hư}. Ba
+nhóm này tương ứng với ba lớp dữ liệu tiếng Anh là \textbf{Fully Peeled
+Garlic}, \textbf{Partially Peeled Garlic} và \textbf{Spoiled Garlic}.
+Đây là ba trạng thái thường gặp trong dây chuyền chế biến tỏi sau bóc vỏ
+và có ý nghĩa trực tiếp đối với việc kiểm tra chất lượng nguyên liệu.
+
+Bảng 2.1. Định nghĩa các lớp trong bộ dữ liệu ảnh tỏi
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0548}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2075}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4978}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1935}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{STT}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Tên lớp}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Mô tả}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Trực quang hóa}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Tỏi sạch vỏ
+
+(\emph{Fully Peeled Garlic}) & Các tép tỏi đã được bóc sạch, bề mặt
+tương đối nhẵn, đồng đều, không còn vỏ rõ rệt và không có khuyết tật dễ
+quan sát. Đây là nhóm tỏi đạt yêu cầu để đóng gói, chế biến công nghiệp
+hoặc sử dụng trực tiếp. &
+\includegraphics[width=1.29638in,height=1.1811in]{./media/image3.jpeg} \\
+2 & Tỏi còn vỏ
+
+\emph{(Partially Peeled Garlic)} & Các tép tỏi vẫn còn sót lại một phần
+vỏ bên ngoài trên bề mặt. Những mẫu này thường cần được đưa qua bước làm
+sạch hoặc bóc vỏ bổ sung trước khi được xem là tỏi đạt yêu cầu. &
+\includegraphics[width=1.27529in,height=1.1811in]{./media/image4.jpeg} \\
+3 & Tỏi hư
+
+\emph{(Spoiled Garlic)} & Các tép tỏi có dấu hiệu không đạt chất lượng
+như đổi màu, mốc, mềm, dập nát hoặc hư hại bề mặt. Những mẫu này cần
+được loại bỏ khỏi dây chuyền do có thể ảnh hưởng đến chất lượng và an
+toàn thực phẩm. &
+\includegraphics[width=1.28302in,height=1.18056in]{./media/image5.jpeg} \\
+\end{longtable}
+}
+
+Bộ dữ liệu \textbf{dataset-1} gồm tổng cộng \textbf{2.134 ảnh}, được
+phân bố vào ba lớp chất lượng. Trong đó, lớp \textbf{Bóc sạch vỏ} có
+\textbf{690 ảnh}, lớp \textbf{Bóc chưa sạch} có \textbf{438 ảnh} và lớp
+\textbf{Hư hỏng} có \textbf{1.006 ảnh}. Bộ dữ liệu được chia thành ba
+tập con gồm tập huấn luyện, tập kiểm định và tập kiểm tra. Việc chia dữ
+liệu được thực hiện ở giai đoạn thu nhận ảnh nhằm hạn chế tình trạng ảnh
+trùng lặp hoặc gần trùng lặp xuất hiện ở các tập con khác nhau.
+
+Bộ dữ liệu \textbf{dataset-2} gồm tổng cộng \textbf{2.944 ảnh}. So với
+dataset-1, dataset-2 được mở rộng ở lớp \textbf{Bóc sạch vỏ}, nâng số
+lượng ảnh của lớp này lên \textbf{1.500 ảnh}. Hai lớp \textbf{Bóc chưa
+sạch} và \textbf{Hư hỏng} lần lượt giữ số lượng là \textbf{438 ảnh} và
+\textbf{1.006 ảnh}. Việc sử dụng thêm dataset-2 giúp nghiên cứu có thêm
+cơ sở đánh giá mô hình trên quy mô dữ liệu lớn hơn, đồng thời xem xét
+ảnh hưởng của sự thay đổi phân bố dữ liệu giữa các lớp đến hiệu quả phân
+loại.
+
+\includegraphics[width=6.52974in,height=2.68595in]{./media/image6.png}
+
+\textbf{Hình 2.1. Phân bố số lượng ảnh và tỷ lệ lớp trong dataset-1 và
+dataset-2}
+
+Hình 2.1 minh họa trực quan sự khác biệt về phân bố dữ liệu giữa
+\textbf{dataset-1} và \textbf{dataset-2}. Ở Hình 2.1(a), có thể thấy số
+lượng ảnh của lớp \textbf{Tỏi sạch vỏ} trong dataset-2 tăng đáng kể so
+với dataset-1, từ \textbf{690 ảnh} lên \textbf{1.500 ảnh}. Trong khi đó,
+số lượng ảnh của hai lớp \textbf{Tỏi còn vỏ} và \textbf{Tỏi hư} được giữ
+nguyên ở cả hai bộ dữ liệu, lần lượt là \textbf{438 ảnh} và
+\textbf{1.006 ảnh}.
+
+Ở Hình 2.1(b), sự thay đổi về tỷ lệ lớp được thể hiện rõ hơn. Trong
+dataset-1, lớp \textbf{Tỏi hư} chiếm tỷ lệ cao nhất với khoảng
+\textbf{47,1\%}, trong khi lớp \textbf{Tỏi sạch vỏ} chiếm khoảng
+\textbf{32,3\%} và lớp \textbf{Tỏi còn vỏ} chiếm khoảng \textbf{20,5\%}.
+Ngược lại, trong dataset-2, lớp \textbf{Tỏi sạch vỏ} trở thành lớp chiếm
+tỷ lệ lớn nhất với khoảng \textbf{51,0\%}, lớp \textbf{Tỏi hư} giảm còn
+khoảng \textbf{34,2\%}, và lớp \textbf{Tỏi còn vỏ} chiếm khoảng
+\textbf{14,9\%}.
+
+Sự khác biệt này cho thấy \textbf{dataset-2} không chỉ mở rộng quy mô dữ
+liệu mà còn làm thay đổi phân bố giữa các lớp. Điều này có ý nghĩa quan
+trọng trong quá trình đánh giá mô hình, vì mô hình cần được kiểm tra
+trong các điều kiện dữ liệu khác nhau để xem xét khả năng học, khả năng
+khái quát hóa và mức độ ổn định khi phân bố lớp thay đổi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \protect\phantomsection\label{_Toc232111999}{}\textbf{Cơ sở lý thuyết
+  về học sâu}
+\end{enumerate}
+
+Học sâu, hay \textbf{Deep Learning}, là một nhánh của học máy, trong đó
+mô hình được xây dựng từ nhiều tầng xử lý liên tiếp nhằm tự động học
+biểu diễn đặc trưng từ dữ liệu. Thay vì phải thiết kế đặc trưng thủ công
+như một số phương pháp học máy truyền thống, mô hình học sâu có khả năng
+tự rút trích các đặc điểm quan trọng thông qua quá trình huấn luyện.
+Theo LeCun, Bengio và Hinton, học sâu cho phép các mô hình tính toán gồm
+nhiều tầng xử lý học được biểu diễn dữ liệu ở nhiều mức độ trừu tượng
+khác nhau, qua đó đạt hiệu quả cao trong các bài toán như nhận dạng ảnh,
+nhận dạng giọng nói và phát hiện đối tượng.
+
+Trong bài toán phân loại chất lượng tỏi, dữ liệu đầu vào là ảnh các tép
+tỏi sau bóc vỏ. Mỗi ảnh có thể chứa nhiều thông tin trực quan như màu
+sắc, hình dạng, bề mặt, phần vỏ còn sót hoặc dấu hiệu hư hỏng. Những đặc
+điểm này không phải lúc nào cũng dễ mô tả bằng các quy tắc cố định. Vì
+vậy, học sâu là hướng tiếp cận phù hợp vì mô hình có thể tự học các đặc
+trưng cần thiết từ dữ liệu ảnh để phục vụ quá trình phân loại.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_Toc232112000}{}\emph{\textbf{Khái niệm
+  học sâu}}
+\end{enumerate}
+
+Học sâu có thể được hiểu là phương pháp học biểu diễn dữ liệu thông qua
+nhiều tầng tính toán. Mỗi tầng trong mô hình nhận dữ liệu từ tầng trước,
+thực hiện một phép biến đổi và truyền kết quả sang tầng tiếp theo. Qua
+nhiều tầng liên tiếp, mô hình có thể học được các đặc trưng từ đơn giản
+đến phức tạp.
+
+Đối với dữ liệu ảnh, các tầng đầu của mô hình thường học những đặc điểm
+cơ bản như màu sắc, vùng sáng tối hoặc đường biên. Các tầng sâu hơn có
+thể học các đặc trưng có ý nghĩa cao hơn, chẳng hạn kết cấu bề mặt, hình
+dạng đối tượng hoặc những vùng bất thường trên ảnh. Nhờ đó, mô hình học
+sâu có thể phân biệt các nhóm ảnh khác nhau dựa trên đặc trưng đã học
+được từ dữ liệu huấn luyện.
+
+Trong nghiên cứu này, học sâu được sử dụng để hỗ trợ phân loại ảnh tỏi
+thành ba nhóm: \textbf{tỏi sạch vỏ}, \textbf{tỏi còn vỏ} và \textbf{tỏi
+hư}. Đây là bài toán mà sự khác biệt giữa các lớp đôi khi không rõ ràng,
+chẳng hạn phần vỏ còn sót có thể rất mỏng hoặc dấu hiệu hư hỏng chỉ xuất
+hiện ở một vùng nhỏ. Do đó, việc để mô hình tự học đặc trưng từ ảnh là
+cần thiết.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \protect\phantomsection\label{_Toc232112001}{}\emph{\textbf{Cấu trúc
+  tổng quát của mạng nơ-ron}}
+\end{enumerate}
+
+Mô hình học sâu thường được xây dựng dựa trên \textbf{mạng nơ-ron nhân
+tạo}. Một mạng nơ-ron cơ bản gồm ba thành phần chính: lớp đầu vào, các
+lớp ẩn và lớp đầu ra. Lớp đầu vào tiếp nhận dữ liệu ban đầu. Trong bài
+toán ảnh, dữ liệu đầu vào thường là ma trận các giá trị điểm ảnh. Các
+lớp ẩn thực hiện quá trình biến đổi và học đặc trưng từ dữ liệu. Lớp đầu
+ra tạo ra kết quả dự đoán cuối cùng, ví dụ xác suất ảnh thuộc về từng
+lớp chất lượng tỏi.
+
+Theo IBM, mạng nơ-ron là mô hình học máy gồm các ``nơ-ron'' đơn giản
+được sắp xếp theo từng lớp, trong đó mô hình học các trọng số và hệ số
+lệch từ dữ liệu để ánh xạ đầu vào thành đầu ra. IBM cũng mô tả rằng mỗi
+liên kết giữa các nơ-ron được nhân với một trọng số, đầu vào của hàm
+kích hoạt có thể được hiểu là tổng có trọng số của các đầu ra từ lớp
+trước, thường cộng thêm một hệ số lệch.
+\hl{{[}https://www.ibm.com/think/topics/neural-networks{]}}
+
+Công thức tổng quát của một nơ-ron nhân tạo có thể biểu diễn như sau:
+
+\[\mathbf{y = f}\left( \sum_{\mathbf{i = 1}}^{\mathbf{n}}{\mathbf{w}_{\mathbf{i}}\mathbf{x}_{\mathbf{i}}}\mathbf{+ b} \right)\]
+
+\begin{quote}
+Trong đó:
+\end{quote}
+
+\begin{itemize}
+\item
+  \(x_{i}\ \)là giá trị đầu vào thứ \(i\);
+\item
+  \(w_{i}\ \)\hspace{0pt} là trọng số tương ứng với đầu vào
+  \(x_{i}\)\hspace{0pt};
+\item
+  \(b\) là hệ số lệch;
+\item
+  \(f\) là hàm kích hoạt;
+\item
+  \(y\) là đầu ra của nơ-ron.
+\end{itemize}
+
+Công thức trên cho thấy mỗi nơ-ron không chỉ nhận dữ liệu đầu vào mà còn
+học mức độ quan trọng của từng đầu vào thông qua các trọng số. Trong quá
+trình huấn luyện, các trọng số và hệ số lệch được điều chỉnh dần để mô
+hình đưa ra dự đoán chính xác hơn.
+
+\includegraphics[width=6.30487in,height=3.56976in]{./media/image7.png}
+
+\textbf{Hình 2.2. Cấu trúc tổng quát của mạng nơ-ron nhân tạo}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_Toc232112002}{}\emph{\textbf{Quá trình
+  học của mô hình}}
+\end{enumerate}
+
+Quá trình học của mô hình học sâu thường gồm hai bước chính: \textbf{lan
+truyền tiến} và \textbf{lan truyền ngược}. Ở bước lan truyền tiến, dữ
+liệu đầu vào được đưa qua các tầng của mạng để tạo ra kết quả dự đoán.
+Kết quả này sau đó được so sánh với nhãn thực tế thông qua một hàm mất
+mát nhằm đo mức độ sai lệch giữa dự đoán của mô hình và đáp án đúng.
+
+Sau khi tính được sai số, mô hình thực hiện lan truyền ngược để cập nhật
+các tham số. Quá trình lan truyền ngược sử dụng thông tin từ sai số để
+xác định mức độ ảnh hưởng của từng trọng số đến kết quả dự đoán, từ đó
+điều chỉnh các trọng số theo hướng làm giảm giá trị mất mát. IBM mô tả
+quá trình huấn luyện mạng nơ-ron gồm các bước như lan truyền tiến, tính
+sai số, lan truyền ngược và cập nhật trọng số bằng phương pháp tối ưu
+như gradient descent.
+\hl{{[}https://www.ibm.com/think/topics/neural-networks{]}}
+
+Có thể hiểu đơn giản rằng, trong quá trình huấn luyện, mô hình liên tục
+thực hiện dự đoán, so sánh với nhãn đúng, sau đó điều chỉnh lại các tham
+số để cải thiện kết quả ở những lần học tiếp theo. Quá trình này được
+lặp lại nhiều lần trên tập dữ liệu huấn luyện cho đến khi mô hình đạt
+được hiệu quả mong muốn hoặc không còn cải thiện đáng kể.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \protect\phantomsection\label{_Toc232112003}{}\emph{\textbf{Vai trò
+  của học sâu trong phân loại ảnh}}
+\end{enumerate}
+
+Học sâu có vai trò quan trọng trong các bài toán phân loại ảnh vì mô
+hình có khả năng tự động học đặc trưng từ dữ liệu đầu vào. Thay vì phải
+xây dựng thủ công các đặc trưng như màu sắc, hình dạng hoặc kết cấu, mô
+hình có thể tự tìm ra những đặc điểm phù hợp nhất cho nhiệm vụ phân
+loại.
+
+Đối với bài toán phân loại chất lượng tỏi, các dấu hiệu cần nhận diện có
+thể rất đa dạng. Tỏi còn vỏ có thể chỉ còn một phần vỏ nhỏ bám trên bề
+mặt, trong khi tỏi hư có thể biểu hiện qua vết thâm, vùng mềm, đổi màu
+hoặc hư hại bề mặt. Những dấu hiệu này khó có thể được mô tả đầy đủ bằng
+một tập quy tắc cố định. Do đó, học sâu giúp mô hình linh hoạt hơn trong
+việc nhận diện sự khác biệt giữa các nhóm chất lượng tỏi.
+
+Tóm lại, học sâu cung cấp nền tảng quan trọng cho việc xây dựng mô hình
+phân loại chất lượng tỏi trong luận văn. Các nội dung về mạng nơ-ron,
+quá trình học và khả năng tự động trích xuất đặc trưng là cơ sở để tiếp
+tục trình bày các mô hình chuyên biệt hơn cho dữ liệu ảnh ở những phần
+tiếp theo.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  \protect\phantomsection\label{_Toc232112004}{}\textbf{Mạng nơ-ron tích
+  chập trong phân loại ảnh}
+\end{enumerate}
+
+Mạng nơ-ron tích chập, hay \textbf{Convolutional Neural Network -- CNN},
+là một trong những kiến trúc học sâu được sử dụng phổ biến trong các bài
+toán xử lý ảnh. CNN được thiết kế phù hợp với dữ liệu có cấu trúc dạng
+lưới, đặc biệt là ảnh số, nhờ khả năng khai thác mối quan hệ không gian
+giữa các điểm ảnh. Theo IBM, CNN thường được sử dụng cho các nhiệm vụ
+như phân loại ảnh và nhận diện đối tượng, đồng thời giúp giảm sự phụ
+thuộc vào quá trình trích xuất đặc trưng thủ công trong xử lý ảnh.
+\hl{{[}https://www.ibm.com/think/topics/convolutional-neural-networks{]}}
+
+Trong bài toán phân loại ảnh, CNN nhận ảnh đầu vào và tự động trích xuất
+đặc trưng thông qua nhiều lớp xử lý liên tiếp. Các lớp đầu thường học
+những đặc trưng đơn giản như cạnh, đường viền, vùng sáng tối hoặc màu
+sắc. Các lớp sâu hơn có thể học những đặc trưng phức tạp hơn như kết cấu
+bề mặt, hình dạng đối tượng hoặc các vùng bất thường trên ảnh. Đối với
+bài toán phân loại chất lượng tỏi, khả năng này rất quan trọng vì sự
+khác biệt giữa các lớp có thể nằm ở những chi tiết nhỏ như phần vỏ còn
+sót, vết thâm hoặc vùng hư hỏng trên bề mặt tép tỏi.
+
+\includegraphics[width=5.99174in,height=2.97149in]{./media/image8.png}
+
+\textbf{Hình 2.3.} \emph{Cấu trúc tổng quát của mạng nơ-ron tích chập}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_Toc232112005}{}\emph{\textbf{Khái niệm
+  mạng nơ-ron tích chập}}
+\end{enumerate}
+
+CNN là một dạng mạng nơ-ron nhân tạo được xây dựng chuyên biệt cho dữ
+liệu ảnh. Nếu mạng nơ-ron truyền thống thường xử lý dữ liệu dưới dạng
+vector một chiều, thì CNN khai thác trực tiếp cấu trúc không gian của
+ảnh thông qua chiều rộng, chiều cao và chiều sâu kênh màu. Stanford
+CS231n mô tả CNN là mạng gồm các nơ-ron có trọng số và hệ số lệch học
+được, nhưng khác với mạng nơ-ron thông thường ở chỗ kiến trúc CNN giả
+định đầu vào là ảnh, từ đó tổ chức các lớp theo không gian ba chiều và
+giúp giảm số lượng tham số cần học.
+\hl{{[}https://cs231n.github.io/convolutional-networks{]}}
+
+Điểm khác biệt quan trọng của CNN là mỗi nơ-ron trong lớp tích chập
+không cần kết nối với toàn bộ ảnh đầu vào, mà chỉ kết nối với một vùng
+cục bộ. Nhờ vậy, CNN có thể tập trung phát hiện các đặc trưng nhỏ trong
+ảnh, đồng thời giảm đáng kể số lượng tham số so với mạng kết nối đầy đủ.
+Đặc điểm này phù hợp với bài toán phân loại tỏi, vì các dấu hiệu cần
+nhận diện như vùng vỏ còn sót hoặc vết hư hỏng thường chỉ xuất hiện ở
+một phần nhỏ trên ảnh.
+
+Một kiến trúc CNN cơ bản thường bao gồm các thành phần chính như lớp
+tích chập, hàm kích hoạt, lớp pooling và lớp phân loại. Các thành phần
+này phối hợp với nhau để biến đổi ảnh đầu vào thành các đặc trưng có ý
+nghĩa, sau đó sử dụng các đặc trưng đó để đưa ra nhãn phân loại cuối
+cùng.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \protect\phantomsection\label{_Toc232112006}{}\emph{\textbf{Lớp tích
+  chập}}
+\end{enumerate}
+
+Lớp tích chập là thành phần cốt lõi của CNN. Lớp này sử dụng các bộ lọc,
+còn gọi là \textbf{kernel} hoặc \textbf{filter}, để trượt trên ảnh đầu
+vào và tạo ra các bản đồ đặc trưng. Mỗi bộ lọc có nhiệm vụ phát hiện một
+loại đặc trưng nhất định, chẳng hạn cạnh, vùng sáng tối, hoa văn, kết
+cấu hoặc một dạng mẫu cục bộ nào đó. Theo Stanford CS231n, trong quá
+trình lan truyền tiến, mỗi bộ lọc được trượt trên chiều rộng và chiều
+cao của ảnh đầu vào, sau đó tính tích vô hướng giữa các giá trị trong bộ
+lọc và vùng ảnh tương ứng để tạo ra bản đồ kích hoạt.
+
+Về mặt khái quát, phép tích chập hai chiều có thể được biểu diễn như
+sau:
+
+\[\mathbf{S}\left( \mathbf{i,j} \right)\mathbf{=}\sum_{\mathbf{m}}^{}{\sum_{\mathbf{n}}^{}\left( \mathbf{X}\left( \mathbf{i + m,j + n} \right)\mathbf{K}\left( \mathbf{m,n} \right) \right)}\]
+
+Trong đó:
+
+\begin{itemize}
+\item
+  \(X\) là ảnh hoặc bản đồ đặc trưng đầu vào.
+\item
+  \(K\) là bộ lọc tích chập.
+\item
+  còn \(S(i,j)\) là giá trị đầu ra tại vị trí\(\ (i,j)\).
+\end{itemize}
+
+Công thức này thể hiện việc bộ lọc quét qua ảnh và tính tổng có trọng số
+tại từng vùng cục bộ. Tài liệu \textbf{``\emph{Dive into Deep
+Learning''}} cũng trình bày lớp tích chập là nền tảng của CNN trong việc
+phát hiện mẫu cục bộ và tạo bản đồ đặc trưng cho các tầng tiếp theo.
+\hl{{[}https://d2l.ai/chapter\_convolutional-neural-networks/index.html{]}}
+
+Trong bài toán phân loại chất lượng tỏi, lớp tích chập giúp mô hình phát
+hiện các đặc trưng trực quan trên bề mặt tép tỏi. Ở các tầng đầu, mô
+hình có thể học các đặc trưng đơn giản như đường biên, vùng sáng tối
+hoặc sự thay đổi màu sắc. Ở các tầng sâu hơn, mô hình có thể học các dấu
+hiệu phức tạp hơn như vùng vỏ còn sót, vết thâm, dập nát hoặc những bất
+thường trên bề mặt tỏi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_Toc232112007}{}\emph{\textbf{Hàm kích
+  hoạt trong CNN}}
+\end{enumerate}
+
+Sau lớp tích chập, kết quả thường được đưa qua một hàm kích hoạt để bổ
+sung tính phi tuyến cho mô hình. Nếu không có hàm kích hoạt, mạng dù có
+nhiều tầng vẫn chủ yếu là sự kết hợp của các phép biến đổi tuyến tính,
+khó học được các quan hệ phức tạp trong dữ liệu ảnh.
+
+Một trong những hàm kích hoạt được sử dụng phổ biến trong CNN là ReLU.
+Hàm ReLU giữ nguyên các giá trị dương và đưa các giá trị âm về 0:
+
+\[\mathbf{ReLU}\left( \mathbf{x} \right)\mathbf{=}\mathbf{\max}\left( \mathbf{0,x} \right)\]
+
+Trong bài toán phân loại ảnh tỏi, hàm kích hoạt giúp mô hình biểu diễn
+tốt hơn các khác biệt phức tạp giữa các lớp. Ví dụ, vùng vỏ còn sót có
+thể có màu sắc gần giống với bề mặt tép tỏi, hoặc dấu hiệu hư hỏng có
+thể biểu hiện không đồng nhất giữa các mẫu ảnh. Nhờ tính phi tuyến, mô
+hình có thể học được các quan hệ phức tạp hơn thay vì chỉ dựa vào sự
+khác biệt tuyến tính đơn giản giữa các giá trị điểm ảnh.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \protect\phantomsection\label{_Toc232112008}{}\emph{\textbf{Lớp
+  pooling}}
+\end{enumerate}
+
+Lớp \textbf{pooling} thường được sử dụng sau một hoặc một số lớp tích
+chập nhằm giảm kích thước không gian của bản đồ đặc trưng. Việc giảm
+kích thước này giúp giảm chi phí tính toán, hạn chế số lượng tham số ở
+các tầng sau và làm cho mô hình ít nhạy hơn với những thay đổi nhỏ về vị
+trí của đặc trưng trong ảnh. Stanford CS231n trình bày pooling là một
+trong các lớp cơ bản của CNN, thường được dùng để thực hiện thao tác
+giảm mẫu theo chiều rộng và chiều cao của bản đồ đặc trưng.
+\hl{{[}https://cs231n.github.io/convolutional-networks{]}}
+
+Hai dạng pooling phổ biến là \textbf{Max Pooling} và \textbf{Average
+Pooling}. Max Pooling lấy giá trị lớn nhất trong một vùng cục bộ, nhờ đó
+giữ lại đặc trưng nổi bật nhất trong vùng đó. Average Pooling lấy giá
+trị trung bình, giúp tổng hợp thông tin theo cách mềm hơn.
+
+Đối với ảnh tỏi, pooling giúp giữ lại các đặc trưng quan trọng trong khi
+giảm kích thước dữ liệu trung gian. Chẳng hạn, nếu một vùng nhỏ trên ảnh
+có dấu hiệu hư hỏng hoặc còn sót vỏ, các lớp tích chập có thể phát hiện
+đặc trưng này, còn pooling giúp giữ lại tín hiệu nổi bật để các tầng sau
+tiếp tục xử lý.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \protect\phantomsection\label{_Toc232112009}{}\emph{\textbf{Lớp phân
+  loại}}
+\end{enumerate}
+
+Sau khi ảnh đầu vào đi qua nhiều lớp tích chập, hàm kích hoạt và
+pooling, mô hình thu được các bản đồ đặc trưng biểu diễn thông tin quan
+trọng của ảnh. Các đặc trưng này sau đó được đưa vào phần phân loại để
+dự đoán nhãn đầu ra. Trong các mô hình CNN truyền thống, phần cuối
+thường gồm một hoặc nhiều lớp kết nối đầy đủ, sau đó là lớp đầu ra.
+
+Với bài toán phân loại nhiều lớp, lớp đầu ra thường sử dụng hàm
+\textbf{Softmax} để chuyển các giá trị đầu ra thành xác suất thuộc về
+từng lớp. Tổng xác suất của tất cả các lớp bằng 1, và lớp có xác suất
+cao nhất thường được chọn làm kết quả dự đoán cuối cùng.
+
+Trong bài toán phân loại chất lượng tỏi, lớp đầu ra cần dự đoán một
+trong ba nhóm: \textbf{tỏi sạch vỏ}, \textbf{tỏi còn vỏ} hoặc
+\textbf{tỏi hư}. Nếu xác suất cao nhất thuộc về lớp tỏi hư, ảnh đầu vào
+sẽ được phân vào nhóm tỏi hư. Tương tự, nếu xác suất cao nhất thuộc về
+lớp tỏi sạch vỏ hoặc tỏi còn vỏ, mô hình sẽ đưa ra nhãn tương ứng.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  \protect\phantomsection\label{_Toc232112010}{}\emph{\textbf{Vai trò
+  của CNN trong phân loại ảnh}}
+\end{enumerate}
+
+CNN đã trở thành nền tảng quan trọng trong nhiều hệ thống phân loại ảnh
+hiện đại. Một dấu mốc quan trọng là mô hình CNN sâu của Krizhevsky,
+Sutskever và Hinton trong bài toán phân loại ImageNet, cho thấy mạng
+nơ-ron tích chập có thể đạt hiệu quả vượt trội trong phân loại ảnh quy
+mô lớn.
+
+Trong nghiên cứu này, CNN được sử dụng làm nền tảng cho việc phân loại
+chất lượng tỏi. Lý do chính là ảnh tỏi chứa nhiều đặc trưng thị giác cần
+được khai thác ở nhiều mức độ khác nhau. Các đặc điểm như màu sắc, kết
+cấu bề mặt, vùng vỏ còn sót và dấu hiệu hư hỏng đều có thể được học
+thông qua các tầng tích chập. Nhờ đó, CNN giúp giảm sự phụ thuộc vào
+việc thiết kế đặc trưng thủ công và phù hợp với hướng xây dựng mô hình
+phân loại tự động.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\item
+  \protect\phantomsection\label{_Toc232112011}{}\textbf{Học chuyển giao
+  trong phân loại ảnh}
+\end{enumerate}
+
+Học chuyển giao, hay \textbf{Transfer Learning}, là một kỹ thuật quan
+trọng trong học sâu, đặc biệt khi dữ liệu huấn luyện của bài toán mới
+không quá lớn. Thay vì huấn luyện một mô hình từ đầu với các trọng số
+khởi tạo ngẫu nhiên, học chuyển giao tận dụng lại một mô hình đã được
+huấn luyện trước trên một bộ dữ liệu lớn. Sau đó, mô hình này được điều
+chỉnh để phù hợp với bài toán cụ thể cần giải quyết.
+
+Trong lĩnh vực phân loại ảnh, học chuyển giao thường sử dụng các mô hình
+đã được huấn luyện trước trên các bộ dữ liệu quy mô lớn như ImageNet.
+Các mô hình này đã học được nhiều đặc trưng thị giác cơ bản và tổng
+quát, chẳng hạn cạnh, màu sắc, đường viền, hình dạng và kết cấu. Khi áp
+dụng vào một bài toán mới, các đặc trưng đã học trước đó có thể được tái
+sử dụng, giúp mô hình huấn luyện nhanh hơn và đạt hiệu quả tốt hơn so
+với việc học hoàn toàn từ đầu, đặc biệt trong trường hợp bộ dữ liệu mới
+có kích thước hạn chế. Stanford CS231n trình bày học chuyển giao như một
+chiến lược phổ biến trong thực tế, trong đó người dùng có thể sử dụng mô
+hình CNN đã huấn luyện trước làm bộ trích xuất đặc trưng hoặc tiếp tục
+tinh chỉnh mô hình trên bộ dữ liệu mới.
+
+\includegraphics[width=6.2in,height=4.22441in,alt={A diagram of a process AI-generated content may be incorrect.}]{./media/image9.png}
+
+\textbf{\emph{Hình} 2.4} \emph{Mô hình Transfer Learning từ ImageNet}
+{[}17{]}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_Toc232112012}{}\emph{\textbf{Khái niệm
+  học chuyển giao}}
+\end{enumerate}
+
+Học chuyển giao có thể hiểu là quá trình chuyển tri thức đã học từ một
+bài toán nguồn sang một bài toán đích có liên quan. Trong phân loại ảnh,
+bài toán nguồn thường là bài toán phân loại ảnh quy mô lớn, còn bài toán
+đích là bài toán cụ thể hơn với tập dữ liệu nhỏ hơn. Mục tiêu của học
+chuyển giao là tận dụng những đặc trưng tổng quát mà mô hình đã học được
+từ bài toán nguồn để cải thiện hiệu quả học trên bài toán đích.
+
+Một mô hình CNN được huấn luyện trên tập dữ liệu lớn thường học được các
+đặc trưng ở nhiều mức độ khác nhau. Các tầng đầu của mô hình thường học
+những đặc trưng cơ bản như cạnh, vùng sáng tối hoặc màu sắc. Các tầng
+sâu hơn học những đặc trưng có mức trừu tượng cao hơn như kết cấu, bộ
+phận của vật thể hoặc đặc điểm liên quan đến từng lớp. Khi chuyển sang
+bài toán mới, các đặc trưng cơ bản ở những tầng đầu vẫn có giá trị sử
+dụng, vì nhiều loại ảnh khác nhau đều chia sẻ các đặc điểm thị giác
+chung.
+
+Đối với bài toán phân loại chất lượng tỏi, số lượng ảnh trong bộ dữ liệu
+không quá lớn so với các bộ dữ liệu ảnh quy mô lớn. Vì vậy, nếu huấn
+luyện một mô hình sâu từ đầu, mô hình có thể cần nhiều dữ liệu và thời
+gian hơn để học được các đặc trưng ổn định. Học chuyển giao giúp giảm
+bớt khó khăn này bằng cách sử dụng các trọng số đã học từ trước làm điểm
+khởi đầu cho quá trình huấn luyện.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \protect\phantomsection\label{_Toc232112013}{}\emph{\textbf{Pre-trained
+  model trong phân loại ảnh}}
+\end{enumerate}
+
+\textbf{Pre-trained model} là mô hình đã được huấn luyện trước trên một
+bộ dữ liệu lớn. Trong phân loại ảnh, các mô hình này thường được huấn
+luyện trên ImageNet hoặc các bộ dữ liệu thị giác quy mô lớn khác. Nhờ
+quá trình huấn luyện trước, mô hình đã học được các đặc trưng thị giác
+tổng quát có thể tái sử dụng cho nhiều bài toán khác nhau.
+
+Khi sử dụng pre-trained model cho một bài toán mới, phần đầu của mô hình
+thường được giữ lại để làm bộ trích xuất đặc trưng. Phần phân loại cuối
+cùng của mô hình được thay thế bằng một lớp đầu ra mới phù hợp với số
+lớp của bài toán đích. Ví dụ, một mô hình ban đầu có thể được huấn luyện
+để phân loại hàng nghìn lớp ảnh, nhưng khi áp dụng vào bài toán phân
+loại tỏi, lớp đầu ra cần được thay đổi để dự đoán ba lớp: \textbf{tỏi
+sạch vỏ}, \textbf{tỏi còn vỏ} và \textbf{tỏi hư}.
+
+TensorFlow hướng dẫn học chuyển giao theo cách sử dụng mô hình đã huấn
+luyện trước làm nền tảng, sau đó thêm các lớp phân loại mới và huấn
+luyện trên bộ dữ liệu riêng của bài toán đích. Đây là cách tiếp cận phổ
+biến trong các bài toán phân loại ảnh khi dữ liệu mới có quy mô vừa hoặc
+nhỏ.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \protect\phantomsection\label{_Toc232112014}{}\emph{\textbf{Các chiến
+  lược sử dụng học chuyển giao}}
+\end{enumerate}
+
+Trong phân loại ảnh, học chuyển giao thường được triển khai theo hai
+chiến lược chính: sử dụng mô hình như bộ trích xuất đặc trưng và tinh
+chỉnh mô hình.
+
+Ở chiến lược thứ nhất, các tầng của mô hình đã huấn luyện trước được giữ
+nguyên, tức là không cập nhật trọng số trong quá trình huấn luyện trên
+dữ liệu mới. Mô hình lúc này đóng vai trò như một bộ trích xuất đặc
+trưng, còn phần phân loại mới ở phía sau sẽ được huấn luyện để phù hợp
+với bài toán đích. Cách này thường được dùng khi bộ dữ liệu mới có kích
+thước nhỏ hoặc khi muốn giảm nguy cơ quá khớp.
+
+Ở chiến lược thứ hai, sau khi huấn luyện phần phân loại mới, một số tầng
+phía sau của mô hình pre-trained được mở khóa để tiếp tục cập nhật trọng
+số trên dữ liệu mới. Quá trình này được gọi là \textbf{fine-tuning}.
+Fine-tuning giúp mô hình điều chỉnh các đặc trưng đã học trước đó sao
+cho phù hợp hơn với bài toán cụ thể. Stanford CS231n cho biết có thể
+fine-tune toàn bộ các tầng của ConvNet hoặc giữ cố định một số tầng đầu
+để hạn chế quá khớp, chỉ tinh chỉnh các tầng cao hơn của mạng.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  \protect\phantomsection\label{_Toc232112015}{}\emph{\textbf{Fine-tuning
+  trong phân loại ảnh}}
+\end{enumerate}
+
+Fine-tuning là bước tinh chỉnh mô hình đã huấn luyện trước trên bộ dữ
+liệu của bài toán mới. Trong quá trình này, các trọng số của một phần
+hoặc toàn bộ mô hình được cập nhật để thích nghi với đặc điểm dữ liệu
+mới. Đối với bài toán phân loại ảnh, fine-tuning thường được thực hiện
+sau khi phần phân loại mới đã được huấn luyện ổn định.
+
+Lý do không nên fine-tune toàn bộ mô hình ngay từ đầu là vì các tầng đầu
+của CNN thường học những đặc trưng cơ bản và tổng quát. Nếu cập nhật tất
+cả trọng số quá sớm, mô hình có thể làm mất đi những đặc trưng hữu ích
+đã học được từ bộ dữ liệu lớn. Vì vậy, trong nhiều trường hợp, người
+nghiên cứu thường đóng băng các tầng đầu, huấn luyện phần phân loại mới,
+sau đó mới mở khóa một số tầng cuối để tinh chỉnh nhẹ với tốc độ học nhỏ
+hơn.
+
+Trong bài toán phân loại tỏi, fine-tuning giúp mô hình thích nghi tốt
+hơn với các đặc trưng riêng của ảnh tỏi, chẳng hạn bề mặt tép tỏi, vùng
+vỏ còn sót, vết thâm hoặc vùng hư hỏng. Các đặc trưng này khác với các
+đối tượng trong bộ dữ liệu gốc, nên việc tinh chỉnh mô hình trên dữ liệu
+tỏi là cần thiết để nâng cao hiệu quả phân loại.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\item
+  \protect\phantomsection\label{_Toc232112016}{}\emph{\textbf{Vai trò
+  của học chuyển giao trong nghiên cứu}}
+\end{enumerate}
+
+Trong luận văn này, học chuyển giao được sử dụng nhằm tận dụng sức mạnh
+của các mô hình CNN đã được huấn luyện trước. Các mô hình này đóng vai
+trò là nền tảng để trích xuất đặc trưng ảnh, sau đó được điều chỉnh cho
+bài toán phân loại chất lượng tỏi.
+
+Việc sử dụng học chuyển giao mang lại một số lợi ích cho nghiên cứu. Thứ
+nhất, học chuyển giao giúp giảm thời gian huấn luyện vì mô hình không
+cần học mọi đặc trưng từ đầu. Thứ hai, mô hình có thể đạt hiệu quả tốt
+hơn khi bộ dữ liệu tỏi không quá lớn. Thứ ba, việc sử dụng các mô hình
+pre-trained giúp quá trình so sánh giữa các kiến trúc CNN nền trở nên
+thuận lợi hơn, vì các mô hình đều bắt đầu từ những trọng số đã học được
+trên dữ liệu ảnh quy mô lớn.
+
+Đối với bài toán phân loại chất lượng tỏi, học chuyển giao đặc biệt phù
+hợp vì dữ liệu ảnh có những đặc trưng thị giác phức tạp nhưng số lượng
+mẫu còn hạn chế. Nhờ học chuyển giao, các mô hình có thể tận dụng các
+đặc trưng tổng quát đã học được trước đó, sau đó điều chỉnh để nhận diện
+tốt hơn ba nhóm chất lượng: \textbf{tỏi sạch vỏ}, \textbf{tỏi còn vỏ} và
+\textbf{tỏi hư}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\item
+  \protect\phantomsection\label{_Toc232112017}{}\textbf{Các mô hình CNN
+  được sử dụng trong nghiên cứu}
+\end{enumerate}
+
+Để có cơ sở lựa chọn mô hình phù hợp cho bài toán phân loại chất lượng
+tỏi, luận văn tiến hành thực nghiệm với một số kiến trúc CNN đã được sử
+dụng rộng rãi trong phân loại ảnh. Các mô hình được lựa chọn gồm
+\emph{\textbf{NASNetMobile, InceptionV3, EfficientNetB4, MobileNetV2 và
+DenseNet121}}. Đây không chỉ là các mô hình phổ biến trong thư viện học
+sâu hiện nay, mà còn đại diện cho những hướng thiết kế khác nhau của
+mạng nơ-ron tích chập.
+
+Việc sử dụng nhiều mô hình nền giúp quá trình đánh giá không bị phụ
+thuộc vào một kiến trúc duy nhất. Mỗi mô hình có ưu điểm riêng: có mô
+hình hướng đến độ chính xác, có mô hình tối ưu tài nguyên tính toán, có
+mô hình khai thác đặc trưng đa tỷ lệ, và cũng có mô hình chú trọng việc
+tái sử dụng đặc trưng giữa các tầng. Từ kết quả thực nghiệm trên cùng bộ
+dữ liệu ảnh tỏi, luận văn có thể xác định mô hình nào phù hợp hơn với
+đặc điểm của bài toán, từ đó lựa chọn làm nền tảng cho mô hình đề xuất ở
+các bước tiếp theo.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_Toc232112018}{}\emph{\textbf{Mô hình
+  NASNetMobile}}
+\end{enumerate}
+
+NASNetMobile là một phiên bản thuộc họ kiến trúc NASNet, viết tắt của
+\textbf{Neural Architecture Search Network}. Đây là nhóm mô hình được
+xây dựng dựa trên ý tưởng tìm kiếm kiến trúc mạng nơ-ron một cách tự
+động, thay vì thiết kế hoàn toàn thủ công như nhiều mô hình CNN truyền
+thống. Trong đó, NASNetMobile được xem là phiên bản gọn nhẹ hơn của
+NASNet, hướng đến các môi trường có tài nguyên tính toán hạn chế như
+thiết bị di động hoặc các hệ thống cần tốc độ xử lý nhanh.
+
+Điểm khác biệt quan trọng của NASNetMobile nằm ở cách hình thành kiến
+trúc mạng. Thay vì con người trực tiếp quyết định toàn bộ số lớp, kiểu
+kết nối và phép toán bên trong mô hình, NASNet sử dụng một quá trình tìm
+kiếm tự động gọi là \textbf{Neural Architecture Search -- NAS}. Quá
+trình này cho phép hệ thống thử nghiệm nhiều cấu trúc mạng con khác
+nhau, đánh giá hiệu quả của từng cấu trúc, sau đó dần tìm ra những thiết
+kế có khả năng hoạt động tốt hơn. Nhờ vậy, NASNetMobile mang đặc trưng
+của một kiến trúc được khám phá tự động, nhưng vẫn có thể triển khai
+dưới dạng một mô hình CNN hoàn chỉnh cho bài toán phân loại ảnh.
+
+Về mặt lý thuyết, quá trình tìm kiếm kiến trúc của NASNet sử dụng một
+mạng nơ-ron tuần hoàn, thường được gọi là \textbf{bộ điều khiển}. Bộ
+điều khiển này có nhiệm vụ sinh ra các kiến trúc mạng con. Mỗi kiến trúc
+mạng con sau đó được huấn luyện và đánh giá trên tập xác thực. Độ chính
+xác của mạng con trên tập xác thực được xem như tín hiệu phản hồi để cập
+nhật lại bộ điều khiển. Qua nhiều vòng lặp, bộ điều khiển có xu hướng
+tạo ra những kiến trúc tốt hơn, vì các thiết kế cho kết quả cao sẽ được
+ưu tiên với xác suất lớn hơn trong các lần sinh kiến trúc tiếp theo.
+
+Một điểm quan trọng trong NASNet là không tìm kiếm toàn bộ kiến trúc
+mạng lớn ngay từ đầu. Cách làm này sẽ tiêu tốn rất nhiều tài nguyên tính
+toán, đặc biệt khi áp dụng trực tiếp trên các bộ dữ liệu ảnh lớn như
+ImageNet. Thay vào đó, NASNet tìm kiếm một khối kiến trúc cơ sở, gọi là
+\textbf{cell}, trên một bộ dữ liệu nhỏ hơn như CIFAR-10. Sau khi tìm
+được cell phù hợp, các cell này được chuyển sang bài toán lớn hơn bằng
+cách xếp chồng nhiều lần để tạo thành mạng hoàn chỉnh. Đây chính là yếu
+tố thể hiện tính chuyển giao trong thiết kế của NASNet: kiến trúc được
+tìm trên bài toán nhỏ có thể được mở rộng và sử dụng cho bài toán có quy
+mô lớn hơn.
+
+Kiến trúc NASNet được xây dựng từ hai loại cell chính là \textbf{Normal
+Cell} và \textbf{Reduction Cell}. Normal Cell có nhiệm vụ xử lý và trích
+xuất đặc trưng nhưng vẫn giữ nguyên kích thước không gian của bản đồ đặc
+trưng đầu vào. Ngược lại, Reduction Cell làm giảm kích thước chiều cao
+và chiều rộng của bản đồ đặc trưng, thường thông qua các phép toán có
+bước nhảy lớn hơn. Nhờ sự kết hợp giữa hai loại cell này, mô hình vừa có
+thể duy trì thông tin không gian cần thiết ở các tầng đầu, vừa dần nén
+và biểu diễn đặc trưng ở mức trừu tượng cao hơn ở các tầng sâu.
+
+Đối với NASNetMobile, phiên bản thường được sử dụng là cấu hình
+\textbf{NASNet-A 4 @ 1056}. Trong cấu hình này, Normal Cell được lặp lại
+bốn lần giữa các Reduction Cell, còn số lượng bộ lọc ở lớp gần cuối là
+1056. Khi kích thước không gian của bản đồ đặc trưng giảm xuống, số
+lượng bộ lọc thường được tăng lên để giữ lại lượng thông tin biểu diễn
+cần thiết. Cách tổ chức này giúp mô hình kiểm soát được chi phí tính
+toán, đồng thời vẫn đảm bảo khả năng học các đặc trưng quan trọng từ ảnh
+đầu vào.
+
+Bên trong mỗi cell, kiến trúc chi tiết không được thiết kế thủ công theo
+một mẫu cố định, mà là kết quả của quá trình tìm kiếm tự động. Bộ điều
+khiển sẽ lựa chọn các đầu vào, các phép toán và cách kết hợp giữa chúng
+để tạo thành cấu trúc của cell. Các phép toán thường gặp trong NASNet
+gồm tích chập tách rời theo chiều sâu, max pooling, average pooling và
+các phép kết hợp đặc trưng. Trong đó, tích chập tách rời theo chiều sâu
+được sử dụng nhiều vì có khả năng giảm chi phí tính toán so với tích
+chập thông thường, phù hợp với định hướng xây dựng mô hình gọn nhẹ.
+
+Workflow tổng quát của NASNetMobile có thể hiểu như sau: ảnh đầu vào
+trước hết đi qua các lớp tích chập ban đầu để tạo bản đồ đặc trưng ở mức
+thấp. Sau đó, đặc trưng được truyền qua nhiều nhóm Normal Cell và
+Reduction Cell. Normal Cell giúp mô hình tiếp tục khai thác đặc trưng mà
+không làm thay đổi kích thước không gian, trong khi Reduction Cell giảm
+kích thước bản đồ đặc trưng và giúp mô hình học các biểu diễn sâu hơn.
+Cuối cùng, đặc trưng được tổng hợp qua lớp Global Average Pooling và đưa
+vào lớp phân loại để dự đoán nhãn đầu ra.
+
+\includegraphics[width=6.36333in,height=3.26986in]{./media/image10.png}
+
+\textbf{\emph{Hình} 2.5} \emph{Cấu trúc Normal Cell và Reduction Cell
+trong NASNet} \hl{{[}17{]}.}
+
+\hl{{[}https://openaccess.thecvf.com/content\_cvpr\_2018/papers/Zoph\_Learning\_Transferable\_Architectures\_CVPR\_2018\_paper.pdf{]}}
+
+Trong quá trình huấn luyện NASNet, một kỹ thuật chính quy hóa đáng chú ý
+là \textbf{ScheduledDropPath}. Kỹ thuật này có ý tưởng gần với DropPath,
+tức là loại bỏ ngẫu nhiên một số nhánh kết nối trong mạng để giảm hiện
+tượng quá khớp. Tuy nhiên, thay vì giữ xác suất loại bỏ cố định trong
+suốt quá trình huấn luyện, ScheduledDropPath tăng dần xác suất này theo
+thời gian. Cách làm này giúp mô hình học ổn định hơn ở giai đoạn đầu,
+sau đó tăng mức độ chính quy hóa ở các giai đoạn sau để cải thiện khả
+năng tổng quát hóa.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  \protect\phantomsection\label{_Toc232112019}{}\emph{\textbf{Mô hình
+  Inception}}
+\end{enumerate}
+
+InceptionV3 là một kiến trúc mạng nơ-ron tích chập thuộc họ Inception,
+được phát triển nhằm nâng cao hiệu quả trích xuất đặc trưng trong các
+bài toán phân loại ảnh. Kiến trúc này kế thừa ý tưởng từ GoogLeNet,
+trong đó mạng không xử lý đặc trưng theo một luồng tuyến tính duy nhất,
+mà tổ chức các phép toán theo nhiều nhánh song song. Nhờ cơ chế này, mô
+hình có thể khai thác đồng thời nhiều dạng đặc trưng ở các mức tỷ lệ
+khác nhau, từ đặc trưng cục bộ nhỏ đến các biểu diễn có phạm vi không
+gian rộng hơn. Để xây dựng cấu trúc này một cách tối ưu, nhóm tác giả đã
+đề xuất 4 nguyên tắc thiết kế nền tảng:
+
+\begin{itemize}
+\item
+  Tránh thắt nút cổ chai biểu diễn (Avoid representational bottlenecks):
+  Kích thước biểu diễn (thông tin) nên được giảm đi một cách từ từ từ
+  đầu vào cho đến đầu ra, đặc biệt là ở các lớp đầu của mạng, nhằm tránh
+  việc nén thông tin quá gắt gao làm mất mát đặc trưng.
+\item
+  Biểu diễn chiều cao dễ xử lý cục bộ hơn: Tăng số lượng kênh kích hoạt
+  (activations) trên mỗi ô (tile) trong mạng tích chập giúp các đặc
+  trưng được phân tách rõ ràng hơn, từ đó tăng tốc độ huấn luyện.
+\item
+  Gộp không gian trên các embedding chiều thấp: Việc giảm chiều của biểu
+  diễn đầu vào trước khi thực hiện các phép tích chập lớn (như 3x3)
+  không làm suy giảm nghiêm trọng sức mạnh biểu diễn, do các tín hiệu
+  lân cận thường có độ tương quan cao.
+\item
+  Cân bằng giữa chiều rộng và chiều sâu: Hiệu suất tối ưu của mạng đạt
+  được khi phân bổ đồng đều ngân sách tính toán cho cả việc tăng số
+  lượng bộ lọc (chiều rộng) và tăng số lớp (chiều sâu).
+\end{itemize}
+
+Kỹ thuật phân rã phép tích chập (Factorizing Convolutions) là cốt lõi
+của Inception-v3 đến từ các chiến lược phân rã (factorization) phép toán
+tích chập tinh vi nhằm giảm số lượng tham số trong khi vẫn giữ nguyên,
+hoặc tăng cường, sức mạnh biểu diễn:
+
+\includegraphics[width=3.97972in,height=2.77122in]{./media/image11.png}
+
+\textbf{\emph{Hình} 2.5} \emph{Mô-đun Inception với phép tích chập 5x5
+được phân rã thành hai phép tích chập 3x3} \hl{{[}17{]}.}
+
+\begin{itemize}
+\item
+  \hl{{[}https://www.cv-foundation.org/openaccess/content\_cvpr\_2016/papers/Szegedy\_Rethinking\_the\_Inception\_CVPR\_2016\_paper.pdf{]}}
+\item
+  Các bộ lọc kích thước lớn như 5x5 có chi phí tính toán đắt đỏ (gấp
+  2.78 lần so với 3x3). Do đó, Inception-v3 thay thế một lớp tích chập
+  5x5 bằng một chuỗi hai lớp tích chập 3x3. Việc này không những giảm
+  thiểu đáng kể số lượng tham số mà còn làm tăng không gian biến thiên
+  nhờ việc sử dụng hàm kích hoạt phi tuyến tính (ReLU) sau mỗi lớp.
+\end{itemize}
+
+\includegraphics[width=4.03181in,height=4.03181in]{./media/image12.png}
+
+\textbf{\emph{Hình} 2.5} \emph{Cấu trúc Normal Cell và Reduction Cell
+trong NASNet} \hl{{[}17{]}.}
+
+\hl{{[}https://www.cv-foundation.org/openaccess/content\_cvpr\_2016/papers/Szegedy\_Rethinking\_the\_Inception\_CVPR\_2016\_paper.pdf{]}}
+
+\begin{itemize}
+\item
+  Mô hình tiến xa hơn bằng cách thay thế các phép tích chập n×n thành
+  một phép chập 1×n theo sau bởi một phép chập n×1. Ví dụ, một phép chập
+  3x3 được phân rã thành 1x3 và 3x1, giúp tiết kiệm 33\% chi phí tính
+  toán. Kỹ thuật này đặc biệt hiệu quả trên các lưới đặc trưng có kích
+  thước trung bình (từ 12×12 đến 20×20), nơi Inception-v3 áp dụng mạnh
+  mẽ các phép chập bất đối xứng kích thước 1x7 và 7x1.
+\end{itemize}
+
+\includegraphics[width=5.39659in,height=3.03167in]{./media/image13.png}
+
+\textbf{\emph{Hình} 2.5} \emph{Cấu trúc mô-đun Inception giúp giảm kích
+thước lưới và mở rộng tập hợp bộ} \hl{{[}17{]}.}
+
+\hl{{[}https://www.cv-foundation.org/openaccess/content\_cvpr\_2016/papers/Szegedy\_Rethinking\_the\_Inception\_CVPR\_2016\_paper.pdf{]}}
+
+Trong các CNN truyền thống, để giảm kích thước không gian của bản đồ đặc
+trưng (feature map), người ta thường dùng phép gộp (pooling). Tuy nhiên,
+nếu áp dụng pooling trực tiếp sẽ tạo ra nút thắt cổ chai biểu diễn.
+Ngược lại, nếu tăng kích thước bộ lọc trước khi pooling thì lại tốn kém
+quá nhiều chi phí tính toán. Để giải quyết điều này, Inception-v3 đề
+xuất một module giảm lưới hiệu quả: Thiết kế hai nhánh song song, một
+nhánh sử dụng phép tích chập với bước nhảy (stride) bằng 2, và nhánh còn
+lại sử dụng phép gộp (pooling) với bước nhảy bằng 2. Sau đó, kết quả của
+hai nhánh được nối (concatenate) lại với nhau. Kỹ thuật này giúp giảm
+không gian lưới một cách rẻ tiền nhưng vẫn mở rộng được số lượng bộ lọc
+để tránh thắt nút cổ chai.
+
+Tối ưu hóa Bộ phân loại phụ (Auxiliary Classifiers) Các kiến trúc
+Inception trước đây sử dụng các bộ phân loại phụ ở giữa mạng để đẩy
+gradient về các lớp thấp, chống lại hiện tượng triệt tiêu gradient
+(vanishing gradient). Tuy nhiên, trong Inception-v3, các tác giả chứng
+minh rằng bộ phân loại phụ thực chất đóng vai trò như một cơ chế chính
+quy hóa (regularizer). Cụ thể, mô hình sẽ hoạt động tốt hơn hẳn nếu bộ
+phân loại phụ được chuẩn hóa theo lô (Batch Normalization) hoặc đi kèm
+với lớp Dropout.
+
+Kỹ thuật chính quy hóa Làm mịn Nhãn (Label Smoothing Regularization -
+LSR) Để ngăn chặn mô hình học cách gán xác suất tuyệt đối cho một nhãn
+duy nhất (dẫn đến quá tự tin và quá khớp - overfitting), Inception-v3 áp
+dụng kỹ thuật làm mịn nhãn. Kỹ thuật LSR thay thế phân phối nhãn gốc
+(ground-truth distribution) -- vốn là một hàm Dirac delta chỉ có giá trị
+1 tại nhãn đúng -- bằng một hỗn hợp giữa nhãn đúng và một phân phối cố
+định (thường là phân phối đồng đều). Phương pháp này giúp mô hình trở
+nên linh hoạt hơn, tăng cường độ dẻo dai và khả năng thích ứng với các
+dữ liệu mới.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \protect\phantomsection\label{_Toc232112020}{}\emph{\textbf{Mô hình
+  EfficientNet}}
+\end{enumerate}
+
+EfficientNet là một trong những kiến trúc mạng nơ-ron tích chập (CNN)
+nổi bật nhất gần đây, được nhóm nghiên cứu Google Brain giới thiệu vào
+năm 2019. Mô hình này không chỉ đạt hiệu suất cao mà còn tối ưu hóa tài
+nguyên tính toán, giúp hoạt động hiệu quả trên cả các thiết bị có phần
+cứng hạn chế. Các kiến trúc CNN cổ điển như AlexNet, VGG và ResNet đã
+tạo ra những bước tiến lớn trong hiệu suất của hệ thống nhận diện hình
+ảnh. Tuy nhiên, những mô hình này thường gặp vấn đề về độ phức tạp cao
+và yêu cầu tài nguyên phần cứng lớn.
+
+Để nâng cao độ chính xác, các nhà nghiên cứu thường tăng độ sâu (depth),
+số kênh (width) hoặc độ phân giải của ảnh đầu vào (resolution) của mô
+hình. Tuy nhiên, việc mở rộng này không phải lúc nào cũng hiệu quả,
+thường dẫn đến nguy cơ quá khớp (overfitting) hoặc đòi hỏi bộ nhớ lớn
+hơn. EfficientNet được thiết kế để khắc phục những hạn chế này thông qua
+phương pháp mở rộng cân bằng (compound scaling). Thay vì chỉ tập trung
+vào một yếu tố như độ sâu, số kênh hoặc độ phân giải, EfficientNet điều
+chỉnh đồng thời tất cả các yếu tố này theo một tỷ lệ mở rộng tối ưu, dựa
+trên sự cân bằng giữa hiệu suất và tài nguyên phần cứng.
+
+Kiến trúc của EfficientNet được xây dựng dựa trên nền tảng của
+MobileNetV2 và MnasNet, hai mô hình được tối ưu hóa cho các thiết bị di
+động. EfficientNet áp dụng phương pháp mở rộng cân bằng (compound
+scaling) để phát triển từ phiên bản cơ sở (EfficientNet-B0) thành các
+phiên bản lớn hơn (EfficientNet-B1 đến EfficientNet-B7), trong đó
+EfficientNet-B7 là phiên bản lớn nhất và đạt độ chính xác cao nhất.
+
+\includegraphics[width=6.19853in,height=2.53908in,alt={A graph of different types of architecture AI-generated content may be incorrect.}]{./media/image14.png}
+
+\emph{\textbf{Hình 2.7.} Kiến trúc tổng thể của EfficientNet}
+{[}19{]}.\\
+Hình 2.7: Mô tả kiến trúc mô hình EfficientNet sử dụng chuỗi block
+MBConv với kích
+
+thước kernel khác nhau để trích xuất đặc trưng hiệu quả và tối ưu tài
+nguyên.
+
+\textbf{Compound Scaling trong EfficientNet}: là một phương pháp mở rộng
+mô hình theo ba chiều: độ sâu (depth), số kênh (width), và độ phân giải
+ảnh (resolution). Thay vì chỉ tăng một chiều như các phương pháp truyền
+thống, EfficientNet đồng thời điều chỉnh cả ba chiều này theo một tỷ lệ
+cân bằng đã được tối ưu hóa. Cách tiếp cận này cải thiện hiệu suất mô
+hình mà không làm tăng quá mức số lượng tham số hoặc yêu cầu tài nguyên
+tính toán, mang lại độ chính xác cao hơn với hiệu quả tính toán tối ưu.
+
+\textbf{Mobile Inverted Bottleneck Convolution (MBConv):} Một trong
+những điểm nổi bật của EfficientNet là sử dụng các khối Mobile Inverted
+Bottleneck Convolution (MBConv), tương tự như trong MobileNetV2. Khối
+MBConv kết hợp các phép tích chập điểm ảnh 1 × 1 (pointwise convolution)
+và tích chập phân tách theo chiều sâu (depthwise convolution), giúp giảm
+số lượng tham số mà vẫn duy trì độ chính xác cao.
+
+~\textbf{Squeeze-and-Excitation (SE) Blocks trong EfficientNet:}
+EfficientNet tích hợp các khối Squeeze-and-Excitation (SE) để tự động
+điều chỉnh trọng số của các kênh, giúp mô hình tập trung vào các kênh
+quan trọng hơn. Khối SE hoạt động bằng cách học các hệ số điều chỉnh
+(attention) cho từng kênh, dựa trên giá trị tổng hợp từ toàn bộ không
+gian đầu vào.
+
+\textbf{Các phiên bản EfficientNet:} EfficientNet là một mô hình mạng
+nơ-ron tích chập (CNN) nổi bật, được thiết kế nhằm tối ưu hóa hiệu suất
+đồng thời giảm thiểu tài nguyên tính toán. Mô hình này bao gồm nhiều
+phiên bản, từ EfficientNet-B0 đến EfficientNet-B7, mỗi phiên bản được mở
+rộng từ phiên bản trước thông qua phương pháp mở rộng cân bằng (compound
+scaling). Đây là đặc điểm nổi bật giúp EfficientNet duy trì sự cân bằng
+giữa độ chính xác và tài nguyên phần cứng khi kích thước mô hình tăng
+lên.
+
+\textbf{EfficientNet-B0:} EfficientNet-B0 là phiên bản đầu tiên và nhỏ
+nhất trong dòng EfficientNet, được xem là nền tảng để mở rộng các phiên
+bản tiếp theo. Kiến trúc của EfficientNet-B0 được tối ưu hóa thông qua
+việc sử dụng tìm kiếm cấu trúc neural architecture search (NAS), nhằm
+xác định cấu trúc mô hình tối ưu nhất về độ chính xác và hiệu quả tính
+toán.
+
+\includegraphics[width=6.2in,height=1.91038in,alt={A diagram of a diagram AI-generated content may be incorrect.}]{./media/image15.png}
+
+\emph{\textbf{Hình 2.8.} Cấu trúc chi tiết của EfficientNet-B1 với các
+giai đoạn} {[}20{]}.
+
+Hình 2.8: Mô tả chi tiết kiến trúc EfficientNet theo từng giai đoạn:
+EfficientNet gồm 8 stage, sử dụng các block MBConv với kích thước kernel
+(3 × 3, 5 × 5) và số kênh tăng dần, giúp mở rộng độ sâu và độ rộng mạng
+một cách hiệu quả.
+
+\textbf{Các phiên bản của mô hình EfficientNet:}
+
+\begin{itemize}
+\item
+  \textbf{EfficientNet-B1:} EfficientNet-B1, phiên bản mở rộng đầu tiên
+  của dòng EfficientNet, tăng độ sâu và số kênh của các lớp mạng, đồng
+  thời nâng độ phân giải ảnh đầu vào từ 224 × 224 pixel lên 240 × 240
+  pixel. Phiên bản này có khoảng 7,8 triệu tham số, yêu cầu 0,7 tỷ FLOPs
+  và đạt độ chính xác khoảng 79.2\% trên ImageNet.
+\item
+  \textbf{EfficientNet-B2:} EfficientNet-B2 nâng độ phân giải đầu vào
+  lên 260 × 260 pixel, đồng thời tăng thêm một số lớp mạng. Số lượng
+  tham số và FLOPs tăng lần lượt lên 9,2 triệu và 1,0 tỷ, với độ chính
+  xác đạt khoảng 80.3\% trên ImageNet\textbf{.}
+\item
+  \textbf{EfficientNet-B3:} EfficientNet-B3 sử dụng độ phân giải đầu vào
+  300 × 300 pixel, với khoảng 12 triệu tham số và yêu cầu 1,8 tỷ FLOPs.
+  Phiên bản này đạt độ chính xác 81.6\% trên ImageNet.
+\item
+  \textbf{EfficientNet-B4:} EfficientNet-B4 là một trong những phiên bản
+  lớn hơn, sử dụng độ phân giải đầu vào 380 × 380 pixel, với khoảng 19
+  triệu tham số và yêu cầu 4,2 tỷ FLOPs. Phiên bản này đạt độ chính xác
+  khoảng 82.9\% trên ImageNet, vượt trội hơn nhiều mô hình truyền thống
+  có quy mô lớn khác.
+\item
+  \textbf{EfficientNet-B5:} EfficientNet-B5 sử dụng ảnh đầu vào có độ
+  phân giải 456 × 456 pixel, với khoảng 30 triệu tham số và yêu cầu 9,9
+  tỷ FLOPs. Phiên bản này đạt độ chính xác 83.6\% trên ImageNet, một kết
+  quả ấn tượng so với quy mô của mô hình.
+\item
+  \textbf{EfficientNet-B6:} EfficientNet-B6 sử dụng độ phân giải ảnh đầu
+  vào 528 × 528 pixel, với khoảng 43 triệu tham số và yêu cầu 19,0 tỷ
+  FLOPs. Phiên bản này đạt độ chính xác khoảng 84.0\% trên ImageNet.
+\item
+  \textbf{EfficientNet-B7:} EfficientNet-B7, phiên bản lớn nhất và mạnh
+  mẽ nhất trong dòng EfficientNet, sử dụng độ phân giải đầu vào 600 ×
+  600 pixel. Phiên bản này có khoảng 66 triệu tham số và yêu cầu 37,0 tỷ
+  FLOPs cho mỗi dự đoán. Độ chính xác của EfficientNet-B7 đạt 84.4\%
+  trên ImageNet, một trong những kết quả cao nhất trên tập dữ liệu này.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item
+    \protect\phantomsection\label{_Toc232112021}{}\emph{\textbf{Mô hình
+    MobileNet}}
+  \end{enumerate}
+\end{itemize}
+
+MobileNet là một họ kiến trúc mạng nơ-ron tích chập (CNN) được Google
+giới thiệu lần đầu vào năm 2017 {[}24{]}, với mục tiêu tối ưu cho các
+thiết bị di động và hệ thống nhúng vốn có hạn chế về tài nguyên tính
+toán. Điểm nổi bật của MobileNet là khả năng duy trì độ chính xác trong
+các tác vụ phân loại ảnh ở mức chấp nhận được, đồng thời giảm đáng kể số
+lượng tham số và chi phí tính toán so với các kiến trúc CNN truyền
+thống.
+
+Nguyên lý hoạt động chính của MobileNet là sử dụng Depthwise Separable
+Convolution, một kỹ thuật tách riêng quá trình tích chập không gian
+(depthwise convolution) và kết hợp kênh (pointwise convolution). Cách
+tiếp cận này giúp giảm đáng kể số lượng tham số và phép tính so với tích
+chập truyền thống, nhưng vẫn giữ được khả năng trích xuất đặc trưng mạnh
+mẽ. Ngoài ra, MobileNet cho phép điều chỉnh mức độ phức tạp của mô hình
+thông qua hai siêu tham số là width multiplier (giảm số kênh feature
+maps) và resolution multiplier (giảm kích thước đầu vào). Nhờ đó, mô
+hình có thể được tùy biến theo yêu cầu về tài nguyên và độ chính xác.
+MobileNet sử dụng Depthwise Separable Convolution thay vì Convolution
+chuẩn. Phương pháp này tách quá trình chập thành 2 bước:
+
+\begin{itemize}
+\item
+  \textbf{Depthwise Convolution:} Thực hiện phép tích chập độc lập trên
+  từng kênh đầu vào.
+\item
+  \textbf{Pointwise Convolution (1 x 1 Convolution):} Kết hợp các đặc
+  trưng từ bước Depthwise để tạo ra đầu ra mong muốn.
+\end{itemize}
+
+\includegraphics[width=6.2in,height=3.55231in,alt={A diagram of a computer AI-generated content may be incorrect.}]{./media/image16.png}
+
+\emph{\textbf{Hình 2.10.} Standard Convolution và Depthwise Separable
+Convolution trong MobileNet {[}24{]}}
+
+Hình 2.10: Minh họa sự khác biệt giữa Standard Convolution và Depthwise
+Separable Convolution. Ở Standard Convolution (bên trái), phép tích chập
+3 x 3 được áp dụng đồng thời trên toàn bộ các kênh đầu vào, sau đó đi
+qua Batch Normalization (BN) và ReLU. Cách này cho độ chính xác cao
+nhưng tốn nhiều tham số và chi phí tính toán. Ở Depthwise Separable
+Convolution (bên phải), quá trình được tách thành hai bước là Depthwise
+và Pointwise Convolution, mỗi bước đều có BN và ReLU. Cách tiếp cận này
+giúp giảm mạnh số tham số và phép tính, trong khi vẫn duy trì hiệu quả
+mô hình.
+
+\textbf{Các phiên bản MobileNet}
+
+\begin{itemize}
+\item
+  \textbf{MobileNetV1 (2017):} Phiên bản đầu tiên, tập trung vào việc
+  giảm số tham số bằng Depthwise Separable Convolution.
+\item
+  \textbf{MobileNetV2 (2018):} Giới thiệu cơ chế Inverted Residuals và
+  Linear Bottlenecks, giúp cải thiện độ chính xác, ổn định huấn luyện và
+  giảm overfitting. Đây là phiên bản được ứng dụng rộng rãi nhất trong
+  các nghiên cứu thị giác máy tính.
+\item
+  \textbf{MobileNetV3 (2019):} Tích hợp tìm kiếm kiến trúc mạng thần
+  nơ-ron (Neural Architecture Search -- NAS) và modules (SE --
+  Squeeze-and-Excitation), giúp cân bằng tốt hơn giữa tốc độ, kích thước
+  và hiệu suất.
+\item
+  \textbf{Ưu điểm của MobileNet:}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Nhẹ, tốc độ nhanh, phù hợp cho thiết bị di động và IoT.
+\item
+  Giảm đáng kể số tham số và phép tính so với các mô hình CNN lớn như
+  VGG hoặc ResNet.
+\item
+  Dễ dàng tích hợp vào các ứng dụng thời gian thực (real-time).
+\end{itemize}
+
+\begin{itemize}
+\item
+  \textbf{Hạn chế của MobileNet:}
+\end{itemize}
+
+\begin{itemize}
+\item
+  Độ chính xác thường thấp hơn một chút so với các mô hình lớn hơn
+  (DenseNet, EfficientNet) trên cùng một tập dữ liệu.
+\item
+  Cần tinh chỉnh cẩn thận để tránh mất thông tin, do giảm số lượng tham
+  số.
+\end{itemize}
+
+\begin{itemize}
+\item
+  \textbf{Ứng dụng thự tế của MobileNet:} Nhờ sự gọn nhẹ, MobileNet đã
+  được áp dụng rộng rãi trong các tác vụ nhận diện hình ảnh trên thiết
+  bị di động, phân loại ảnh y tế, giám sát thông minh, và đặc biệt là
+  trong nông nghiệp chính xác (Precision Agriculture), nơi cần mô hình
+  nhanh, hiệu quả, nhưng vẫn đảm bảo độ chính xác chấp nhận được.
+\item
+  \textbf{Đánh giá tổng quan:} MobileNet là một trong những kiến trúc
+  tiêu biểu cho xu hướng ``lightweight deep learning models''. Ưu điểm
+  chính là khả năng triển khai trên thiết bị hạn chế tài nguyên, tốc độ
+  suy luận nhanh và dễ dàng tùy biến. Tuy nhiên, độ chính xác của
+  MobileNet thường thấp hơn so với các mô hình phức tạp hơn như ResNet
+  hay EfficientNet khi huấn luyện trên các tập dữ liệu lớn. Vì vậy,
+  MobileNet phù hợp cho các ứng dụng thực tiễn yêu cầu cân bằng giữa độ
+  chính xác và tốc độ hơn là các nghiên cứu cần hiệu năng cao nhất.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item
+    \protect\phantomsection\label{_Toc232112022}{}\emph{\textbf{Mô hình
+    DenseNet}}
+  \end{enumerate}
+\end{itemize}
+
+Trong số các kiến trúc mạng nơ-ron nhân tạo, DenseNet (Mạng tích chập
+dày đặc) nổi bật như một giải pháp tiên tiến và hiệu quả cho nhiều bài
+toán phức tạp, đặc biệt trong lĩnh vực nhận dạng và phân loại hình ảnh.
+DenseNet được giới thiệu lần đầu tiên vào năm 2017 bởi Gao Huang và các
+cộng sự trong bài báo ``\emph{Densely Connected Convolutional
+Networks}'' {[}23{]}. Kiến trúc này đã mở ra một hướng tiếp cận mới
+trong việc thiết kế mạng nơ-ron sâu thông qua việc sử dụng các kết nối
+dày đặc.
+
+\begin{itemize}
+\item
+  \textbf{Cấu trúc và nguyên lý hoạt động:}
+\end{itemize}
+
+Cấu trúc của DenseNet được xây dựng dựa trên một ý tưởng đơn giản nhưng
+hiệu quả, tăng cường kết nối giữa các lớp trong mạng nơ-ron. Khác với
+các kiến trúc mạng nơ-ron truyền thống, trong đó mỗi lớp chỉ nhận đầu
+vào từ lớp liền trước và truyền đầu ra cho lớp liền sau, DenseNet cho
+phép mỗi lớp nhận đầu vào từ tất cả các lớp trước đó và truyền đầu ra
+đến tất cả các lớp tiếp theo. Cơ chế này tạo ra một mạng lưới dày đặc,
+trong đó các đặc trưng được chia sẻ và tái sử dụng liên tục giữa các
+lớp. Nhờ đó, DenseNet giúp cải thiện hiệu suất mô hình và giảm thiểu
+hiện tượng mất mát thông tin trong quá trình lan truyền. Mạng DenseNet
+được xây dựng từ các khối Dense (Dense Blocks) và các lớp chuyển tiếp
+(Transition Layers).
+
+Dense Block là một thành phần cốt lõi của kiến trúc DenseNet, bao gồm
+nhiều lớp được kết nối dày đặc với nhau. Đặc điểm nổi bật của mỗi lớp
+trong một Dense Block là khả năng nhận đầu vào từ tất cả các lớp trước
+đó và truyền đầu ra đến tất cả các lớp tiếp theo. Mỗi lớp trong Dense
+Block thường bao gồm ba thành phần chính là lớp chuẩn hóa theo batch
+(Batch Normalization), lớp kích hoạt ReLU (Rectified Linear Unit), và
+lớp tích chập (Convolutional Layer). Nhờ cơ chế tái sử dụng các đặc
+trưng đã học từ các lớp trước, Dense Block giúp giảm độ phức tạp của mô
+hình mà vẫn duy trì được độ chính xác cao.
+
+\textbf{Transition Layer:} Transition Layer được đặt giữa các Dense
+Block trong kiến trúc DenseNet, có nhiệm vụ giảm kích thước của bản đồ
+đặc trưng (feature map) thông qua việc sử dụng lớp tích chập (1 × 1
+Convolution) và phép gộp trung bình (Average Pooling). Lớp chuyển tiếp
+đóng vai trò quan trọng trong việc kiểm soát kích thước và độ phức tạp
+của mô hình, đồng thời ngăn chặn sự gia tăng quá mức của số lượng đặc
+trưng khi mạng trở nên sâu hơn.
+
+Mô hình DenseNet có nhiều ưu điểm như:
+
+\begin{itemize}
+\item
+  \textbf{Tái sử dụng đặc trưng hiệu quả:} Trong các mạng nơ-ron truyền
+  thống, mỗi lớp học các đặc trưng mới dựa trên đầu ra của lớp trước đó.
+  Tuy nhiên, trong DenseNet, các đặc trưng đã học từ các lớp trước được
+  tái sử dụng trực tiếp ở các lớp tiếp theo thông qua cơ chế kết nối dày
+  đặc. Điều này không chỉ giúp mô hình học tập hiệu quả hơn mà còn giảm
+  thiểu sự dư thừa không cần thiết, cho phép DenseNet đạt được hiệu suất
+  cao với số lượng tham số ít hơn so với các kiến trúc khác.
+\item
+  \textbf{Giảm nguy cơ tiêu biến gradient (Gradient Vanishing):} Nhờ cơ
+  chế kết nối dày đặc, gradient trong quá trình huấn luyện được truyền
+  trực tiếp từ các lớp sau về các lớp trước một cách dễ dàng, giảm nguy
+  cơ tiêu biến gradient, một vấn đề thường gặp trong các mạng nơ-ron
+  sâu. Điều này đặc biệt hữu ích khi huấn luyện các mạng có số lượng lớp
+  lớn, giúp DenseNet duy trì hiệu suất ổn định.
+\item
+  \textbf{Hiệu quả sử dụng bộ nhớ:} Mặc dù có nhiều kết nối hơn,
+  DenseNet lại sử dụng bộ nhớ hiệu quả hơn nhờ số lượng tham số thực tế
+  ít hơn so với các mô hình có cùng độ sâu, như VGGNet hoặc GoogLeNet.
+  Điều này làm cho DenseNet trở thành lựa chọn lý tưởng trong các ứng
+  dụng cần tối ưu hóa tài nguyên, chẳng hạn như trên các hệ thống nhúng
+  hoặc thiết bị di động.
+\item
+  \textbf{Giảm nguy cơ quá khớp (Overfitting):} Cơ chế tái sử dụng đặc
+  trưng và cấu trúc kết nối dày đặc của DenseNet giúp giảm nguy cơ quá
+  khớp, ngay cả khi dữ liệu huấn luyện hạn chế. Đây là một lợi thế lớn
+  khi làm việc với các tập dữ liệu nhỏ hoặc trong các môi trường có tài
+  nguyên tính toán hạn chế.
+\end{itemize}
+
+Kể từ khi được giới thiệu, DenseNet đã được phát triển và mở rộng với
+nhiều biến thể khác nhau, nhằm mục đích tối ưu hóa hiệu suất và thích
+nghi với các bài toán khác nhau trong học sâu. Một số biến thể đáng chú
+ý của DenseNet như DenseNet-121, DenseNet-169, DenseNet-201 và
+DenseNet-264, được đặt tên dựa trên tổng số lớp (layers) trong mạng,
+tương ứng với 121, 169, 201 và 264 lớp. Sự khác biệt chính giữa các biến
+thể này nằm ở số lượng Dense Block và số lớp trong mỗi Dense Block, ảnh
+hưởng đến độ sâu và khả năng học của mô hình.
+
+\textbf{Các phiên bản của mô hình DenseNet:}
+
+\begin{itemize}
+\item
+  \textbf{DenseNet-121:} Đây là phiên bản cơ bản nhất trong số các biến
+  thể của DenseNet, thường được sử dụng rộng rãi trong nhiều thử nghiệm
+  nhờ kích thước nhỏ gọn và hiệu suất cao. DenseNet-121 bao gồm 4 Dense
+  Block với số lớp trong mỗi Dense block lần lượt là 6, 12, 24 và 16.
+  Với cấu trúc này, DenseNet-121 đạt được sự cân bằng giữa hiệu suất và
+  chi phí tính toán, phù hợp cho các bài toán phân loại hình ảnh trên
+  các tập dữ liệu như CIFAR-10 hoặc ImageNet.
+\item
+  \textbf{DenseNet-169:} DenseNet-169 có số lớp lớn hơn, với 4 Dense
+  Block chứa lần lượt 6, 12, 32 và 32 lớp. Sự gia tăng số lớp giúp mạng
+  trở nên sâu hơn, cho phép học các đặc trưng phức tạp hơn so với
+  DenseNet-121. Biến thể này thường được sử dụng trong các bài toán yêu
+  cầu độ chính xác cao hơn, nhưng vẫn duy trì hiệu quả tính toán tương
+  đối tốt.
+\item
+  \textbf{DenseNet-201:} Khác với các mạng nơ-ron tích chập (CNN) truyền
+  thống, nơi mỗi lớp chỉ kết nối với lớp liền trước, DenseNet201 giới
+  thiệu cơ chế kết nối dày đặc, trong đó mỗi lớp nhận đầu vào từ tất cả
+  các lớp trước đó. Thiết kế này giúp giảm thiểu hiện tượng mất mát
+  gradient, thúc đẩy việc tái sử dụng đặc trưng, nâng cao khả năng khái
+  quát hóa và giảm dư thừa mô hình, đồng thời duy trì tính gọn nhẹ. Cấu
+  trúc kiến trúc của DenseNet201 được sử dụng trong nghiên cứu này được
+  minh họa ở hình 2.9
+\end{itemize}
+
+\begin{quote}
+\includegraphics[width=6.2in,height=2.97083in,alt={A diagram of a diagram of a book AI-generated content may be incorrect.}]{./media/image17.png}
+
+\emph{\textbf{Hình 2.9.} Kiến trúc tổng quan của mô hình DenseNet201}
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{DenseNet-264:} Đây là phiên bản sâu nhất trong các biến thể
+  được đề cập, với 4 Dense Block chứa lần lượt 6, 12, 64 và 48 lớp.
+  DenseNet-264 có khả năng xử lý các tập dữ liệu lớn và phức tạp, như
+  ImageNet, nhờ vào độ sâu và khả năng học các đặc trưng ở nhiều cấp độ
+  khác nhau. Tuy nhiên, do số lượng lớp lớn, DenseNet-264 đòi hỏi tài
+  nguyên tính toán đáng kể, khiến nó phù hợp hơn cho các hệ thống có cấu
+  hình mạnh.
+\end{itemize}
+
+Sự khác biệt giữa các biến thể này không chỉ nằm ở số lượng lớp mà còn ở
+số lượng đặc trưng (feature maps) được tạo ra trong mỗi Dense Block. Các
+phiên bản sâu hơn (như DenseNet-201 và DenseNet-264) thường có khả năng
+học tốt hơn trên các tập dữ liệu phức tạp, nhưng đi kèm với chi phí tính
+toán và bộ nhớ cao hơn. Trong khi đó, DenseNet-121 và DenseNet-169
+thường được ưa chuộng trong các ứng dụng thực tế nhờ sự cân bằng giữa
+hiệu suất và hiệu quả tài nguyên.
+
+\section{TÓM TẮT CHƯƠNG 2}\label{tuxf3m-tux1eaft-chux1b0ux1a1ng-2}
+
+Chương 2 đã trình bày các nền tảng lý thuyết và cơ sở khoa học cần thiết
+cho việc nghiên cứu, xây dựng và đánh giá mô hình phân loại chất lượng
+tỏi. Trước hết, chương đã giới thiệu tổng quan về bài toán phân loại tỏi
+sau bóc vỏ, trong đó nhiệm vụ chính là phân loại ảnh tép tỏi vào ba
+nhóm: tỏi sạch vỏ, tỏi còn vỏ và tỏi hư. Đây là cơ sở quan trọng để xác
+định rõ phạm vi bài toán, đặc điểm dữ liệu đầu vào và nhãn đầu ra của mô
+hình.
+
+Bên cạnh đó, bộ dữ liệu ảnh tỏi sử dụng trong nghiên cứu cũng được trình
+bày chi tiết. Luận văn sử dụng Garlic Clove Dataset với hai phiên bản dữ
+liệu là dataset-1 gồm 2.134 ảnh và dataset-2 gồm 2.944 ảnh. Việc sử dụng
+hai phiên bản dữ liệu này giúp quá trình thực nghiệm có thêm cơ sở để
+đánh giá hiệu quả mô hình trong các điều kiện phân bố lớp khác nhau, đặc
+biệt trong bối cảnh dữ liệu thực tế thường có sự chênh lệch giữa các
+nhóm mẫu.
+
+Tiếp theo, chương đã trình bày các kiến thức nền tảng về học sâu và mạng
+nơ-ron tích chập. Các thành phần chính trong một mô hình CNN như lớp
+tích chập, hàm kích hoạt, lớp pooling và lớp phân loại được giới thiệu
+nhằm làm rõ cách mô hình trích xuất và học đặc trưng từ ảnh. Đối với bài
+toán phân loại chất lượng tỏi, CNN có vai trò quan trọng vì mô hình có
+thể tự động học các đặc trưng thị giác trên bề mặt tép tỏi, từ những đặc
+điểm tổng thể đến các dấu hiệu cục bộ như phần vỏ còn sót, vùng thâm,
+dập nát hoặc hư hỏng.
+
+Ngoài ra, chương cũng trình bày phương pháp học chuyển giao và kỹ thuật
+fine-tuning. Đây là hướng tiếp cận phù hợp trong nghiên cứu này vì bộ dữ
+liệu ảnh tỏi có quy mô không quá lớn so với các bộ dữ liệu ảnh phổ biến
+trong học sâu. Việc tận dụng các mô hình đã được huấn luyện trước giúp
+mô hình kế thừa những đặc trưng thị giác tổng quát, giảm thời gian huấn
+luyện và cải thiện khả năng học trên dữ liệu ảnh tỏi.
+
+Cuối cùng, chương đã khảo sát các mô hình CNN nền được sử dụng trong
+thực nghiệm, bao gồm NASNetMobile, InceptionV3, EfficientNetB4,
+MobileNetV2 và DenseNet121. Mỗi mô hình đại diện cho một hướng thiết kế
+kiến trúc khác nhau, chẳng hạn NASNetMobile với kiến trúc được tìm kiếm
+tự động, InceptionV3 với khả năng khai thác đặc trưng đa tỷ lệ,
+EfficientNetB4 với phương pháp mở rộng mô hình cân bằng, MobileNetV2 với
+thiết kế gọn nhẹ và DenseNet121 với cơ chế kết nối dày đặc giúp tái sử
+dụng đặc trưng. Việc phân tích các mô hình này tạo cơ sở lý thuyết và
+thực nghiệm cho quá trình so sánh, lựa chọn mô hình nền phù hợp, từ đó
+phát triển mô hình đề xuất ở các chương tiếp theo.
+
+\section{CHƯƠNG 3: MÔ HÌNH ĐỀ
+XUẤT}\label{chux1b0ux1a1ng-3-muxf4-huxecnh-ux111ux1ec1-xuux1ea5t}
+
+Trong chương này, Đề án tập trung trình bày và phân tích hai hướng tiếp
+cận chính: Mô hình 1: Các mô hình học sâu tiền huấn luyện cơ sở
+(Pre-trained CNN baseline), trong đó tiến hành thực nghiệm và so sánh 5
+kiến trúc mạng khác nhau (NASNetMobile, InceptionV3, EfficientNetB4,
+MobileNetV2, DenseNet121) để đánh giá hiệu năng trích xuất đặc trưng. Mô
+hình 2: Mô hình đề xuất của Đề án (dựa trên kiến trúc đạt kết quả tốt
+nhất là EfficientNetB4), kết hợp chiến lược tinh chỉnh (Fine-tuning)
+chuyên sâu các khối tích chập (Blocks 2, 3, 4) và áp dụng các kỹ thuật
+cải tiến về hàm mất mát, cơ chế học đa nhiệm nhằm tối ưu hóa độ chính
+xác cho bài toán phân loại tỏi.
+
+\textbf{Mô hình 1:} Nhóm mô hình học sâu tiền huấn luyện được re-train
+trên bộ dữ liệu ảnh tỏi nhằm xác định kiến trúc nền phù hợp nhất cho bài
+toán phân loại chất lượng tỏi.
+
+\textbf{Mô hình 2:} Mô hình đề xuất được phát triển dựa trên kiến trúc
+đạt kết quả tốt nhất từ Mô hình 1, sau đó bổ sung các cải tiến về chiến
+lược fine-tuning, hàm mất mát và thiết kế đầu ra để nâng cao hiệu quả
+phân loại.
+
+\begin{quote}
+\protect\phantomsection\label{_Toc232112025}{}\textbf{3.1 Các mô hình
+học sâu tiền huấn luyện cho phân loại tỏi}
+
+\protect\phantomsection\label{_Toc232112026}{}\emph{\textbf{3.1.1 Mục
+tiêu}}
+\end{quote}
+
+Mục tiêu của giai đoạn này là re-train và đánh giá các mô hình CNN tiền
+huấn luyện trên bộ dữ liệu ảnh tỏi sau bóc vỏ, từ đó lựa chọn một
+backbone phù hợp để phát triển mô hình đề xuất ở Mục 3.2. Các mô hình
+được đánh giá trên cùng bài toán phân loại ba lớp:
+\textbf{Fully\_Peeled\_Garlic}, \textbf{Partially\_Peeled\_Garlic} và
+\textbf{Spoiled\_Garlic}. Đây lần lượt là ba trạng thái chất lượng
+tương ứng với tỏi đã bóc sạch, tỏi còn sót vỏ và tỏi hư hỏng.
+
+Việc so sánh các mô hình tiền huấn luyện không chỉ nhằm tìm mô hình đạt
+độ chính xác cao nhất, mà còn giúp đánh giá khả năng trích xuất đặc
+trưng thị giác của từng kiến trúc đối với các dấu hiệu đặc thù của ảnh
+tỏi, chẳng hạn vùng vỏ còn sót, vết thâm, vùng đổi màu và kết cấu bề mặt
+tép tỏi. Kết quả của giai đoạn này là cơ sở để chọn kiến trúc nền cho
+các cải tiến tiếp theo.
+
+Quy trình thực nghiệm được thực hiện theo bốn bước chính: chuẩn bị dữ
+liệu, xây dựng mô hình, huấn luyện nhiều lần với các seed khác nhau và
+so sánh kết quả trên tập kiểm tra độc lập. Toàn bộ quá trình được tổ
+chức thống nhất cho cả năm mô hình nhằm bảo đảm tính công bằng khi so
+sánh.
+
+\begin{quote}
+\protect\phantomsection\label{_Toc232112027}{}\emph{\textbf{3.1.2 Các mô
+hình được lựa chọn}}
+\end{quote}
+
+Nghiên cứu lựa chọn năm kiến trúc CNN tiền huấn luyện trên ImageNet gồm
+\textbf{NASNetMobile}, \textbf{InceptionV3}, \textbf{EfficientNetB4},
+\textbf{MobileNetV2} và \textbf{DenseNet121}. Các kiến trúc này đại diện
+cho nhiều hướng thiết kế khác nhau trong học sâu cho ảnh:
+
+\begin{itemize}
+\item
+  \textbf{NASNetMobile} là kiến trúc được thiết kế thông qua tìm kiếm
+  kiến trúc mạng nơ-ron, có ưu điểm gọn nhẹ và phù hợp với các môi
+  trường tính toán hạn chế.
+\item
+  \textbf{InceptionV3} khai thác đặc trưng đa tỷ lệ thông qua các mô-đun
+  Inception, phù hợp với ảnh có nhiều vùng đặc trưng ở kích thước khác
+  nhau.
+\item
+  \textbf{EfficientNetB4} sử dụng chiến lược compound scaling để cân
+  bằng đồng thời độ sâu, độ rộng và độ phân giải đầu vào của mạng.
+\item
+  \textbf{MobileNetV2} sử dụng depthwise separable convolution và inverted
+  residual block, phù hợp với các bài toán cần mô hình nhẹ.
+\item
+  \textbf{DenseNet121} khai thác cơ chế kết nối dày đặc giữa các lớp,
+  giúp tái sử dụng đặc trưng và cải thiện lan truyền gradient.
+\end{itemize}
+
+\protect\phantomsection\label{_bookmark21}{}\emph{\textbf{3.1.3 Bộ dữ
+liệu và tiền xử lý}}
+
+Bộ dữ liệu sử dụng trong giai đoạn re-train là
+\textbf{Garlic Clove Dataset -- dataset-1}, gồm \textbf{2.134 ảnh} tép
+tỏi sau bóc vỏ. Dữ liệu được chia sẵn thành ba tập con: training,
+validation và test. Cụ thể, tập training có \textbf{1.492 ảnh}, tập
+validation có \textbf{318 ảnh} và tập test có \textbf{324 ảnh}. Ba lớp dữ
+liệu được phân bố như sau: Fully\_Peeled\_Garlic gồm 690 ảnh,
+Partially\_Peeled\_Garlic gồm 438 ảnh và Spoiled\_Garlic gồm 1.006 ảnh.
+
+Việc chia dữ liệu được thực hiện trước khi huấn luyện để hạn chế rò rỉ dữ
+liệu giữa các tập con. Mỗi mô hình chỉ học trên tập training, sử dụng tập
+validation để theo dõi quá trình hội tụ và lựa chọn checkpoint tốt nhất,
+sau đó đánh giá cuối cùng trên tập test độc lập.
+
+Trước khi đưa vào mô hình, ảnh được resize theo kích thước đầu vào phù
+hợp với từng kiến trúc. NASNetMobile và MobileNetV2 sử dụng ảnh
+\(224 \times 224\), InceptionV3 sử dụng ảnh \(299 \times 299\), còn
+EfficientNetB4 và DenseNet121 sử dụng ảnh \(380 \times 380\). Mỗi mô hình
+sử dụng hàm tiền xử lý tương ứng trong thư viện Keras Applications để bảo
+đảm ảnh đầu vào phù hợp với backbone đã được huấn luyện trước.
+
+\protect\phantomsection\label{_Toc232112029}{}\emph{\textbf{3.1.4 Xây
+dựng và huấn luyện mô hình}}
+
+Các mô hình được xây dựng theo cùng một nguyên tắc transfer learning.
+Phần backbone được khởi tạo bằng trọng số ImageNet và loại bỏ tầng phân
+loại gốc (\texttt{include\_top=False}). Trên đầu backbone, nghiên cứu bổ
+sung một classification head thống nhất gồm:
+
+\begin{itemize}
+\item
+  Global Average Pooling để chuyển bản đồ đặc trưng thành vector đặc
+  trưng;
+\item
+  Batch Normalization để ổn định phân bố đặc trưng trong quá trình học;
+\item
+  Dense layer 128 nút với hàm kích hoạt ReLU và L2 regularization
+  \(1\times10^{-5}\);
+\item
+  Dropout 0.5 để giảm quá khớp;
+\item
+  Dense Softmax ba nút để dự đoán xác suất thuộc ba lớp chất lượng tỏi.
+\end{itemize}
+
+Trong giai đoạn so sánh baseline, các mô hình được huấn luyện theo chiến
+lược \textbf{head-only fine-tuning}: backbone được đóng băng và chỉ các
+tầng phân loại mới được cập nhật trọng số. Cách huấn luyện này giúp đánh
+giá trực tiếp chất lượng đặc trưng đã học sẵn của từng kiến trúc khi áp
+dụng vào bộ dữ liệu ảnh tỏi.
+
+Để tăng khả năng khái quát hóa, tập training được áp dụng data
+augmentation gồm xoay ảnh, dịch chuyển ngang/dọc, phóng to/thu nhỏ, lật
+ngang, lật dọc và thay đổi độ sáng. Do dữ liệu có sự mất cân bằng giữa
+các lớp, class weights được tính từ tần suất xuất hiện của từng lớp trong
+tập training và đưa vào quá trình huấn luyện. Hàm mất mát sử dụng là
+Categorical Cross-Entropy có label smoothing 0.15. Mỗi mô hình được chạy
+ba lần với các seed \textbf{42}, \textbf{123} và \textbf{456}; kết quả
+báo cáo là giá trị trung bình và độ lệch chuẩn trên ba lần chạy.
+
+\emph{\textbf{Bảng 3.1.} Cấu hình re-train của năm mô hình tiền huấn
+luyện}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2200}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1600}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1300}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1700}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2600}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Mô hình}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Input}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Batch}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Learning rate}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Thiết lập chung}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+NASNetMobile & \(224 \times 224\) & 32 & \(1\times10^{-5}\) &
+Head-only, ImageNet, Adam + ExponentialDecay, tối đa 50 epoch,
+EarlyStopping patience = 15 \\
+InceptionV3 & \(299 \times 299\) & 32 & \(1\times10^{-5}\) &
+Head-only, ImageNet, Adam + ExponentialDecay, tối đa 50 epoch,
+EarlyStopping patience = 15 \\
+EfficientNetB4 & \(380 \times 380\) & 64 & \(1\times10^{-4}\) &
+Head-only, ImageNet, Adam + ExponentialDecay, tối đa 50 epoch,
+EarlyStopping patience = 15 \\
+MobileNetV2 & \(224 \times 224\) & 32 & \(1\times10^{-5}\) &
+Head-only, ImageNet, Adam + ExponentialDecay, tối đa 50 epoch,
+EarlyStopping patience = 15 \\
+DenseNet121 & \(380 \times 380\) & 32 & \(1\times10^{-5}\) &
+Head-only, ImageNet, Adam + ExponentialDecay, tối đa 50 epoch,
+EarlyStopping patience = 15 \\
+\end{longtable}
+}
+
+\emph{\textbf{Bảng 3.2.} Kết quả re-train năm mô hình tiền huấn luyện
+trên dataset-1}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2600}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1700}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1900}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1700}}
+  >{\centering\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1800}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Mô hình}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Accuracy}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Precision}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Recall}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{F1-Score}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+NASNetMobile & \(0.7706 \pm 0.0154\) & \(0.7897 \pm 0.0021\) &
+\(0.7706 \pm 0.0154\) & \(0.7724 \pm 0.0134\) \\
+InceptionV3 & \(0.7994 \pm 0.0157\) & \(0.8001 \pm 0.0157\) &
+\(0.7994 \pm 0.0157\) & \(0.7988 \pm 0.0154\) \\
+\textbf{EfficientNetB4} & \(\mathbf{0.8714} \pm \mathbf{0.0052}\) &
+\(\mathbf{0.8885} \pm \mathbf{0.0049}\) &
+\(\mathbf{0.8714} \pm \mathbf{0.0052}\) &
+\(\mathbf{0.8722} \pm \mathbf{0.0052}\) \\
+MobileNetV2 & \(0.7891 \pm 0.0038\) & \(0.8086 \pm 0.0080\) &
+\(0.7891 \pm 0.0038\) & \(0.7910 \pm 0.0015\) \\
+DenseNet121 & \(0.7901 \pm 0.0076\) & \(0.8015 \pm 0.0092\) &
+\(0.7901 \pm 0.0076\) & \(0.7893 \pm 0.0073\) \\
+\end{longtable}
+}
+
+Kết quả ở Bảng 3.2 cho thấy \textbf{EfficientNetB4} đạt hiệu năng cao
+nhất trong cả bốn chỉ số đánh giá. Accuracy trung bình của EfficientNetB4
+đạt \(0.8714\), cao hơn InceptionV3 khoảng \(0.0720\), MobileNetV2 khoảng
+\(0.0823\), DenseNet121 khoảng \(0.0813\) và NASNetMobile khoảng
+\(0.1008\). Đồng thời, độ lệch chuẩn của EfficientNetB4 tương đối nhỏ
+(\(\pm 0.0052\) đối với Accuracy và F1-Score), cho thấy mô hình có độ ổn
+định tốt qua ba lần chạy độc lập.
+
+Từ kết quả này, EfficientNetB4 được lựa chọn làm backbone chính cho mô
+hình đề xuất ở phần tiếp theo. Lựa chọn này phù hợp với đặc thù của bài
+toán phân loại tỏi vì mô hình vừa khai thác tốt đặc trưng thị giác ở độ
+phân giải cao, vừa duy trì hiệu năng ổn định khi dữ liệu có sự mất cân
+bằng giữa các lớp.
+
+\begin{quote}
+\protect\phantomsection\label{_Toc232112030}{}\textbf{3.2 Mô hình đề
+xuất}
+
+\protect\phantomsection\label{_Toc232112031}{}\emph{\textbf{3.2.1 Hạn
+chế của mô hình}}
+\end{quote}
+
+\protect\phantomsection\label{_Toc232112032}{}\emph{\textbf{3.2.2 Ý
+tưởng cải tiến}}
+
+\begin{quote}
+\emph{\textbf{Bảng 3.3.} Bảng Hyper-parameters~của mô hình đề xuất}
+\end{quote}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2456}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3421}}
+  >{\centering\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+& & \\
+\end{longtable}
+}
+
+Bảng 3.3
+
+\protect\phantomsection\label{_Toc232112033}{}\emph{\textbf{3.2.3 Kiến
+trúc}}
+
+\section{CHƯƠNG 4: KẾT QUẢ THỰC
+NGHIỆM}\label{chux1b0ux1a1ng-4-kux1ebft-quux1ea3-thux1ef1c-nghiux1ec7m}
+
+Trong Chương 3, Đề án đã trình bày các mô hình được sử dụng, bao gồm
+nhóm mô hình học sâu tiền huấn luyện (Pre-trained CNN) và mô hình cải
+tiến
+
+\textbf{Trọng tâm của chương là:}
+
+Kết quả trong chương này sẽ làm cơ sở cho phần Kết luận ở Chương 5.
+
+\begin{quote}
+\protect\phantomsection\label{_Toc232112035}{}\textbf{4.1 Tiêu chí đánh
+giá và công cụ hỗ trợ}
+\end{quote}
+
+\protect\phantomsection\label{_Toc232112036}{}\emph{\textbf{4.1.1 Tiêu
+chí đánh giá}}
+
+Để đánh giá khách quan hiệu năng của các mô hình, nghiên cứu sử dụng bốn
+tiêu chí phân loại chuẩn, được tính toán trên cả tập validation và test
+độc lập, bao gồm:
+
+\begin{itemize}
+\item
+  \textbf{Độ chính xác (Accuracy):}
+\end{itemize}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0548}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.8159}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0507}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0484}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\[Accuracy = \frac{TP + TN}{TP + TN + FP + FN}\]
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(7)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+}
+
+Chỉ số phản ánh tỷ lệ dự đoán đúng trên tổng số mẫu, thể hiện mức độ
+chính xác tổng thể của mô hình.
+
+\begin{itemize}
+\item
+  \textbf{Độ chính xác dự đoán (Precision):}
+\end{itemize}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0548}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.8159}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0507}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0484}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\[Precision = \frac{TP}{TP + FP}\]
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(8)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+}
+
+Phản ánh mức độ chính xác trong các dự đoán dương tính của mô hình.
+Precision cao đặc biệt quan trọng trong kiểm tra chất lượng tỏi, vì giúp
+hạn chế các cảnh báo sai khi xác định mẫu tỏi không đạt yêu cầu.
+
+\begin{itemize}
+\item
+  \textbf{Độ bao phủ (Recall):}
+\end{itemize}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0548}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.8159}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0507}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0484}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\[Recall = \frac{TP}{TP + FN}\]
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(9)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+}
+
+Chỉ số đo lường khả năng phát hiện đầy đủ các mẫu thuộc từng lớp thực tế,
+đặc biệt là các mẫu tỏi còn vỏ hoặc tỏi hư cần được tách khỏi nhóm đạt
+yêu cầu. Đây là tiêu chí quan trọng để hạn chế bỏ sót mẫu lỗi trong dây
+chuyền chế biến.
+
+\begin{itemize}
+\item
+  \textbf{F1-Score:}
+\end{itemize}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0548}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.8159}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0634}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0484}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\[F1 - Score = 2.\frac{Precision.Recall}{Precision + Recall}\]
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+(10)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+}
+
+Là chỉ số trung bình giữa Precision và Recall, giúp cân bằng khi dữ liệu
+bị mất cân bằng giữa các lớp.
+
+\textbf{Trong đó:}
+
+\begin{itemize}
+\item
+  \textbf{TP (True Positive):} số trường hợp dương tính được dự đoán
+  đúng.
+\item
+  \textbf{TN (True Negative):} số trường hợp âm tính được dự đoán đúng.
+\item
+  \textbf{FP (False Positive):} số trường hợp âm tính nhưng bị dự đoán
+  sai thành dương tính.
+\item
+  \textbf{FN (False Negative):} số trường hợp dương tính nhưng bị dự
+  đoán sai thành âm tính.
+\end{itemize}
+
+Ngoài ra, nghiên cứu còn sử dụng:
+
+\begin{quote}
+\textbf{Ma trận nhầm lẫn (Confusion Matrix):} dùng để quan sát chi tiết
+các lớp chất lượng tỏi dễ bị nhầm lẫn.
+\end{quote}
+
+Những tiêu chí này không chỉ phản ánh khả năng phân loại tổng thể mà còn
+làm rõ mức độ tin cậy và khả năng khái quát hóa của mô hình khi áp dụng
+trong thực tế sản xuất nông nghiệp.
+
+\protect\phantomsection\label{_Toc232112037}{}\emph{\textbf{4.1.2 Công
+cụ hỗ trợ}}
+
+Trong quá trình xây dựng và huấn luyện mô hình, nghiên cứu sử dụng các
+công cụ chính sau:
+
+\begin{itemize}
+\item
+  \textbf{TensorFlow và Keras:} Framework học sâu chủ đạo, cung cấp sẵn
+  các mô hình Pre-trained (NASNetMobile, DenseNet, EfficientNet,
+  Inception, MobileNet).
+\item
+  \textbf{Scikit-learn:} Hỗ trợ tính toán các chỉ số đánh giá
+  (Precision, Recall, F1, Confusion Matrix, Top-K Accuracy).
+\item
+  \textbf{Matplotlib và Seaborn:} Dùng để trực quan hóa quá trình huấn
+  luyện (Accuracy, Loss) và ma trận nhầm lẫn.
+\item
+  \textbf{Google Colab Pro}: Môi trường huấn luyện chính, tận dụng
+  GPU/TPU để tăng tốc quá trình tính toán.
+\item
+  \textbf{Google Drive:} Lưu trữ dữ liệu, checkpoint mô hình, lịch sử
+  huấn luyện và kết quả thực nghiệm.
+\end{itemize}
+
+Việc kết hợp các tiêu chí đánh giá khoa học cùng công cụ hỗ trợ mạnh mẽ
+đảm bảo rằng quá trình thực nghiệm khách quan, minh bạch, có thể tái lập
+và ứng dụng thực tiễn.
+
+\begin{quote}
+\protect\phantomsection\label{_Toc232112038}{}\textbf{4.2 Kết quả của 5
+mô hình Pre-trained}
+\end{quote}
+
+Các mô hình được tiến hành huấn luyện và đánh giá trên tập kiểm định,
+với việc áp dụng các kỹ thuật như EarlyStopping, ReduceLROnPlateau và
+ModelCheckpoint nhằm tối ưu quá trình huấn luyện và ngăn ngừa hiện tượng
+quá khớp. Sau khi quá trình huấn luyện hoàn tất, mô hình được kiểm tra
+trên tập dữ liệu độc lập để đánh giá khả năng tổng quát hóa. Các chỉ số
+được báo cáo bao gồm: Accuracy, Precision, Recall, F1-score và ma trận
+nhầm lẫn, giúp phân tích chi tiết hiệu quả phân loại ở từng lớp chất
+lượng tỏi.
+
+\textbf{Kết quả theo từng mô hình:}
+
+\emph{\textbf{Bảng 4.1.}} \emph{Bảng kết quả của năm mô hình
+Pre-trained}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1222}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3232}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1185}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1271}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1008}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1232}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+No
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Models
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Accuracy
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+F1-Score
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Recall
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Precision
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{1} & & & & & \\
+2 & & & & & \\
+3 & & & & & \\
+4 & & & & & \\
+5 & & & & & \\
+\end{longtable}
+}
+
+Bảng 4.1 So sánh hiệu năng của năm mô hình học sâu
+
+\begin{quote}
+\protect\phantomsection\label{_Toc232112039}{}\textbf{4.3 Kết quả của mô
+hình đề xuất}
+\end{quote}
+
+\emph{\textbf{Bảng 4.2.} So sánh các mô hình CNN trong phân loại chất
+lượng tỏi}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0699}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2815}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1671}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1847}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1056}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1144}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{No}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Models}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & & & & & \\
+2 & & & & & \\
+3 & & & & & \\
+4 & & & & & \\
+5 & & & & & \\
+6 & & & & & \\
+7 & & & & & \\
+8 & & & & & \\
+\end{longtable}
+}
+
+\emph{Hình 4.13. Ma trận nhầm lẫn (Confusion Matrix)}
+
+\section{CHƯƠNG 5: KẾT LUẬN}\label{chux1b0ux1a1ng-5-kux1ebft-luux1eadn}
+
+\begin{quote}
+\protect\phantomsection\label{_Toc232112041}{}\textbf{5.1 Tổng kết quá
+trình nghiên cứu}
+
+\protect\phantomsection\label{_Toc232112042}{}\textbf{5.2 Hạn chế và
+hướng phát triển}
+\end{quote}
+
+\protect\phantomsection\label{_Toc232112043}{}\emph{\textbf{5.2.1 Hạn
+chế:}}
+
+\protect\phantomsection\label{_Toc232112044}{}\emph{\textbf{5.2.2 Hướng
+phát triển trong tương lai:}}
+
+\begin{quote}
+\protect\phantomsection\label{_Toc232112045}{}\textbf{5.3 Khả năng ứng
+dụng thực tiễn}
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+\end{itemize}
+
+\section{TÀI LIỆU THAM KHẢO}\label{tuxe0i-liux1ec7u-tham-khux1ea3o}
+
+1. B. Zoph, V. Vasudevan, J. Shlens, and Q. V. Le, ``Learning
+transferable architectures for scalable image recognition,'' in Proc.
+IEEE Conf. Computer Vision and Pattern Recognition (CVPR), 2018, pp.
+8697--8710.
+
+2. Thủ tướng Chính phủ, ``\emph{Quyết định số 127/QĐ-TTg về việc phê
+duyệt Chiến lược quốc gia về nghiên cứu, phát triển và ứng dụng trí tuệ
+nhân tạo đến năm 2030},'' Hà Nội, Việt Nam, 2021.
+
+3. Rashid, Mohammed, et al. ``\emph{Plant Disease Detection Using Deep
+Neural Networks and Computer Vision.}'', 2023.
+
+4. Trịnh, C. Đ. (2023). Ứng dụng học sâu để nhận dạng và phân loại bệnh
+trên cây lúa: Nghiên cứu sử dụng kiến trúc mạng dư (ResNet). Luận văn
+thạc sĩ, Đại học Nông nghiệp Việt Nam, Hà Nội.
+
+5. G. Huang, Z. Liu, L. van der Maaten, and K. Q. Weinberger, ``Densely
+Connected Convolutional Networks,'' in Proc. IEEE Conf. Computer Vision
+and Pattern Recognition (CVPR), Honolulu, HI, 2017, pp. 2261--2269.
+
+6. M. Tan and Q. V. Le, ``\emph{EfficientNetV2: Smaller Models and
+Faster Training,}'' in Proc. 38th Int. Conf. Machine Learning, vol. 139,
+pp. 10096--10106, 2021.
+
+7. C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, and Z. Wojna,
+``Rethinking the Inception Architecture for Computer Vision,'' in Proc.
+IEEE Conf. Computer Vision and Pattern Recognition (CVPR), Las Vegas,
+NV, 2016, pp. 2818--2826.
+
+8. M. Sandler, A. Howard, M. Zhu, A. Zhmoginov, and L. C. Chen,
+``MobileNetV2: Inverted Residuals and Linear Bottlenecks,'' in Proc.
+IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR), Salt Lake
+City, UT, 2018, pp. 4510--4520.
+
+9. F. Chollet, ``Xception: Deep learning with depthwise separable
+convolutions,'' in Proc. IEEE Conf. Computer Vision and Pattern
+Recognition (CVPR), Honolulu, HI, 2017, pp. 1251--1258.
+
+10. D. Chicco, and G. Jurman, ``The advantages of the Matthews
+correlation coefficient (MCC) over F1 score and Accuracy in binary
+classification evaluation,'' IEEE Access, vol. 7, pp. 749--762, 2019.
+
+11. M. Tan and Q. V. Le, ``EfficientNet: Rethinking model scaling for
+convolutional neural networks,'' in Proc. 36th Int. Conf. Machine
+Learning (ICML), 2019, pp. 6105--6114.
+
+12. M. Meenu, C. Kurade, B. C. Neelapu, S. Kalra, H. S. Ramaswamy, and
+Y. Yu, ``A concise review on food quality assessment using digital image
+processing,'' Trends in Food Science \& Technology, vol. 118, pp.
+106--124, 2021.
+
+13. K. Wonggasem, P. Chakranon, and P. Wongchaisuwat, ``Automated quality
+inspection of baby corn using image processing and deep learning,''
+Artificial Intelligence in Agriculture, vol. 11, pp. 61--69, 2024.
+
+14. S. J. Pan and Q. Yang, ``A Survey on Transfer Learning,'' IEEE
+Transactions on Knowledge and Data Engineering, vol. 22, no. 10, pp.
+1345--1359, Oct. 2010.
+
+15. J. Yosinski, J. Clune, Y. Bengio, and H. Lipson, ``How transferable
+are features in deep neural networks?'' in Proc. Advances in Neural
+Information Processing Systems (NeurIPS), vol. 27, 2014.
+
+16. S. Thrun and L. Pratt, Eds., Learning to Learn. New York, NY, USA:
+Springer, 1998, pp. 1--392.
+
+17. Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai,
+X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S.,
+Uszkoreit, J., \& Houlsby, N. (2021). An Image is Worth 16x16 Words:
+Transformers for Image Recognition at Scale.
+
+18. Szegedy, C., Vanhoucke, V., Ioffe, S., \& Shlens, J. (2016).
+Rethinking the Inception Architecture for Computer Vision. In Proc. IEEE
+Conf. Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, pp.
+2818--2826.
+
+19. Chollet, F. (2017). Xception: Deep Learning with Depthwise Separable
+Convolutions. In Proceedings of the IEEE Conference on Computer Vision
+and Pattern Recognition (CVPR).
+
+20. Sumalatha, K., Hisaria, S., Sharma, P., \& Gupta, R. (2023). An
+Analysis of Multi-Criteria Performance in Deep Learning-Based Medical
+Image Classification: A Comprehensive Review. Journal Name, vol. X, pp.
+Y--Z.
+
+21. C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D.
+Erhan, V. Vanhoucke, and A. Rabinovich, ``Going deeper with
+convolutions,'' in Proc. IEEE Conf. Comput. Vis. Pattern Recognit.
+(CVPR), 2015, pp. 1--9.
+
+22. O. Russakovsky et al., ``ImageNet large scale visual recognition
+challenge,'' Int. J. Comput. Vis., vol. 115, no. 3, pp. 211--252, Dec.
+2015.
+
+23. Huang, G., Liu, Z., Van Der Maaten, L., \& Weinberger, K. Q. (2017).
+Densely connected convolutional networks. Proceedings of the IEEE
+Conference on Computer Vision and Pattern Recognition (CVPR), 4700-4708.
+
+24. A. G. Howard et al., ``MobileNets: Efficient convolutional neural
+networks for mobile vision applications,'' arXiv preprint
+arXiv:1704.04861, 2017.
+
+25. P. Hoang and T. Le, ``Deep Learning-Based Classification of Peeled
+Garlic Cloves for Smart Food Processing,'' manuscript, HUTECH
+University, 2026.
+
+\end{document}
